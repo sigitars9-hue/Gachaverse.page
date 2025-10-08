@@ -290,16 +290,18 @@ function hasToken(hay, token) {
 function detectGames(admin) {
   const hay = textHay(admin);
   const set = new Set();
+
   for (const m of GAME_MATCHERS) {
-    const hit = m.kws.some((kw) => {
+    const list = Array.isArray(m.aliases) ? m.aliases : []; // <-- guard
+    const hit = list.some((kw) => {
       const k = kw.toLowerCase().trim();
-      if (k.includes(' ')) return hay.includes(k);
-      return hasToken(hay, k);
+      return k.includes(' ') ? hay.includes(k) : hasToken(hay, k);
     });
     if (hit) set.add(m.key);
   }
   return Array.from(set);
 }
+
 
 function likelyModerator(admin) {
   const hay = textHay(admin);
