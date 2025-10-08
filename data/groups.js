@@ -9,7 +9,7 @@ export const groups = [
 
   { name: "Anak Emas Kubis",       category: "Honkai Impact 3rd",     monthlyChats: 4213,  link: waGroup("BwVMPBLkAyj0waG7vPmq8M") },
   { name: "Anak Pungut Eridu",     category: "Zenless Zone Zero",     monthlyChats: 3801,  link: waGroup("C1mc6GvRho9JecoxgCpgU3") },
-  { name: "Perusahaan Hitam",      category: "Wuwa & PGR",            monthlyChats: 3599,  link: waGroup("Dk25iGaF4siE0zUbRmQl1J") },
+  { name: "Perusahaan Hitam",      category: "Wuwa & pgr",            monthlyChats: 3599,  link: waGroup("Dk25iGaF4siE0zUbRmQl1J") },
   { name: "Budak Arcanist",        category: "Reverse: 1999",         monthlyChats: 3484,  link: waGroup("F0PvYlVuka7JUO0DE6zwbP") },
   { name: "Anak Emas Yostar",      category: "AK, AL, AG, BA, dll",   monthlyChats: 3187,  link: waGroup("LHVEp4pNskdCm3nIqIZmot") },
   { name: "Anak Coklat Moonton",   category: "MLBB",                  monthlyChats: 2577,  link: waGroup("K77YYPDwx6o8Pj7lfMPBBY") },

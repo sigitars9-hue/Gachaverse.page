@@ -86,44 +86,53 @@ function Medal({ rank, hm = false }) {
 /* =========================================================
    ICON BADGE HELPERS
    ========================================================= */
-const ICON_BASE = '/icons/games';
-const ICON_EXT  = 'png'; // ganti ke 'png' kalau file kamu PNG
-const iconPath  = (key) => `${ICON_BASE}/${key}.${ICON_EXT}`;
+ const ICON_BASE = '/icons/games';
+ const ICON_EXT  = 'png';
+ // alias slug → nama file yang ADA di /public/icons/games
+ const ICON_FILE_ALIAS = {
+   gi: 'genshin',            // Genshin
+   'guardian-tales': 'guardiantales',
+   'neural-cloud': 'nc',
+   'limbus-company': 'limbus',
+   'grand-order': 'fgo',     // kalau ada yang masih pakai label "grand-order"
+   gfl2: 'gfl',
+ };
+ const iconPath = (key) => {
+   const fileKey = ICON_FILE_ALIAS[key] ?? key;
+   return `${ICON_BASE}/${fileKey}.${ICON_EXT}`;
+ };
 
 // mapping nama/kategori → icon
 // mapping nama/kategori → daftar icon (harus cocok dg nama file di /public/icons/games/*.png)
 const ICON_MAP = [
-  // --- Catatan khususmu ---
-  { test: /\bdante\b/i,                       icons: ['limbus'] },                          // 1) Dante → Limbus
-  { test: /velvet\s*room/i,                   icons: ['persona'] },                         // 2) Velvet Room → Persona
-  { test: /manusia\s*penembak\s*jitu/i,       icons: ['valorant','Pubg','df'] },            // 3) Penembak Jitu → Valo/PUBG/df
-  { test: /paimon|genshin|gi\b/i,             icons: ['gi'] },                              // 4) Paimon → Genshin(GI)
-  { test: /penafkah\s*husbu/i,                icons: ['tot','lads'] },                      // 5) Penafkah Husbu → ToT & lads
-  { test: /chaldea/i,                          icons: ['fgo'] },                     // 6) Chaldea → FGO
-  { test: /mayling/i,                          icons: ['gfl'] },                             // 7) Mayling → Girls' Frontline
-  { test: /penjaga\s*anomali/i,               icons: ['guardiantales'] },                  // 8) Penjaga Anomali → Guardian Tales
-  { test: /anak\s*freak\s*gamefreak/i,        icons: ['pokemon'] },                         // 9) Gamefreak → Pokémon
+ { test: /\bdante\b/i,                        icons: ['limbus'] },
+ { test: /velvet\s*room/i,                    icons: ['persona'] },
+ { test: /penembak\s*jitu|pubg/i,             icons: ['valorant','pubg','df'] },
+ { test: /paimon|genshin|gi\b/i,              icons: ['gi'] },          // → genshin.png via alias
+ { test: /penafkah\s*husbu/i,                 icons: ['tot','lads'] },
+ { test: /chaldea|fate\s*grand\s*order|fgo/i, icons: ['fgo'] },
+ { test: /mayling|girls'? frontline/i,        icons: ['gfl'] },
+ { test: /penjaga\s*anomali|guardian\s*tales/i, icons: ['guardiantales'] },
+ { test: /gamefreak|pok(e|é)mon/i,            icons: ['pokemon'] },
 
-  // --- Umum / publisher ---
-  { test: /honkai:\s*star\s*rail|pom\s*pom/i, icons: ['hsr'] },
-  { test: /honkai\s*impact\s*3rd|kubis|hi3/i, icons: ['hi3'] },
-  { test: /zenless\s*zone\s*zero|eridu|zzz/i, icons: ['zzz'] },
-  { test: /reverse[:\s]*1999|arcanist/i,      icons: ['reverse-1999'] },
-  { test: /kurogames|wuwa/i,                  icons: ['wuwa'] },
-  { test: /mlbb|moonton/i,                    icons: ['mlbb'] },
+ { test: /honkai:\s*star\s*rail|pom\s*pom/i,  icons: ['hsr'] },
+ { test: /honkai\s*impact\s*3rd|kubis|hi3/i,  icons: ['hi3'] },
+ { test: /zenless\s*zone\s*zero|eridu|zzz/i,  icons: ['zzz'] },
+ { test: /reverse[:\s]*1999|arcanist/i,       icons: ['reverse-1999'] },
+ { test: /kurogames|wuwa/i,                   icons: ['wuwa'] },
 
-  { test: /mihoyo|hoyoverse/i,                 icons: ['gi','hsr','zzz','hi3'] },            // set ke 'GI' agar match file icon kamu
-  { test: /cygames/i,                          icons: ['gbf','umamusume'] },
-  { test: /yostar/i,                           icons: ['ak','al','ba','ag','nc'] },          // >3 icon, akan tampil
+ { test: /mihoyo|hoyoverse/i,                 icons: ['gi','hsr','zzz','hi3'] },
+ { test: /cygames/i,                          icons: ['gbf','umamusume'] },
+ { test: /yostar/i,                           icons: ['ak','al','ba','ag','nc'] },
 
-  // --- Genre/seri lain ---
-  { test: /rhythm|full\s*combo|bandori|pjsk/i, icons: ['bandori','pjsk'] },
-  { test: /valorant/i,                         icons: ['valorant'] },
-  { test: /\broblox\b/i,                       icons: ['roblox'] },
-  { test: /pgr|punishing\s*gray\s*rav(en)?/i,  icons: ['pgr'] },
-  { test: /limbus/i,                           icons: ['limbus'] },                           // perbaiki yg sebelumnya salah
+ { test: /rhythm|full\s*combo|bandori|pjsk/i, icons: ['bandori','pjsk'] },
+ { test: /valorant/i,                         icons: ['valorant'] },
+ { test: /\broblox\b/i,                       icons: ['roblox'] },
+ { test: /pgr|punishing\s*gray\s*rav(en)?/i,  icons: ['pgr'] },
+ { test: /limbus/i,                           icons: ['limbus'] },
+ { test: /mlbb|moonton/i, icons: ['mlbb'] },
+
 ];
-
 
 function dedupLimit(arr, n) {
   const seen = new Set();
