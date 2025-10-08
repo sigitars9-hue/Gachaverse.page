@@ -5,7 +5,7 @@ export const admins = [
     name: "Ryuu",
     img: "/admins/ryuu.jpg",
     role: "Founder",
-    gender: "laki laki",
+    gender: "perempuan",
     skills: [
       "Communicate",
       "Ganteng",
