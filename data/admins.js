@@ -208,11 +208,11 @@ export const admins = [
       "al",
       "gfl2"
     ],
-    whatsapp: "081259160766",
+    whatsapp: "6281259160766",
     channels: [
       {
         platform: "whatsapp",
-        contact: "081259160766",
+        contact: "6281259160766",
         role: "owner",
         responsibility: "Job Matching",
         isPrimary: true
@@ -338,12 +338,12 @@ export const admins = [
       "hi3",
       "zzz"
     ],
-    whatsapp: "085155250004",
+    whatsapp: "6285155250004",
     discord: "https://discord.gg/RaidenZ#0927",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085155250004",
+        contact: "6285155250004",
         role: "admin",
         responsibility: "Memastikan grup tetap aktif dan kondusif",
         isPrimary: true
@@ -389,11 +389,11 @@ export const admins = [
       "pgr",
       "hi3"
     ],
-    whatsapp: "081382975970",
+    whatsapp: "6281382975970",
     channels: [
       {
         platform: "whatsapp",
-        contact: "081382975970",
+        contact: "6281382975970",
         role: "admin",
         responsibility: "Mengawasi grup, menjaga ketertiban grup",
         isPrimary: true
@@ -432,11 +432,11 @@ export const admins = [
       "ak",
       "reverse1999"
     ],
-    whatsapp: "085214900240",
+    whatsapp: "6285214900240",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085214900240",
+        contact: "6285214900240",
         role: "admin",
         responsibility: "mengawasi grup kasual",
         isPrimary: true
@@ -544,8 +544,7 @@ export const admins = [
       "Babel",
       "Owner Grup",
       "Admin Grup",
-      "AI",
-      "Pentung"
+      "AI"
     ],
     languages: [
       "ID",
@@ -565,12 +564,12 @@ export const admins = [
       "pgr",
       "nikke"
     ],
-    whatsapp: "085710161768",
+    whatsapp: "6285710161768",
     discord: "https://discord.gg/rizzmustdie_",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085710161768",
+        contact: "6285710161768",
         role: "admin",
         responsibility: "Head Admin",
         isPrimary: true
@@ -618,11 +617,11 @@ export const admins = [
       "al",
       "gfl2"
     ],
-    whatsapp: "0895345382926",
+    whatsapp: "62895345382926",
     channels: [
       {
         platform: "whatsapp",
-        contact: "0895345382926",
+        contact: "62895345382926",
         role: "admin",
         responsibility: "Memantau keadaan grup dan memastikan kondisi nya tetep aktif dan kondusif, serta memberikan update news dan guide sebisa dan sebaik mungkin ke member",
         isPrimary: true
@@ -668,11 +667,11 @@ export const admins = [
       "game-fps",
       "pc-game"
     ],
-    whatsapp: "085273874635",
+    whatsapp: "6285273874635",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085273874635",
+        contact: "6285273874635",
         role: "admin",
         responsibility: "Mengatur grup",
         isPrimary: true
@@ -710,11 +709,11 @@ export const admins = [
       "ak",
       "strinova"
     ],
-    whatsapp: "081291010707",
+    whatsapp: "6281291010707",
     channels: [
       {
         platform: "whatsapp",
-        contact: "081291010707",
+        contact: "6281291010707",
         role: "admin",
         responsibility: "Mengawasi traffic dan kelakuan anggota ACM",
         isPrimary: true
@@ -854,11 +853,11 @@ export const admins = [
     games: [
       "ak"
     ],
-    whatsapp: "085718072135",
+    whatsapp: "6285718072135",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085718072135",
+        contact: "6285718072135",
         role: "owner",
         responsibility: "Menjaga ketertiban grub dan memantau setiap member untuk mematuhi segala peraturan yang ada.",
         isPrimary: true
@@ -945,13 +944,13 @@ export const admins = [
     games: [
       "lads"
     ],
-    whatsapp: "085797027714",
+    whatsapp: "6285797027714",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085797027714",
+        contact: "6285797027714",
         role: "admin",
-        responsibility: "085797027714",
+        responsibility: "6285797027714",
         isPrimary: true
       }
     ]
@@ -997,12 +996,12 @@ export const admins = [
       "uma-musume-jp",
       "osu"
     ],
-    whatsapp: "081383216705",
+    whatsapp: "6281383216705",
     discord: "https://discord.gg/yMQKQpkwss",
     channels: [
       {
         platform: "whatsapp",
-        contact: "081383216705",
+        contact: "6281383216705",
         role: "admin",
         responsibility: "Mengawasi grup Eridu, bertaggung jawab atas Grup Minecraft dan Shooter, dan Mengawasi traffic Discord",
         isPrimary: false
@@ -1049,11 +1048,11 @@ export const admins = [
       "wuwa",
       "zzz"
     ],
-    whatsapp: "085882821862",
+    whatsapp: "6285882821862",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085882821862",
+        contact: "6285882821862",
         role: "admin",
         responsibility: "mengawasi member",
         isPrimary: true
@@ -1190,11 +1189,11 @@ export const admins = [
       "mlbb",
       "hsr"
     ],
-    whatsapp: "083820615118",
+    whatsapp: "6283820615118",
     channels: [
       {
         platform: "whatsapp",
-        contact: "083820615118",
+        contact: "6283820615118",
         role: "admin",
         responsibility: "Mengawasi grup casual",
         isPrimary: true
@@ -1243,7 +1242,7 @@ export const admins = [
         platform: "whatsapp",
         contact: "6282177517990",
         role: "admin",
-        responsibility: "082177517990",
+        responsibility: "Mengawasi grup casual",
         isPrimary: true
       }
     ]
@@ -1329,11 +1328,11 @@ export const admins = [
     games: [
       "uma"
     ],
-    whatsapp: "082114911824",
+    whatsapp: "6282114911824",
     channels: [
       {
         platform: "whatsapp",
-        contact: "082114911824",
+        contact: "6282114911824",
         role: "admin",
         responsibility: "Divisi UmaMusume",
         isPrimary: true
@@ -1387,12 +1386,12 @@ export const admins = [
       "gtav",
       "valorant"
     ],
-    whatsapp: "081217131696",
+    whatsapp: "6281217131696",
     discord: "https://discord.com/channels/@ceezumv",
     channels: [
       {
         platform: "whatsapp",
-        contact: "081217131696",
+        contact: "6281217131696",
         role: "editor",
         responsibility: "Bertanggung jawab atas manajemen beberapa grup di komunitas Gachaverse (ZZZ, Kreator, Casual, Shooter dll.)",
         isPrimary: true
@@ -1500,11 +1499,11 @@ export const admins = [
       "wuwa",
       "fps"
     ],
-    whatsapp: "081297808493",
+    whatsapp: "628129780493",
     channels: [
       {
         platform: "whatsapp",
-        contact: "081297808493",
+        contact: "628129780493",
         role: "admin",
         responsibility: "Memberikan guide dan theorycraft untuk resonator2 yang ada di WuWa dan menjaga kekondusivitas grup",
         isPrimary: true
@@ -1541,11 +1540,11 @@ export const admins = [
       "ak",
       "ba"
     ],
-    whatsapp: "082234123314",
+    whatsapp: "6282234123314",
     channels: [
       {
         platform: "whatsapp",
-        contact: "082234123314",
+        contact: "6282234123314",
         role: "admin",
         responsibility: "Sharing info, guide & news",
         isPrimary: true
@@ -1679,11 +1678,11 @@ export const admins = [
       "hi3",
       "al"
     ],
-    whatsapp: "087784093452",
+    whatsapp: "6287784093452",
     channels: [
       {
         platform: "whatsapp",
-        contact: "087784093452",
+        contact: "6287784093452",
         role: "admin",
         responsibility: "Information, Research, Theory, Data",
         isPrimary: true
@@ -1788,12 +1787,12 @@ export const admins = [
       "fgo",
       "dan-lads"
     ],
-    whatsapp: "085261809904",
+    whatsapp: "6285261809904",
     discord: "https://--",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085261809904",
+        contact: "6285261809904",
         role: "admin",
         responsibility: "Posting & mengawasi grup",
         isPrimary: true
@@ -1935,11 +1934,11 @@ export const admins = [
       "valorant",
       "war-thunder"
     ],
-    whatsapp: "085156119507",
+    whatsapp: "6285156119507",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085156119507",
+        contact: "6285156119507",
         role: "admin",
         responsibility: "Bertanggung jawab sebagai admin gc casual",
         isPrimary: true
@@ -1977,11 +1976,11 @@ export const admins = [
       "mlbb",
       "apapun-itu-asal-genrenya-moba"
     ],
-    whatsapp: "085748125249",
+    whatsapp: "6285748125249",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085748125249",
+        contact: "6285748125249",
         role: "admin",
         responsibility: "Membantu member",
         isPrimary: true
@@ -2020,12 +2019,12 @@ export const admins = [
       "roblox",
       "umamusume"
     ],
-    whatsapp: "081353857668",
+    whatsapp: "6281353857668",
     discord: "https://discord.gg/itznandahh",
     channels: [
       {
         platform: "whatsapp",
-        contact: "081353857668",
+        contact: "6281353857668",
         role: "admin",
         responsibility: "Membuat design template feed, logo dan  design poster penjualan gvstore. Dan juga memantau grup pojok kreator dan roblox.",
         isPrimary: true
@@ -2070,11 +2069,11 @@ export const admins = [
       "hsr",
       "fate-go"
     ],
-    whatsapp: "089520174379",
+    whatsapp: "6289520174379",
     channels: [
       {
         platform: "whatsapp",
-        contact: "089520174379",
+        contact: "6289520174379",
         role: "admin",
         responsibility: "Menjaga grup",
         isPrimary: true
@@ -2086,7 +2085,7 @@ export const admins = [
     slug: "pal",
     name: "Pal",
     img: "/admins/pal.jpg",
-    role: "Admin",
+    role: "moderator",
     gender: "laki laki",
     skills: [
       "Strategy",
@@ -2160,12 +2159,12 @@ export const admins = [
     games: [
       "aether-gazer"
     ],
-    whatsapp: "085649155051",
+    whatsapp: "6285649155051",
     discord: "https://discord.gg/xxxxx",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085649155051",
+        contact: "6285649155051",
         role: "admin",
         responsibility: "Berusaha fast Respon ketika di tag perihal sesuatu namun melihat kondisi dulu.",
         isPrimary: true
@@ -2210,11 +2209,11 @@ export const admins = [
       "gbf",
       "shadowverse"
     ],
-    whatsapp: "089601578562",
+    whatsapp: "6289601578562",
     channels: [
       {
         platform: "whatsapp",
-        contact: "089601578562",
+        contact: "6289601578562",
         role: "admin",
         responsibility: "Mantau grup",
         isPrimary: true
@@ -2306,11 +2305,11 @@ export const admins = [
       "bandori",
       "maimai"
     ],
-    whatsapp: "089661457400",
+    whatsapp: "6289661457400",
     channels: [
       {
         platform: "whatsapp",
-        contact: "089661457400",
+        contact: "6289661457400",
         role: "admin",
         responsibility: "Guide seputar Blue Archive dan beberapa Rhythm game",
         isPrimary: true
@@ -2449,7 +2448,7 @@ export const admins = [
         platform: "whatsapp",
         contact: "",
         role: "owner",
-        responsibility: "085892782249",
+        responsibility: "6285892782249",
         isPrimary: true
       }
     ]
@@ -2584,11 +2583,11 @@ export const admins = [
       "zzz",
       "limbus-company"
     ],
-    whatsapp: "0895336677729",
+    whatsapp: "62895336677729",
     channels: [
       {
         platform: "whatsapp",
-        contact: "0895336677729",
+        contact: "62895336677729",
         role: "admin",
         responsibility: "AI training",
         isPrimary: true
@@ -2753,11 +2752,11 @@ export const admins = [
       "pjsk",
       "bandori"
     ],
-    whatsapp: "0895341667044",
+    whatsapp: "62895341667044",
     channels: [
       {
         platform: "whatsapp",
-        contact: "0895341667044",
+        contact: "62895341667044",
         role: "editor",
         responsibility: "MenTransliterasi Karya sastra Jepang ke bahasa Indonesia",
         isPrimary: true
@@ -2990,11 +2989,11 @@ export const admins = [
       "mlbb",
       "genshin"
     ],
-    whatsapp: "085314370807",
+    whatsapp: "6285314370807",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085314370807",
+        contact: "6285314370807",
         role: "admin",
         responsibility: "Admin grup Anak Emas Paimon, leaks Genshin",
         isPrimary: true
@@ -3045,12 +3044,12 @@ export const admins = [
       "fgo",
       "gbf"
     ],
-    whatsapp: "085172268228",
+    whatsapp: "6285172268228",
     discord: "https://discord.gg/adamsan#2010",
     channels: [
       {
         platform: "whatsapp",
-        contact: "085172268228",
+        contact: "6285172268228",
         role: "admin",
         responsibility: "Memandu Newbie dan Sharing Seputar HsR",
         isPrimary: true
@@ -3148,38 +3147,13 @@ export const admins = [
       },
          ]
   },
-  {
-  slug: "cid",
-  name: "Cid",
-  img: "/admins/cid.jpg",
-  role: "Co-owner Group",
-  gender: "laki laki",
-  skills: ["Guide"],
-  responsibility: "Memantau grup yang dipegang, memberi saran dan panduan yang baik di game HSR.",
-  joined: 2023,
-
-  divisions: ["Admin Grup"],
-  languages: ["ID", "EN"],
-  timezone: "WIB",
-  status: "active",
-  lastUpdated: "2025-10-07T12:00:00.000Z",
-
-  platforms: ["whatsapp"],
-  games: ["hsr"],
-
-  whatsapp: "085814060508",
-
-  channels: [
-    { platform: "whatsapp", contact: "085814060508", role: "co-owner", responsibility: "Mengawasi grup & memberi guide HSR.", isPrimary: true }
-  ]
-},
 {
   slug: "chuzo",
   name: "Chuzo",
   img: "/admins/chuzo.jpg",
   role: "Co-founder",
   gender: "laki laki",
-  skills: ["Psychology", "Counseling", "Communicative", "Checker Translation (EN)"],
+  skills: ["Psychology", "Counseling", "communication", "Checker Translation (EN)"],
   responsibility: "Menggantikan founder bila berhalangan dan membantu meringankan tugas founder.",
   joined: 2023,
 
@@ -3190,7 +3164,7 @@ export const admins = [
   lastUpdated: "2025-10-07T12:00:05.000Z",
 
   platforms: ["whatsapp", "discord"],
-  games: ["genshin", "ak", "pjsk", "bandori", "limbus", "library-of-ruina", "lobotomy-corporation"],
+  games: ["gi", "ak", "pjsk", "bandori", "limbus", "tot"],
 
   discord: "https://discord.com/invite/QhSe6q7g",
 
@@ -3218,7 +3192,7 @@ export const admins = [
   platforms: ["whatsapp"],
   games: ["pgr", "hok", "fgo"],
 
-  whatsapp: "081210127259",
+  whatsapp: "6281210127259",
 
   channels: [
     { platform: "whatsapp", contact: "6281210127259", role: "admin", responsibility: "Moderasi & QnA di grup.", isPrimary: true }
@@ -3266,10 +3240,10 @@ export const admins = [
   platforms: ["whatsapp"],
   games: ["wuwa", "pgr"],
 
-  whatsapp: "089618586286",
+  whatsapp: "6289618586286",
 
   channels: [
-    { platform: "whatsapp", contact: "089618586286", role: "co-founder", responsibility: "Koordinasi & pengawasan grup.", isPrimary: true }
+    { platform: "whatsapp", contact: "6289618586286", role: "co-founder", responsibility: "Koordinasi & pengawasan grup.", isPrimary: true }
   ]
 },
 {
@@ -3291,11 +3265,11 @@ export const admins = [
   platforms: ["whatsapp", "discord"],
   games: ["mlbb", "wuwa", "pjsk", "uma"],
 
-  whatsapp: "087888350801",
+  whatsapp: "6287888350801",
   discord: "https://discord.gg/butterchipstm",
 
   channels: [
-    { platform: "whatsapp", contact: "087888350801", role: "owner", responsibility: "Koordinasi & keputusan utama komunitas.", isPrimary: true },
+    { platform: "whatsapp", contact: "6287888350801", role: "owner", responsibility: "Koordinasi & keputusan utama komunitas.", isPrimary: true },
     { platform: "discord", url: "https://discord.gg/butterchipstm", role: "owner", responsibility: "Event & komunikasi server." }
   ]
 },
@@ -3330,7 +3304,323 @@ export const admins = [
     }
   ]
 },
-
+{
+    slug: "cid",
+    name: "Cid",
+    img: "/admins/cid.jpg",
+    role: "Co-owner Group",
+    gender: "laki-laki",
+    skills: [
+      "Guide game HSR"
+    ],
+    responsibility: "Mengawasi grup yang dipegang, serta memberikan panduan seputar HSR",
+    joined: 2023,
+    divisions: [
+      "Admin Grup"
+    ],
+    languages: [
+      "ID"
+    ],
+    timezone: "WIB",
+    status: "active",
+    lastUpdated: "2025-10-08T00:00:00.000Z",
+    platforms: [
+      "whatsapp"
+    ],
+    games: [
+      "hsr"
+    ],
+    whatsapp: "6285814060508",
+    discord: "",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6285814060508",
+        role: "admin",
+        responsibility: "Guide seputar HSR",
+        isPrimary: true
+      }
+    ]
+  },
+  {
+    slug: "damar",
+    name: "Marz",
+    img: "/admins/damar.jpg",
+    role: "admin",
+    gender: "laki-laki",
+    skills: [
+      "Guide game",
+      "Moba",
+      "Video Editing"
+    ],
+    responsibility: "Sebagai salah satu admin ACM sebisa mungkin membantu grup dan member.",
+    joined: 2023,
+    divisions: [
+      "Discord"
+    ],
+    languages: [
+      "ID"
+    ],
+    timezone: "WIB",
+    status: "active",
+    lastUpdated: "2025-10-08T00:00:00.000Z",
+    platforms: [
+      "whatsapp"
+    ],
+    games: [
+      "mlbb",
+      "hsr",
+      "minecraft"
+    ],
+    whatsapp: "628578234525",
+    discord: "",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "628578234525",
+        role: "admin",
+        responsibility: "",
+        isPrimary: true
+      }
+    ]
+  },
+  {
+    slug: "lepus-0810",
+    name: "Na0",
+    img: "/admins/lepus-0810.jpg",
+    role: "moderator",
+    gender: "laki-laki",
+    skills: [
+      "Guide",
+      "Moderating",
+      "Penggunaan bot"
+    ],
+    responsibility: "Berperan sebagai moderator di grup discord, menjaga keamanan grup",
+    joined: 2025,
+    divisions: [
+      "Discord"
+    ],
+    languages: [
+      "ID"
+    ],
+    timezone: "WIB",
+    status: "active",
+    lastUpdated: "2025-10-08T00:00:00.000Z",
+    platforms: [
+      "whatsapp",
+      "discord"
+    ],
+    games: [
+      "genshin",
+      "persona",
+      "NFS"
+    ],
+    whatsapp: "81256792690",
+    discord: "https://discord.com/users/1240322788171059303",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "81256792690",
+        role: "admin",
+        responsibility: "",
+        isPrimary: false
+      },
+      {
+        platform: "discord",
+        url: "https://discord.com/users/1240322788171059303",
+        role: "moderator",
+        responsibility: "Moderator",
+        isPrimary: true
+      }
+    ]
+  },
+  {
+    slug: "the-real-kanee",
+    name: "Ludfi",
+    img: "/admins/the-real-kanee.jpg",
+    role: "admin",
+    gender: "laki-laki",
+    skills: [
+      "Marketing",
+      "Transaction Management",
+      "Networking"
+    ],
+    responsibility: "Mengelola transaksi akun game",
+    joined: 2024,
+    divisions: [
+      "Discord"
+    ],
+    languages: [
+      "ID"
+    ],
+    timezone: "WIB",
+    status: "active",
+    lastUpdated: "2025-10-08T00:00:00.000Z",
+    platforms: [
+      "whatsapp"
+    ],
+    games: [
+      "mlbb",
+      "genshin",
+      "hsr",
+      "wuwa",
+      "Free fire"
+    ],
+    whatsapp: "6282125793171",
+    discord: "",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6282125793171",
+        role: "admin",
+        responsibility: "Mengelola transaksi akun game",
+        isPrimary: false
+      }
+    ]
+  },
+  {
+    slug: "al-schariac",
+    name: "AL",
+    img: "/admins/al-schariac.jpg",
+    role: "moderator",
+    gender: "laki-laki",
+    skills: [
+      "Dad jokes",
+      "Story telling"
+    ],
+    responsibility: "Menjaga keamanan discord",
+    joined: 2025,
+    divisions: [
+      "Discord"
+    ],
+    languages: [
+      "ID"
+    ],
+    timezone: "WIB",
+    status: "active",
+    lastUpdated: "2025-10-08T00:00:00.000Z",
+    platforms: [
+      "whatsapp",
+      "discord"
+    ],
+    games: [
+      "genshin",
+      "hsr",
+      "wuwa",
+      "zzz",
+      "roblox",
+      "Path to Nowhere"
+    ],
+    whatsapp: "6281384322093",
+    discord: "https://discordapp.com/al_schariac/69685309643",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6281384322093",
+        role: "",
+        responsibility: "",
+        isPrimary: false
+      },
+      {
+        platform: "discord",
+        url: "https://discordapp.com/al_schariac/69685309643",
+        role: "moderator",
+        responsibility: "Keamanan",
+        isPrimary: true
+      }
+    ]
+  },
+  {
+    slug: "rein",
+    name: "Reinavy",
+    img: "/admins/rein.jpg",
+    role: "admin",
+    gender: "laki-laki",
+    skills: [
+      "Graphic Design(slightly)",
+      "Motion Design"
+    ],
+    responsibility: "Upload postingan instagram sesuai keahlian sendiri.",
+    joined: 2025,
+    divisions: [
+      "Posting"
+    ],
+    languages: [
+      "ID",
+      "EN"
+    ],
+    timezone: "WITA",
+    status: "active",
+    lastUpdated: "2025-10-08T00:00:00.000Z",
+    platforms: [
+      "whatsapp",
+      "discord"
+    ],
+    games: [
+      "wuwa"
+    ],
+    whatsapp: "6282154749208",
+    discord: "https://discord.gg/853225956603723808",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6282154749208",
+        role: "admin",
+        responsibility: "Upload postingan instagram sesuai keahlian sendiri.",
+        isPrimary: true
+      },
+      {
+        platform: "discord",
+        url: "https://discord.gg/853225956603723808",
+        role: "moderator",
+        responsibility: "Discord nya gua gaada role..",
+        isPrimary: true
+      }
+    ]
+  },
+  {
+    slug: "yurian",
+    name: "Yurian",
+    img: "/admins/yurian.jpg",
+    role: "Best Creator",
+    gender: "perempuan",
+    skills: [
+      "Writing"
+    ],
+    responsibility: "Menulis lore dan informasi dari Story Game dengan cara yang mudah dipahami pembaca.",
+    joined: 2025,
+    divisions: [
+      "Posting"
+    ],
+    languages: [
+      "ID",
+      "EN",
+      "JP"
+    ],
+    timezone: "WIB",
+    status: "active",
+    lastUpdated: "2025-10-08T00:00:00.000Z",
+    platforms: [
+      "whatsapp"
+    ],
+    games: [
+      "genshin",
+      "hsr",
+      "hi3",
+      "roblox"
+    ],
+    whatsapp: "6288233869471",
+    discord: "",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6288233869471",
+        role: "admin",
+        responsibility: "Menulis lore dan informasi dari Story Game dengan cara yang mudah dipahami pembaca.",
+        isPrimary: true
+      }
+    ]
+  }
 ];
 
 export function getAdminBySlug(slug) {

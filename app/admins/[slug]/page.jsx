@@ -194,7 +194,7 @@ function isPentungDivision(a) {
 // base path TANPA ekstensi → MultiIcon akan coba svg/webp/png/avif/jpg/jpeg
 const GAME_ICON_MAP = {
   hsr:     { base: '/icons/games/hsr',     title: 'Honkai: Star Rail' },
-  genshin: { base: '/icons/games/genshin', title: 'Genshin Impact' },
+  genshin: { base: '/icons/games/gi',      title: 'Genshin Impact' },
   ak:      { base: '/icons/games/ak',      title: 'Arknights' },
   ba:      { base: '/icons/games/ba',      title: 'Blue Archive' },
   pgr:     { base: '/icons/games/pgr',     title: 'Punishing: Gray Raven' },
@@ -202,24 +202,61 @@ const GAME_ICON_MAP = {
   hi3:     { base: '/icons/games/hi3',     title: 'Honkai Impact 3rd' },
   zzz:     { base: '/icons/games/zzz',     title: 'Zenless Zone Zero' },
   al:      { base: '/icons/games/al',      title: 'Azur Lane' },
-  gfl2:    { base: '/icons/games/gfl2',    title: 'Girls’ Frontline 2' },
+  gfl:    { base: '/icons/games/gfl',    title: 'Girls’ Frontline' },
   persona: { base: '/icons/games/persona', title: 'Persona' },
   roblox:  { base: '/icons/games/roblox',  title: 'Roblox' },
+  strinova:  { base: '/icons/games/strinova',  title: 'Strinova' },
+  tot:  { base: '/icons/games/tot',  title: 'Tear of Themis' },
+  lads:  { base: '/icons/games/lads',  title: 'Love and Deep Space' },
+  valorant:  { base: '/icons/games/valorant',  title: 'Valorant' },
+  bandori:  { base: '/icons/games/bandori',  title: 'BanG Dream!' },
+  pjsk:  { base: '/icons/games/pjsk',  title: 'Project Sekai' },
+  ag:  { base: '/icons/games/ag',  title: 'Aether Gazer' },
+  df:  { base: '/icons/games/df',  title: 'DF' },
+  gbf:  { base: '/icons/games/gbf',  title: 'Granblue Fantasy' },
+  fgo:  { base: '/icons/games/fgo',  title: 'Fate Grand Order' },
+  pokemon:  { base: '/icons/games/pokemon',  title: 'Pokemon' },
+  reverse:  { base: '/icons/games/reverse-1999',  title: 'Reverse' },
+  mlbb:  { base: '/icons/games/mlbb',  title: 'Mobile Legends: Bang Bang' },
+  nc:  { base: '/icons/games/nc',  title: 'Neural Cloud' },
+  minecraft:  { base: '/icons/games/minecraft',  title: 'Minecraft' },
+  umamusume:  { base: '/icons/games/umamusume',  title: 'Umamusume: Pretty Derby' },
+  pubg:  { base: '/icons/games/pubg',  title: 'PUBG' },
+  guardian:  { base: '/icons/games/guardiantales',  title: 'Guardian Tales' },
+
 };
 
-const GAME_MATCHERS = [
-  { key: 'hsr',     kws: ['hsr', 'honkai: star rail', 'star rail'] },
-  { key: 'genshin', kws: ['genshin', 'genshin impact'] },
-  { key: 'ak',      kws: ['ak', 'arknights'] },
-  { key: 'ba',      kws: ['ba', 'blue archive'] },
-  { key: 'pgr',     kws: ['pgr', 'punishing: gray raven'] },
-  { key: 'wuwa',    kws: ['wuwa', 'wuthering waves'] },
-  { key: 'hi3',     kws: ['hi3', 'hi 3', 'honkai impact 3rd'] },
-  { key: 'zzz',     kws: ['zzz', 'zenless zone zero'] },
-  { key: 'al',      kws: ['al', 'azur lane'] },
-  { key: 'gfl2',    kws: ["gfl2", "girls' frontline 2", 'girls frontline 2'] },
-  { key: 'persona', kws: ['persona'] },
-  { key: 'roblox',  kws: ['roblox'] },
+export const GAME_MATCHERS = [
+  { key: 'hsr',       title: 'Honkai: Star Rail',        aliases: ['hsr','star rail','honkai star rail','honkai: star rail'] },
+  { key: 'genshin',   title: 'Genshin Impact',           aliases: ['gi','genshin','genshin impact'] },
+  { key: 'ak',        title: 'Arknights',                aliases: ['ak','arknights'] },
+  { key: 'ba',        title: 'Blue Archive',             aliases: ['ba','blue archive'] },
+  { key: 'pgr',       title: 'Punishing: Gray Raven',    aliases: ['pgr','punishing gray raven','punishing: gray raven'] },
+  { key: 'wuwa',      title: 'Wuthering Waves',          aliases: ['wuwa','wuthering waves'] },
+  { key: 'hi3',       title: 'Honkai Impact 3rd',        aliases: ['hi3','honkai impact 3','honkai impact 3rd','hi3rd'] },
+  { key: 'zzz',       title: 'Zenless Zone Zero',        aliases: ['zzz','zenless zone zero','zenless'] },
+  { key: 'al',        title: 'Azur Lane',                aliases: ['al','azur lane'] },
+  { key: 'gfl',       title: 'Girls’ Frontline',         aliases: ['gfl','girls frontline',"girls' frontline"] },
+  { key: 'persona',   title: 'Persona',                  aliases: ['persona','persona 5','p5','persona5','persona series'] },
+  { key: 'roblox',    title: 'Roblox',                   aliases: ['roblox'] },
+  { key: 'strinova',  title: 'Strinova',                 aliases: ['strinova','stri nova'] },
+  { key: 'tot',       title: 'Tear of Themis',           aliases: ['tot','tear of themis'] },
+  { key: 'lads',      title: 'Love and Deep Space',      aliases: ['lads','love and deep space'] },
+  { key: 'valorant',  title: 'Valorant',                 aliases: ['valorant','valo'] },
+  { key: 'bandori',   title: 'BanG Dream!',              aliases: ['bandori','bang dream','bangdream'] },
+  { key: 'pjsk',      title: 'Project Sekai',            aliases: ['pjsk','project sekai','pjsk colorful stage','colorful stage'] },
+  { key: 'ag',        title: 'Aether Gazer',             aliases: ['ag','aether gazer'] },
+  { key: 'df',        title: 'DF',                       aliases: ['df'] },
+  { key: 'gbf',       title: 'Granblue Fantasy',         aliases: ['gbf','granblue fantasy','gran blue fantasy'] },
+  { key: 'fgo',       title: 'Fate Grand Order',         aliases: ['fgo','fate grand order','fate/go'] },
+  { key: 'pokemon',   title: 'Pokemon',                  aliases: ['pokemon','pokémon','poke'] },
+  { key: 'reverse',   title: 'Reverse',                  aliases: ['reverse 1999','reverse-1999','reverse'] },
+  { key: 'mlbb',      title: 'Mobile Legends: Bang Bang',aliases: ['mlbb','mobile legends','mobile legends bang bang'] },
+  { key: 'nc',        title: 'Neural Cloud',             aliases: ['nc','neural cloud'] },
+  { key: 'minecraft', title: 'Minecraft',                aliases: ['minecraft','mc'] },
+  { key: 'umamusume', title: 'Umamusume: Pretty Derby',  aliases: ['umamusume','uma musume','pretty derby'] },
+  { key: 'pubg',      title: 'PUBG',                     aliases: ['pubg','playerunknown battlegrounds','playerunknown’s battlegrounds'] },
+  { key: 'guardian',  title: 'Guardian Tales',           aliases: ['guardian tales','guardiantales','guardian'] },
 ];
 
 const PLATFORM_ICONS = {
@@ -763,7 +800,7 @@ export default function AdminProfile({ params }) {
               <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur">
                 <div className="mb-3 flex items-center gap-2 text-blue-300">
                   <Shield className="h-5 w-5" />
-                  <span className="font-semibold">Penanggung jawab</span>
+                  <span className="font-semibold">Tugas Utama</span>
                 </div>
                 <div className="text-white/90">{admin.responsibility ?? '-'}</div>
               </div>
