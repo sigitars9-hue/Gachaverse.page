@@ -97,11 +97,11 @@ const ICON_MAP = [
   { test: /\bdante\b/i,                       icons: ['limbus'] },                          // 1) Dante → Limbus
   { test: /velvet\s*room/i,                   icons: ['persona'] },                         // 2) Velvet Room → Persona
   { test: /manusia\s*penembak\s*jitu/i,       icons: ['valorant','Pubg','df'] },            // 3) Penembak Jitu → Valo/PUBG/df
-  { test: /paimon|genshin|gi\b/i,             icons: ['GI'] },                              // 4) Paimon → Genshin(GI)
-  { test: /penafkah\s*husbu/i,                icons: ['ToT','lads'] },                      // 5) Penafkah Husbu → ToT & lads
-  { test: /chaldea/i,                          icons: ['Grand Order'] },                     // 6) Chaldea → FGO
+  { test: /paimon|genshin|gi\b/i,             icons: ['gi'] },                              // 4) Paimon → Genshin(GI)
+  { test: /penafkah\s*husbu/i,                icons: ['tot','lads'] },                      // 5) Penafkah Husbu → ToT & lads
+  { test: /chaldea/i,                          icons: ['fgo'] },                     // 6) Chaldea → FGO
   { test: /mayling/i,                          icons: ['gfl'] },                             // 7) Mayling → Girls' Frontline
-  { test: /penjaga\s*anomali/i,               icons: ['Guardian Tales'] },                  // 8) Penjaga Anomali → Guardian Tales
+  { test: /penjaga\s*anomali/i,               icons: ['guardiantales'] },                  // 8) Penjaga Anomali → Guardian Tales
   { test: /anak\s*freak\s*gamefreak/i,        icons: ['pokemon'] },                         // 9) Gamefreak → Pokémon
 
   // --- Umum / publisher ---
@@ -112,7 +112,7 @@ const ICON_MAP = [
   { test: /kurogames|wuwa/i,                  icons: ['wuwa'] },
   { test: /mlbb|moonton/i,                    icons: ['mlbb'] },
 
-  { test: /mihoyo|hoyoverse/i,                 icons: ['GI','hsr','zzz','hi3'] },            // set ke 'GI' agar match file icon kamu
+  { test: /mihoyo|hoyoverse/i,                 icons: ['gi','hsr','zzz','hi3'] },            // set ke 'GI' agar match file icon kamu
   { test: /cygames/i,                          icons: ['gbf','umamusume'] },
   { test: /yostar/i,                           icons: ['ak','al','ba','ag','nc'] },          // >3 icon, akan tampil
 
@@ -120,7 +120,7 @@ const ICON_MAP = [
   { test: /rhythm|full\s*combo|bandori|pjsk/i, icons: ['bandori','pjsk'] },
   { test: /valorant/i,                         icons: ['valorant'] },
   { test: /\broblox\b/i,                       icons: ['roblox'] },
-  { test: /pgr|punishing\s*gray\s*rav(en)?/i,  icons: ['PGR'] },
+  { test: /pgr|punishing\s*gray\s*rav(en)?/i,  icons: ['pgr'] },
   { test: /limbus/i,                           icons: ['limbus'] },                           // perbaiki yg sebelumnya salah
 ];
 
