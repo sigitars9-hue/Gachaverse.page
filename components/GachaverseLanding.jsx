@@ -13,6 +13,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 /** Jika sudah punya data/gallery.js, ganti konstanta ini dengan import */
 // import { gallery as GALLERY_DATA } from '@/data/gallery';
@@ -48,14 +49,13 @@ const NAV = [
   { href: '#gallery', label: 'Galeri' },
 ];
 
-// highlight 6 admin (pakai role terpisah)
 const ADMIN_PREVIEW = [
-  { name: 'Ryuu',     role: 'Founder',                 img: '/admins/ryuu.jpg' },
-  { name: 'Chuzo',    role: 'Co-Founder',              img: '/admins/chuzo.jpg' },
-  { name: 'Rizz',     role: 'Head Admin',              img: '/admins/rizz.jpg' },
-  { name: 'Asuka',    role: 'Best Creator',            img: '/admins/asuka.jpg' },
-  { name: 'Imy',      role: 'Sekretaris',              img: '/admins/imy.jpg' },
-  { name: 'haru',     role: 'Owner Gvstore',           img: '/admins/haru.jpg' },
+  { name: 'Ryuu',  slug: 'ryuu',  role: 'Founder',        img: '/admins/ryuu.jpg' },
+  { name: 'Chuzo', slug: 'chuzo', role: 'Co-Founder',     img: '/admins/chuzo.jpg' },
+  { name: 'Rizz',  slug: 'rizz',  role: 'Head Admin',     img: '/admins/rizz.jpg' },
+  { name: 'Asuka', slug: 'asuka', role: 'Best Creator',   img: '/admins/asuka.jpg' },
+  { name: 'Imy',   slug: 'imy',   role: 'Sekretaris',     img: '/admins/imy.jpg' },
+  { name: 'Haru',  slug: 'haru',  role: 'Owner Gvstore',  img: '/admins/haru.jpg' },
 ];
 
 const MEDIA_PARTNERS = [
@@ -154,10 +154,26 @@ const SPONSORS = [
 ];
 
 const GROUPS = [
-  { name: 'Honkai: Star Rail', desc: 'Diskusi meta, build, banner, dan lelang akun.', link: '#' },
-  { name: 'Genshin Impact', desc: 'Tips artefak, rota, dan co-op weekly boss.', link: '#' },
-  { name: 'Wuthering Waves', desc: 'Echo route, boss timer, dan team comp.', link: '#' },
-  { name: 'Arknights', desc: 'Guide CC, base layout, dan pull discuss.', link: '#' },
+  {
+    name: 'Honkai: Star Rail',
+    desc: 'Diskusi meta, build, banner, dan tanya sepuh.',
+    link: 'https://chat.whatsapp.com/FFKfA8EM0Bw3O9FwXilRjl'
+  },
+  {
+    name: 'Genshin Impact',
+    desc: 'Diskusi build, rotasi, dan tanya sepuh.',
+    link: 'https://chat.whatsapp.com/KHeINGtWIlKK1smxuIatwr'
+  },
+  {
+    name: 'Wuthering Waves',
+   desc: 'Echo route, boss timer, dan tanya sepuh.',
+    link: 'https://chat.whatsapp.com/Dk25iGaF4siE0zUbRmQl1J'
+  },
+  {
+    name: 'Arknights',
+    desc: 'Guide CC, base layout, pull discuss dan tanya sepuh.',
+    link: 'https://chat.whatsapp.com/LHVEp4pNskdCm3nIqIZmot'
+  },
 ];
 
 const DISCORD = {
@@ -509,52 +525,55 @@ function toRoleKey(label = '') {
   return String(label).trim().toLowerCase().replace(/\s+/g, '-');
 }
 
-// warna/gradient sesuai hierarki
 const ROLE_BADGE = {
-  'founder':                'from-amber-500 via-amber-400 to-yellow-400',
-  'co-founder':             'from-orange-500 via-amber-500 to-yellow-400',
-  'head-admin':             'from-rose-600 via-red-500 to-orange-500',
-  'Best-Creator':           'from-sky-600 via-blue-500 to-indigo-500',
-  'sekretaris':             'from-rose-500 via-pink-500 to-fuchsia-500',
-  'owner-gvstore':          'from-fuchsia-600 via-pink-600 to-rose-500',
+  'founder':        'from-amber-500 via-amber-400 to-yellow-400',
+  'co-founder':     'from-orange-500 via-amber-500 to-yellow-400',
+  'head-admin':     'from-rose-600 via-red-500 to-orange-500',
+  'best-creator':   'from-sky-600 via-blue-500 to-indigo-500',
+  'sekretaris':     'from-rose-500 via-pink-500 to-fuchsia-500',
+  'owner-gvstore':  'from-fuchsia-600 via-pink-600 to-rose-500',
 };
 
 function getRoleGradient(roleLabel) {
-  const key = toRoleKey(roleLabel);
-  return ROLE_BADGE[key] || 'from-slate-700 via-blue-700 to-sky-600'; // default
+  const key = toRoleKey(roleLabel); // "Best Creator" -> "best-creator"
+  return ROLE_BADGE[key] || 'from-slate-700 via-blue-700 to-sky-600';
 }
+
 
 function Admins() {
   return (
     <Section id="admins" icon={Users} title="Pengenalan Admin" subtitle="Dari 80+ admin, berikut highlight 6 orang.">
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 sm:gap-5 lg:gap-6">
         {ADMIN_PREVIEW.map((a) => (
-          <Card key={a.name} className="text-center p-3 sm:p-4">
-            {/* Avatar — lebih kecil di mobile */}
-            <div className="mx-auto mb-2 h-16 w-16 sm:h-20 sm:w-20 overflow-hidden rounded-full border border-white/20 bg-white/10">
-              <img src={a.img} alt={a.name} className="h-full w-full object-cover" loading="lazy" decoding="async" />
-            </div>
+          <Link key={a.slug} href={`/admins/${a.slug}`} className="block focus:outline-none group">
+            <Card className="text-center p-3 sm:p-4 hover:cursor-pointer">
+              {/* Avatar */}
+              <div className="mx-auto mb-2 h-16 w-16 sm:h-20 sm:w-20 overflow-hidden rounded-full border border-white/20 bg-white/10">
+                <img src={a.img} alt={a.name} className="h-full w-full object-cover" loading="lazy" decoding="async" />
+              </div>
 
-            {/* Nama — lebih kecil & sedikit transparan */}
-            <div className="text-xs sm:text-sm font-medium text-white/80 leading-tight">
-              {a.name}
-            </div>
+              {/* Nama */}
+              <div className="text-xs sm:text-sm font-medium text-white/80 leading-tight">
+                {a.name}
+              </div>
 
-            {/* Role badge — ukurannya diperkecil + wrap rapi */}
-            <span
-              className={[
-                'mt-1.5 inline-flex items-center justify-center rounded-full',
-                'px-2.5 py-0.5 sm:px-3 sm:py-1',
-                'text-[11px] sm:text-[12px] font-semibold text-white leading-none',
-                'bg-gradient-to-r', getRoleGradient(a.role),
-                'ring-1 ring-white/10 shadow-[0_6px_20px_rgba(30,58,138,0.25)]',
-                'max-w-[170px] mx-auto whitespace-normal text-center'
-              ].join(' ')}
-              title={a.role}
-            >
-              {a.role}
-            </span>
-          </Card>
+              {/* Role badge */}
+              <span
+                className={[
+                  'mt-1.5 inline-flex items-center justify-center rounded-full',
+                  'px-2.5 py-0.5 sm:px-3 sm:py-1',
+                  'text-[11px] sm:text-[12px] font-semibold text-white leading-none',
+                  'bg-gradient-to-r',               // Wajib, arah gradien
+                  getRoleGradient(a.role),          // Mapping gradien berdasar role
+                  'ring-1 ring-white/10 shadow-[0_6px_20px_rgba(30,58,138,0.25)]',
+                  'max-w-[170px] mx-auto whitespace-normal text-center'
+                ].join(' ')}
+                title={a.role}
+              >
+                {a.role}
+              </span>
+            </Card>
+          </Link>
         ))}
       </div>
 
