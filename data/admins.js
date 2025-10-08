@@ -10,7 +10,7 @@ export const admins = [
       "Communicate",
       "Ganteng",
     ],
-    responsibility: "Penentu arah komunitas",
+    responsibility: "Anuan",
     joined: 2020,
     divisions: [
       "Founder",
