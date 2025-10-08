@@ -27,14 +27,14 @@ const GALLERY_DATA = [
 ];
 // --- POJOK KREASI: daftar karya/kreasi (ganti src & credit sesuai file kamu) ---
 const CREATIONS = [
-  { src: '/kreasi/yura-1.jpg', credit: '@ceozumv' },
-  { src: '/kreasi/yura-2.jpg', credit: '@ceozumv' },
-  { src: '/kreasi/yura-3.jpg', credit: '@winxd' },
-  { src: '/kreasi/yura-4.jpg', credit: '@someone' },
-  { src: '/kreasi/yura-5.jpg', credit: '@artist' },
-  { src: '/kreasi/yura-6.jpg', credit: '@nyuka_01' },
-  { src: '/kreasi/yura-7.jpg', credit: '@desu' },
-  { src: '/kreasi/yura-8.jpg', credit: '@koyukirin_' },
+  { src: '/kreasi/yura-1.jpg', credit: '@maehel.heehl' },
+  { src: '/kreasi/yura-2.jpg', credit: '@jody_winner' },
+  { src: '/kreasi/yura-3.jpg', credit: '@ryuuka_01' },
+  { src: '/kreasi/yura-4.jpg', credit: '@koyukirin_' },
+  { src: '/kreasi/yura-5.jpg', credit: '@doromizu' },
+  { src: '/kreasi/yura-6.jpg', credit: '@a_kushinana16' },
+  { src: '/kreasi/yura-7.jpg', credit: '@winxd._' },
+  { src: '/kreasi/yura-8.jpg', credit: '@ceezumv' },
 ];
 
 /* ==================== Static data ==================== */
