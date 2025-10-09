@@ -43,6 +43,13 @@ export const admins = [
         role: "Founder",
         responsibility: " Mengelola data komunitas",
         isPrimary: true
+      },
+      {
+        platform: "instagram",
+        url: "https://www.instagram.com/sigitars9",
+        role: "Founder",
+        responsibility: " Mengelola data komunitas",
+        isPrimary: true
       }
       
     ]
@@ -1346,17 +1353,17 @@ export const admins = [
     slug: "ceezu",
     name: "Ceezu",
     img: "/admins/ceezu.jpg",
-    role: "Sekretaris",
+    role: "Best Creator",
     gender: "laki laki",
     skills: [
       "Video Editor",
       "Content Creator",
       "Designer",
-      "Hoyoverse Guide (GI",
+      "Hoyoverse Guide GI",
       "HSR",
-      "ZZZ)"
+      "ZZZ"
     ],
-    responsibility: "- Bertanggung jawab atas manajemen operasional komunitas seperti Mendesain Profile Komunitas/Grup, Pembersihan member di Komunitas jika penuh dan memberikan sanksi kepada member yang melanggar aturan\n- Bertanggung jawab atas Konten Posting di Instagram dan Tiktok Gachaverse seperti membuat konten dengan Quality tinggi dll.",
+    responsibility: "Bertanggung jawab atas manajemen operasional komunitas seperti Mendesain Profile Komunitas/Grup, Pembersihan member di Komunitas jika penuh dan memberikan sanksi kepada member yang melanggar aturan\n- Bertanggung jawab atas Konten Posting di Instagram dan Tiktok Gachaverse seperti membuat konten dengan Quality tinggi dll.",
     joined: 2024,
     divisions: [
       "Babel",
@@ -1378,11 +1385,9 @@ export const admins = [
       "discord"
     ],
     games: [
-      "mlbb",
       "genshin",
       "hsr",
       "zzz",
-      "al",
       "strinova",
       "delta-force",
       "gtav",
@@ -1402,7 +1407,21 @@ export const admins = [
         platform: "discord",
         url: "https://discord.com/channels/@ceezumv",
         role: "admin",
-        responsibility: "- Bertanggung jawab atas manajemen operasional komunitas seperti Mendesain Profile Komunitas/Grup, Pembersihan member di Komunitas jika penuh dan memberikan sanksi kepada member yang melanggar aturan\n- Bertanggung jawab atas Konten Posting di Instagram dan Tiktok Gachaverse seperti membuat konten dengan Quality tinggi dll.",
+        responsibility: "Bertanggung jawab atas manajemen operasional komunitas seperti Mendesain Profile Komunitas/Grup, Pembersihan member di Komunitas jika penuh dan memberikan sanksi kepada member yang melanggar aturan\n- Bertanggung jawab atas Konten Posting di Instagram dan Tiktok Gachaverse seperti membuat konten dengan Quality tinggi dll.",
+        isPrimary: false
+      },
+       {
+        platform: "instagram",
+        url: "https://www.instagram.com/ceezumv?igsh=MWN5dDh0ZmI1b216dA%3D%3D&utm_source=qr",
+        role: "Pribadi",
+        responsibility: "Akun Instagram Pribadi",
+        isPrimary: false
+      },
+      {
+        platform: "tiktok",
+        url: "https://www.tiktok.com/@ceezumv?_t=ZS-90PVLauYGbi&_r=1",
+        role: "Pribadi",
+        responsibility: "Akun Tiktok Pribadi",
         isPrimary: false
       }
     ]
@@ -1624,7 +1643,9 @@ export const admins = [
     games: [
       "hsr",
       "ak",
-      "code-vein"
+      "wuwa",
+      "zzz",
+      "pgr"
     ],
     whatsapp: "#",
     discord: "https://discord.gg/Kurokaizaru7#5613",
@@ -2281,8 +2302,9 @@ export const admins = [
     role: "Co-owner Group",
     gender: "laki laki",
     skills: [
-      "Guide",
-      "Rhythm"
+      "Guide Blue Archive dan Rhythm",
+      "Meta Blue Archive",
+      "Blue Archive dan Rhythm Information"
     ],
     responsibility: "Memantau keadaan pada grup yang dipegang, serta memberikan panduan pada game Blue Archive dan beberapa Rhythm game",
     joined: 2023,

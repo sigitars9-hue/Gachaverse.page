@@ -195,7 +195,7 @@ function isPentungDivision(a) {
 // base path TANPA ekstensi → MultiIcon akan coba svg/webp/png/avif/jpg/jpeg
 const GAME_ICON_MAP = {
   hsr:     { base: '/icons/games/hsr',     title: 'Honkai: Star Rail' },
-  genshin: { base: '/icons/games/gi',      title: 'Genshin Impact' },
+  gi:      { base: '/icons/games/gi',      title: 'Genshin Impact' },
   ak:      { base: '/icons/games/ak',      title: 'Arknights' },
   ba:      { base: '/icons/games/ba',      title: 'Blue Archive' },
   pgr:     { base: '/icons/games/pgr',     title: 'Punishing: Gray Raven' },
@@ -203,7 +203,7 @@ const GAME_ICON_MAP = {
   hi3:     { base: '/icons/games/hi3',     title: 'Honkai Impact 3rd' },
   zzz:     { base: '/icons/games/zzz',     title: 'Zenless Zone Zero' },
   al:      { base: '/icons/games/al',      title: 'Azur Lane' },
-  gfl:    { base: '/icons/games/gfl',    title: 'Girls’ Frontline' },
+  gfl:     { base: '/icons/games/gfl',    title: 'Girls’ Frontline' },
   persona: { base: '/icons/games/persona', title: 'Persona' },
   roblox:  { base: '/icons/games/roblox',  title: 'Roblox' },
   strinova:  { base: '/icons/games/strinova',  title: 'Strinova' },
@@ -229,7 +229,7 @@ const GAME_ICON_MAP = {
 
 export const GAME_MATCHERS = [
   { key: 'hsr',       title: 'Honkai: Star Rail',        aliases: ['hsr','star rail','honkai star rail','honkai: star rail'] },
-  { key: 'genshin',   title: 'Genshin Impact',           aliases: ['gi','genshin','genshin impact'] },
+  { key: 'gi',        title: 'Genshin Impact',           aliases: ['gi','genshin','genshin impact'] },
   { key: 'ak',        title: 'Arknights',                aliases: ['ak','arknights'] },
   { key: 'ba',        title: 'Blue Archive',             aliases: ['ba','blue archive'] },
   { key: 'pgr',       title: 'Punishing: Gray Raven',    aliases: ['pgr','punishing gray raven','punishing: gray raven'] },
@@ -940,7 +940,7 @@ export default function AdminProfile({ params }) {
               <div className="mt-6 text-left">
                 <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur">
                   <div className="mb-3 flex items-center justify-between">
-                    <div className="text-blue-300 font-semibold">Platfrom Penugasan Admin</div>
+                    <div className="text-blue-300 font-semibold">Penugasan & Media Sosial</div>
                   </div>
 
                   <ul className="space-y-3">
