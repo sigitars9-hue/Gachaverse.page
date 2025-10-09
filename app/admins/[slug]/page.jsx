@@ -2,6 +2,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import LaporAdminButtonClient from '../../../components/LaporAdminButtonClient';
+import AdminThemeSongDock from '../../../components/AdminThemeSongDock';
 import {
   CalendarCheck,
   Phone,
@@ -1038,6 +1039,7 @@ export default function AdminProfile({ params }) {
           </Link>
         </div>
       </div>
+        <AdminThemeSongDock admin={admin} src="/audio/gachaverse-theme.mp3" title="Gachaverse Theme" />
     </main>
   );
 }
