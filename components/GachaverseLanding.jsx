@@ -50,9 +50,9 @@ const NAV = [
 ];
 
 const ADMIN_PREVIEW = [
-  { name: 'Ryuu',  slug: 'ryuu',  role: 'Founder',        img: '/admins/ryuu.jpg' },
+  { name: 'Ryuu',  slug: 'pacar-elysia',  role: 'Founder',        img: '/admins/ryuu.jpg' },
   { name: 'Chuzo', slug: 'chuzo', role: 'Co-Founder',     img: '/admins/chuzo.jpg' },
-  { name: 'Rizz',  slug: 'rizz',  role: 'Head Admin',     img: '/admins/rizz.jpg' },
+  { name: 'Rizz',  slug: 'rizzmustdie',  role: 'Head Admin',     img: '/admins/rizz.jpg' },
   { name: 'Asuka', slug: 'asuka', role: 'Best Creator',   img: '/admins/asuka.jpg' },
   { name: 'Imy',   slug: 'imy',   role: 'Sekretaris',     img: '/admins/imy.jpg' },
   { name: 'Haru',  slug: 'haru',  role: 'Owner Gvstore',  img: '/admins/haru.jpg' },

@@ -1,16 +1,18 @@
 // Auto-generated from form responses
 export const admins = [
   {
-    slug: "ryuu",
+    slug: "pacar-elysia",
     name: "Ryuu",
     img: "/admins/ryuu.jpg",
     role: "Founder",
-    gender: "perempuan",
+    gender: "laki laki",
     skills: [
-      "Communicate",
-      "Ganteng",
+      "Communication",
+      "Leadership",
+      "Editing",
+      "Programming"
     ],
-    responsibility: "Anuan",
+    responsibility: "Mengelola semua akun Gachaverse di berbagai platfrom dan menentukan arah komunitas",
     joined: 2020,
     divisions: [
       "Founder",
@@ -39,7 +41,7 @@ export const admins = [
         platform: "whatsapp",
         contact: "6282123710880",
         role: "Founder",
-        responsibility: " Penentu arah komunitas",
+        responsibility: " Mengelola data komunitas",
         isPrimary: true
       }
     ]
@@ -57,8 +59,7 @@ export const admins = [
     responsibility: "Saya bertanggung jawab atas kenyamanan dan keamanan di grup Anak Emas Kubis",
     joined: 2025,
     divisions: [
-      "Admin Grup",
-      "Pentung"
+      "Admin Grup"
     ],
     languages: [
       "ID",
@@ -99,7 +100,7 @@ export const admins = [
     responsibility: "Menangani member rusuh atau melanggar peraturan group dengan counter pendapat mereka",
     joined: 2024,
     divisions: [
-      "Pentung"
+
     ],
     languages: [
       "ID",
@@ -197,7 +198,7 @@ export const admins = [
     ],
     games: [
       "mlbb",
-      "genshin",
+      "gi",
       "hsr",
       "wuwa",
       "ak",
@@ -206,7 +207,7 @@ export const admins = [
       "hi3",
       "zzz",
       "al",
-      "gfl2"
+      "gfl"
     ],
     whatsapp: "6281259160766",
     channels: [
@@ -274,7 +275,7 @@ export const admins = [
     responsibility: "Menjaga gachaverse menjadi tempat yang nyaman dan aman bagi setiap member komunitas.",
     joined: 2024,
     divisions: [
-      "Pentung"
+  
     ],
     languages: [
       "ID",
@@ -1217,7 +1218,7 @@ export const admins = [
     divisions: [
       "Admin Grup",
       "AI",
-      "Pentung"
+   
     ],
     languages: [
       "ID"
@@ -1785,7 +1786,7 @@ export const admins = [
       "fellow-moon",
       "reverse-1999",
       "fgo",
-      "dan-lads"
+      "lads"
     ],
     whatsapp: "6285261809904",
     discord: "https://--",
@@ -2862,7 +2863,7 @@ export const admins = [
   {
     slug: "raven",
     name: "R",
-    img: "/admins/raven.jpg",
+    img: "/admins/r.jpg",
     role: "Admin",
     gender: "laki laki",
     skills: [
@@ -2961,9 +2962,9 @@ export const admins = [
   },
 
   {
-    slug: "gavriil",
+    slug: "gavrill",
     name: "Hilmi",
-    img: "/admins/gavriil.jpg",
+    img: "/admins/gavrill.jpg",
     role: "Admin",
     gender: "laki laki",
     skills: [
@@ -3356,7 +3357,7 @@ export const admins = [
     responsibility: "Sebagai salah satu admin ACM sebisa mungkin membantu grup dan member.",
     joined: 2023,
     divisions: [
-      "Discord"
+      "Admin Grup"
     ],
     languages: [
       "ID"
@@ -3372,12 +3373,12 @@ export const admins = [
       "hsr",
       "minecraft"
     ],
-    whatsapp: "628578234525",
+    whatsapp: "6285878234525",
     discord: "",
     channels: [
       {
         platform: "whatsapp",
-        contact: "628578234525",
+        contact: "6285878234525",
         role: "admin",
         responsibility: "",
         isPrimary: true
@@ -3387,7 +3388,7 @@ export const admins = [
   {
     slug: "lepus-0810",
     name: "Na0",
-    img: "/admins/lepus-0810.jpg",
+    img: "/admins/na0.jpg",
     role: "moderator",
     gender: "laki-laki",
     skills: [
@@ -3437,7 +3438,7 @@ export const admins = [
   {
     slug: "the-real-kanee",
     name: "Ludfi",
-    img: "/admins/the-real-kanee.jpg",
+    img: "/admins/ludfi.jpg",
     role: "admin",
     gender: "laki-laki",
     skills: [
@@ -3481,7 +3482,7 @@ export const admins = [
   {
     slug: "al-schariac",
     name: "AL",
-    img: "/admins/al-schariac.jpg",
+    img: "/admins/al.jpg",
     role: "moderator",
     gender: "laki-laki",
     skills: [

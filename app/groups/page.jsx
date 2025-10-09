@@ -90,7 +90,7 @@ function Medal({ rank, hm = false }) {
  const ICON_EXT  = 'png';
  // alias slug → nama file yang ADA di /public/icons/games
  const ICON_FILE_ALIAS = {
-   gi: 'genshin',            // Genshin
+   gi: 'gi',            // Genshin
    'guardian-tales': 'guardiantales',
    'neural-cloud': 'nc',
    'limbus-company': 'limbus',
