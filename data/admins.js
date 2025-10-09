@@ -44,7 +44,10 @@ export const admins = [
         responsibility: " Mengelola data komunitas",
         isPrimary: true
       }
-    ]
+      
+    ],
+    themeSong: "https://cdn.jsdelivr.net/gh/gachaverseid/profile-admin-songs@main/apexxa.webm"
+    
   },
   {
     slug: "wira",
@@ -1202,52 +1205,52 @@ export const admins = [
     ]
   },
 
-  {
-    slug: "apexxa",
-    name: "APexxa",
-    img: "/admins/pexxa.jpg",
-    role: "Admin",
-    gender: "laki laki",
-    skills: [
-      "Strategy",
-      "tester Yura analysis",
-      "beginners programming"
-    ],
-    responsibility: "memantau grub mahasiswa,menjadi beta tester Yura AI Dan membantu admin lain yang yang membutuhkan",
-    joined: 2024,
-    divisions: [
-      "Admin Grup",
-      "AI",
-   
-    ],
-    languages: [
-      "ID"
-    ],
-    timezone: "WIB",
-    status: "active",
-    lastUpdated: "2025-10-06T13:24:44.000Z",
-    platforms: [
-      "whatsapp"
-    ],
-    games: [
-      "mlbb",
-      "hsr",
-      "clash-of-clan",
-      "clash-royale",
-      "delta-force",
-      "pubgm"
-    ],
-    whatsapp: "6282177517990",
-    channels: [
-      {
-        platform: "whatsapp",
-        contact: "6282177517990",
-        role: "admin",
-        responsibility: "Mengawasi grup casual",
-        isPrimary: true
-      }
-    ]
-  },
+{
+  slug: "apexxa",
+  name: "APexxa",
+  img: "/admins/pexxa.jpg",
+  role: "Admin",
+  gender: "laki laki",
+  skills: [
+    "Strategy",
+    "tester Yura analysis",
+    "beginners programming"
+  ],
+  responsibility: "memantau grub mahasiswa, menjadi beta tester Yura AI dan membantu admin lain yang membutuhkan",
+  joined: 2024,
+  divisions: [
+    "Admin Grup",
+    "AI",
+  ],
+  languages: [
+    "ID"
+  ],
+  timezone: "WIB",
+  status: "active",
+  lastUpdated: "2025-10-06T13:24:44.000Z",
+  platforms: [
+    "whatsapp"
+  ],
+  games: [
+    "mlbb",
+    "hsr",
+    "clash-of-clan",
+    "clash-royale",
+    "delta-force",
+    "pubgm"
+  ],
+  whatsapp: "6282177517990",
+  channels: [
+    {
+      platform: "whatsapp",
+      contact: "6282177517990",
+      role: "admin",
+      responsibility: "Mengawasi grup casual",
+      isPrimary: true
+    }
+  ],
+  themeSong: "https://cdn.jsdelivr.net/gh/gachaverseid/profile-admin-songs@main/apexxa.webm"
+},
 
   {
     slug: "izuru",
