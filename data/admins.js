@@ -45,9 +45,7 @@ export const admins = [
         isPrimary: true
       }
       
-    ],
-    themeSong: "https://cdn.jsdelivr.net/gh/gachaverseid/profile-admin-songs@main/apexxa.webm"
-    
+    ]
   },
   {
     slug: "wira",
@@ -172,7 +170,7 @@ export const admins = [
 
   {
     slug: "haru",
-    name: "Khairan",
+    name: "Haru",
     img: "/admins/haru.jpg",
     role: "Owner Gvstore",
     gender: "laki laki",
@@ -449,7 +447,7 @@ export const admins = [
   },
 
   {
-    slug: "kamijou",
+    slug: "kouta",
     name: "Kouta",
     img: "/admins/kamijou.jpg",
     role: "Owner Group",

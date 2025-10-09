@@ -2,19 +2,34 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Play, Pause, Volume2, VolumeX, Music2 } from "lucide-react";
 
-const CDN_BASE = "https://cdn.jsdelivr.net/gh/sigitars9-hue/lagu-profile-admin@main";
+const CDN_BASES = [
+  "https://cdn.jsdelivr.net/gh/sigitars9-hue/lagu-profile-admin@main",
+  "https://cdn.jsdelivr.net/gh/sigitars9-hue/lagu-profile-admin-b@main",
+];
+
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const fmt = (s) => `${Math.floor((s || 0) / 60)}:${String(Math.floor((s || 0) % 60)).padStart(2, "0")}`;
 
 function buildCandidates({ slug, src }) {
-  const baseUrl = src || (slug ? `${CDN_BASE}/${slug}.webm` : "");
-  if (!baseUrl) return [];
-  const b = baseUrl.replace(/\.\w+$/, "");
-  return [
-    { url: b + ".webm", type: "audio/webm" },
-    { url: b + ".m4a", type: "audio/mp4" },
-    { url: b + ".mp3", type: "audio/mpeg" },
-  ];
+  if (src) {
+    const b = src.replace(/\.\w+$/, "");
+    return [
+      { url: b + ".webm", type: "audio/webm" },
+      { url: b + ".m4a",  type: "audio/mp4"  },
+      { url: b + ".mp3",  type: "audio/mpeg" }
+    ];
+  }
+  if (!slug) return [];
+  const list = [];
+  for (const base of CDN_BASES) {
+    const b = `${base}/${slug}`;
+    list.push(
+      { url: b + ".webm", type: "audio/webm" },
+      { url: b + ".m4a",  type: "audio/mp4"  },
+      { url: b + ".mp3",  type: "audio/mpeg" }
+    );
+  }
+  return list;
 }
 
 export default function TinyMusicButton({ slug, src, autoHideMs = 3500 }) {
