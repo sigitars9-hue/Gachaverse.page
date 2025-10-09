@@ -1252,7 +1252,7 @@ export const admins = [
   {
     slug: "izuru",
     name: "Izuru",
-    img: "/admins/izuru.jpg",
+    img: "/admins/izu.jpg",
     role: "Admin",
     gender: "laki laki",
     skills: [
