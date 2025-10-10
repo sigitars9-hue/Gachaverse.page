@@ -97,7 +97,7 @@ export const admins = [
       "whatsapp"
     ],
     games: [
-      "hi3"
+      "hi"
     ],
     whatsapp: "6282190622823",
     channels: [
@@ -229,7 +229,7 @@ export const admins = [
       "ak",
       "ba",
       "pgr",
-      "hi3",
+      "hi",
       "zzz",
       "al",
       "gfl"
@@ -361,7 +361,7 @@ export const admins = [
       "hsr",
       "wuwa",
       "pgr",
-      "hi3",
+      "hi",
       "zzz"
     ],
     whatsapp: "6285155250004",
@@ -413,7 +413,7 @@ export const admins = [
       "mlbb",
       "hsr",
       "pgr",
-      "hi3"
+      "hi"
     ],
     whatsapp: "6281382975970",
     channels: [
@@ -3805,7 +3805,7 @@ export const admins = [
   lastUpdated: "2025-10-10T12:00:00.000Z",
 
   platforms: ["whatsapp", "discord"],
-  games: ["hsr", "hi3", "al"],
+  games: ["hsr", "hi", "al"],
 
   whatsapp: "6282143961401",
   discord: "https://discord.com/users/903068305663881249",
