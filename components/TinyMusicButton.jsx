@@ -32,7 +32,7 @@ function buildCandidates({ slug, src }) {
   return list;
 }
 
-export default function TinyMusicButton({ slug, src, autoHideMs = 3500, autoPlayOnLoad = false }) {
+export default function TinyMusicButton({ slug, src, autoHideMs = 3500 }) {
   const aRef = useRef(null);
   const hideRef = useRef(null);
 
@@ -45,32 +45,6 @@ export default function TinyMusicButton({ slug, src, autoHideMs = 3500, autoPlay
   const [prog, setProg] = useState(0);
   const [cur, setCur] = useState(0);
   const [dur, setDur] = useState(0);
-   const triedAutoRef = useRef(false);
-
-  useEffect(() => {
-    if (!autoPlayOnLoad) return;
-    const a = aRef.current; if (!a || triedAutoRef.current) return;
-
-    const attempt = async () => {
-      triedAutoRef.current = true;
-      try {
-        await a.play();
-        setPlaying(true);
-        setOpen(false);
-        if (autoHideMs) setTimeout(() => setOpen(false), autoHideMs);
-      } catch {
-        // ditolak policy → tampilkan dock agar user tap Play
-        setOpen(true);
-      }
-    };
-
-    if (a.readyState >= 2) attempt();
-    else {
-      const onCanPlay = () => attempt();
-      a.addEventListener('canplay', onCanPlay, { once: true });
-      return () => a.removeEventListener('canplay', onCanPlay);
-    }
-  }, [autoPlayOnLoad, autoHideMs]);
 
   const prefersReducedMotion = useMemo(() => {
     if (typeof window === "undefined") return false;
@@ -98,10 +72,8 @@ export default function TinyMusicButton({ slug, src, autoHideMs = 3500, autoPlay
     a.loop = true;
     a.preload = "metadata";
     a.crossOrigin = "anonymous";
-    a.muted = muted;
-    a.volume = vol;
 
-    let idx = -1;
+let idx = -1;
     const tryNext = () => {
       idx++;
       if (idx >= candidates.length) { setVisible(false); return; }
@@ -137,7 +109,14 @@ export default function TinyMusicButton({ slug, src, autoHideMs = 3500, autoPlay
       aRef.current = null;
       if (hideRef.current) clearTimeout(hideRef.current);
     };
-  }, [slug, src, muted, vol]);
+ }, [slug, src]);
+
+ useEffect(() => {
+  const a = aRef.current;
+  if (!a) return;
+  a.muted = muted;
+  a.volume = vol;
+}, [muted, vol]);
 
   const armAutoHide = () => {
     if (hideRef.current) clearTimeout(hideRef.current);
