@@ -11,7 +11,16 @@ export const admins = [
       "Leadership",
       "Editing",
       "Beginner Programmer",
-      "Cosplay"
+      "Strategic Planning",
+      "Public Relations",
+      "Content Creation",
+      "Social Media Management",
+      "Decision Making",
+      "Community Building",
+      "Front-End (HTML, CSS, JavaScript, React, Next.js, Tailwind CSS)",
+      "Version Control (Git, GitHub)",
+      "Automation (Bot, Script, OCR, AI Integration)",
+      "UI/UX Design (Figma, Adobe XD)"
 
     ],
     responsibility: "Mengelola semua akun Gachaverse di berbagai platfrom dan menentukan arah komunitas",
@@ -40,25 +49,16 @@ export const admins = [
       "gi",
       "Pgr",
       "hsr",
-      "ak",
       "ba",
       "strinova",
-      "wuwa",
       "zzz",
       "mlbb",
-      "persona",
-      "nc",
-      "r1999",
-      "gbf",
-      "fgo",
-      "pokemon",
-      "pubg",
     ],
     whatsapp: "6282123710880",
     discord: "Ryuu#6888",
     instagram: "https://www.instagram.com/sigitars9",
     tiktok: "https://www.tiktok.com/@gachaverse.id",
-    x: "https://x.com/gachaverse_id",
+    x: "https://x.com/#",
     channels: [
       {
         platform: "whatsapp",
@@ -1394,10 +1394,8 @@ export const admins = [
     skills: [
       "Video Editor",
       "Content Creator",
-      "Designer",
-      "Hoyoverse Guide GI",
-      "HSR",
-      "ZZZ"
+      "Graphic Designer",
+      "Motion Graphics"    
     ],
     responsibility: "Bertanggung jawab atas manajemen operasional komunitas seperti Mendesain Profile Komunitas/Grup, Pembersihan member di Komunitas jika penuh dan memberikan sanksi kepada member yang melanggar aturan\n- Bertanggung jawab atas Konten Posting di Instagram dan Tiktok Gachaverse seperti membuat konten dengan Quality tinggi dll.",
     joined: 2024,

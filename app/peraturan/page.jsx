@@ -196,33 +196,51 @@ export default function PeraturanPage() {
           </Card>
 
           {/* F. Tipe Warn */}
-          <Card className="sm:col-span-2">
-            <SectionTitle id="warn" icon={CircleAlert}>
-              Tingkatan Peringatan (Warn)
-            </SectionTitle>
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-yellow-300/25 bg-yellow-500/10 p-5">
-                <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-yellow-500/20 px-3 py-1 text-xs text-yellow-200 ring-1 ring-yellow-300/25">
-                  <Info className="h-3.5 w-3.5" />
-                  Warn Tipe 1
-                </div>
-                <p className="text-white/90">
-                  Pelanggaran ringan–menengah. Dapat diberikan hingga <strong>3 kali</strong>. Jika
-                  sudah maksimal, sanksi berupa <strong>Kick 3/6/9/12 bulan</strong>.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-rose-300/25 bg-rose-500/10 p-5">
-                <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-rose-500/20 px-3 py-1 text-xs text-rose-200 ring-1 ring-rose-300/25">
-                  <Ban className="h-3.5 w-3.5" />
-                  Warn Tipe 2
-                </div>
-                <p className="text-white/90">
-                  Pelanggaran menengah–berat. Berlaku <strong>sekali</strong>. Pelanggaran berulang:
-                  <strong> Kick Permanen</strong> hingga <strong>Keluar dari Komunitas</strong>.
-                </p>
-              </div>
-            </div>
-          </Card>
+{/* F. Tipe Warn (UPDATED) */}
+<Card className="sm:col-span-2">
+  <SectionTitle id="warn" icon={CircleAlert}>
+    Tingkatan Peringatan (Warn)
+  </SectionTitle>
+
+  <div className="mt-4 space-y-4 text-white/90">
+    <p className="font-semibold text-white">
+      𝗣𝗲𝗻𝗷𝗲𝗹𝗮𝘀𝗮𝗻 𝗽𝗲𝗿𝗯𝗲𝗱𝗮𝗮𝗻 𝗧𝗶𝗽𝗲 𝗪𝗮𝗿𝗻
+    </p>
+
+    <div className="rounded-2xl border border-yellow-300/25 bg-yellow-500/10 p-5">
+      <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-yellow-500/20 px-3 py-1 text-xs text-yellow-200 ring-1 ring-yellow-300/25">
+        <Info className="h-3.5 w-3.5" />
+        𝗪𝗮𝗿𝗻 𝗧𝗶𝗽𝗲 𝟭
+      </div>
+      <p>
+        Peringatan yang diberikan terhadap pelanggar yang melakukan pelanggaran
+        taraf ringan – menengah. Warn Tipe 1 ini dapat diberikan hingga maksimal
+        3 (tiga) kali, dan jika sudah mencapai batas maksimal, pelaku dapat
+        dikenakan hukuman <em>Kick</em>. Kick pertama berlangsung selama
+        <strong> 1 Minggu</strong>, Kick kedua selama <strong>1 Bulan</strong>,
+        Kick ketiga selama <strong>2 Bulan</strong>, dan Kick selanjutnya akan
+        bersifat <strong>permanen</strong>.
+      </p>
+    </div>
+
+    <div className="rounded-2xl border border-rose-300/25 bg-rose-500/10 p-5">
+      <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-rose-500/20 px-3 py-1 text-xs text-rose-200 ring-1 ring-rose-300/25">
+        <Ban className="h-3.5 w-3.5" />
+        𝗪𝗮𝗿𝗻 𝗧𝗶𝗽𝗲 𝟮
+      </div>
+      <p>
+        Peringatan yang diberikan terhadap pelanggar yang melakukan pelanggaran
+        taraf menengah – berat. Warn Tipe 2 ini hanya diberlakukan sekali dan
+        pelanggaran selanjutnya akan dikenakan hukuman <strong>Kick</strong>.
+        Kick pertama akan berlangsung selama <strong>1 Bulan</strong>, Kick
+        kedua akan bersifat <strong>Permanent</strong>, dan pelanggaran berulang
+        pada beberapa grup akan <strong> Dikeluarkan dari Komunitas
+        Gachaverse.ID</strong>.
+      </p>
+    </div>
+  </div>
+</Card>
+
 
           {/* FOOTER LINKS */}
           <div className="flex flex-wrap items-center justify-center gap-3">
