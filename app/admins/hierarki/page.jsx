@@ -1,13 +1,8 @@
 // app/admins/hierarki/page.jsx
+"use client";
+
 import Link from "next/link";
-import {
-  ArrowLeft,
-  Home,
-  Lock,
-  Shield,
-  Layers,
-  Users,
-} from "lucide-react";
+import { Lock, Shield, Layers, Users } from "lucide-react";
 import { DIVISION_ORDER, DIVISION_DESC } from "@/constants/division";
 
 /* ------------------------------------------------------------------ */
@@ -22,19 +17,22 @@ function roleKey(str = "") {
     .replace(/[^a-z\-]/g, "");
 }
 
+/* Base gradient per role (sebelum override divisi/logika khusus) */
 const ROLE_GRADIENT = {
   // tier tertinggi
   "founder": "from-amber-600/85 via-amber-500/75 to-yellow-500/65",
   "co-founder": "from-amber-500/85 via-orange-500/70 to-yellow-500/60",
   "head-admin": "from-rose-600/85 via-red-500/70 to-orange-500/60",
 
-  // gvstore
+  // gvstore & sekretaris (tetap)
   "owner-gvstore": "from-pink-600/85 via-rose-500/70 to-fuchsia-500/60",
   "sekretaris": "from-rose-500/85 via-pink-500/70 to-fuchsia-400/60",
 
-  // khusus
-  "Best Creator": "from-sky-600/85 via-blue-500/70 to-indigo-500/60",
-  "mascot": "from-emerald-600/85 via-teal-500/70 to-green-500/60",
+  // best-creator: diganti ke emerald (override kuat di fungsi getRoleGrad)
+  "best-creator": "from-emerald-600/85 via-emerald-500/70 to-green-500/60",
+
+  // mascot: DITUKAR → pakai warna keluarga Gvs/Sekretaris
+  "mascot": "from-pink-600/85 via-rose-500/70 to-fuchsia-500/60",
 
   // moderator (discord)
   "moderator": "from-violet-700/85 via-purple-600/75 to-fuchsia-600/60",
@@ -47,51 +45,124 @@ const ROLE_GRADIENT = {
   "admin": "from-slate-700/85 via-blue-700/70 to-sky-600/60",
 };
 
-// contoh role terkait per divisi
+/* Divisi → contoh role (boleh tetap) */
 const DIVISION_ROLES = {
-  "Babel": ["Founder", "Co-founder", "Head admin", "Best-Creator"],
-  "Posting": ["Best Creator", "Admin"],
-  "Translator": ["Translator"],
-  "Leaks": ["Leaks"],
+  Babel: ["Founder", "Co-founder", "Head admin", "Best Creator"],
+  Posting: ["Best Creator", "Admin"],          // "Admin" di sini akan ditampilkan sebagai "Admin Posting"
+  Translator: ["Translator"],
+  Leaks: ["Leaks"],
   "Owner Grup": ["Owner Group", "Co-owner group"],
-  "Admin Grup": ["Admin"],
-  "Discord": ["Moderator"],
-  "AI": ["Mascot"],
-  "Gvs": ["Owner Gvstore", "Sekretaris"],
-  "Partnership": ["Moderator"],
-  "Pentung": [], // terkunci
+  "Admin Grup": ["Admin"],                     // "Admin" di sini akan ditampilkan sebagai "Admin Grup"
+  Discord: ["Moderator"],
+  AI: ["Mascot"],
+  Gvs: ["Owner Gvstore", "Sekretaris"],
+  Partnership: ["Moderator"],
+  Pentung: [], // terkunci
 };
 
-function RoleChip({ role }) {
+/* Siapa saja yang dapat efek “mengkilau” */
+const SHIMMER_ROLES = new Set([
+  "founder",
+  "co-founder",
+  "head-admin",
+  "best-creator",
+  "owner-group",
+  "owner-gvstore",
+  "sekretaris",
+]);
+
+/* Gradient override berbasis role + divisi (Admin Posting vs Admin Grup, emerald, dll.) */
+function getRoleGrad(role, division) {
   const key = roleKey(role);
-  const grad = ROLE_GRADIENT[key] ?? ROLE_GRADIENT["admin"];
+  let grad = ROLE_GRADIENT[key] ?? ROLE_GRADIENT["admin"];
+
+  // Best Creator → emerald
+  if (key === "best-creator") {
+    grad = "from-emerald-600/85 via-emerald-500/70 to-green-500/60";
+  }
+
+  // Mascot → tukar ke warna Gvs/Sekretaris
+  if (key === "mascot") {
+    grad = "from-pink-600/85 via-rose-500/70 to-fuchsia-500/60";
+  }
+
+  // Admin POSTING → samakan base dengan Best Creator (emerald), TAPI tanpa shimmer
+  if (division === "Posting" && (key === "admin" || key === "admin-posting")) {
+    grad = "from-emerald-700/85 via-emerald-600/70 to-green-600/60";
+  }
+
+  return grad;
+}
+
+/* Label override untuk membedakan Admin Grup vs Admin Posting */
+function getRoleLabel(role, division) {
+  const key = roleKey(role);
+
+  if (division === "Admin Grup" && key === "admin") return "Admin Grup";
+  if (division === "Posting" && (key === "admin" || key === "admin-posting"))
+    return "Admin Posting";
+
+  // Normalisasi ejaan untuk konsistensi tampilan
+  if (key === "owner-gvstore") return "Owner Gvstore";
+  if (key === "head-admin") return "Head Admin";
+  if (key === "co-owner-group") return "Co-owner Group";
+  if (key === "owner-group") return "Owner Group";
+  if (key === "best-creator") return "Best Creator";
+
+  return role;
+}
+
+/* Chip role dengan opsi efek shimmer */
+function RoleChip({ role, division }) {
+  const key = roleKey(role);
+  const grad = getRoleGrad(role, division);
+  const label = getRoleLabel(role, division);
+  const shimmer =
+    SHIMMER_ROLES.has(key) ||
+    // kalau "Admin Posting", jangan shimmer
+    (division === "Posting" && roleKey(role) === "admin" ? false : false);
+
   return (
-    <span
-      className={`rounded-full px-3 py-1 text-xs font-semibold text-white bg-gradient-to-r ${grad} ring-1 ring-white/10 shadow-[0_4px_16px_rgba(0,0,0,.25)]`}
-    >
-      {role}
+    <span className="relative inline-flex items-center">
+      <span
+        className={`relative rounded-full px-3 py-1 text-xs font-semibold text-white bg-gradient-to-r ${grad} ring-1 ring-white/10 shadow-[0_4px_16px_rgba(0,0,0,.25)]`}
+      >
+        {/* glossy overlay tipis agar gradasi lebih hidup */}
+        <span className="pointer-events-none absolute inset-0 rounded-full bg-white/10 mix-blend-overlay opacity-10" />
+        {label}
+      </span>
+
+      {/* shimmer highlight (kilau bergerak) */}
+      {shimmer && (
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-full overflow-hidden"
+        >
+          <span className="absolute -inset-2 rounded-full shine" />
+        </span>
+      )}
     </span>
   );
 }
 
 function Card({ children, className = "" }) {
   return (
-    <div className={`rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-black/40 ${className}`}>
+    <div
+      className={`rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-black/40 ${className}`}
+    >
       {children}
     </div>
   );
 }
 
-export const metadata = {
-  title: "Hierarki Gachaverse — Struktur Divisi",
-};
+
 
 export default function HierarkiPage() {
-    // susun ulang urutan: Pentung selalu terakhir
-const ORDERED_DIVISION = [
-  ...DIVISION_ORDER.filter((d) => String(d).toLowerCase() !== "pentung"),
-  ...DIVISION_ORDER.filter((d) => String(d).toLowerCase() === "pentung"),
-];
+  // Pentung selalu terakhir
+  const ORDERED_DIVISION = [
+    ...DIVISION_ORDER.filter((d) => String(d).toLowerCase() !== "pentung"),
+    ...DIVISION_ORDER.filter((d) => String(d).toLowerCase() === "pentung"),
+  ];
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -100,10 +171,7 @@ const ORDERED_DIVISION = [
         <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_-10%,rgba(37,99,235,0.22),transparent)]" />
         <div className="absolute inset-0 bg-[radial-gradient(900px_400px_at_20%_10%,rgba(59,130,246,0.12),transparent)]" />
         <div className="absolute inset-0 bg-[radial-gradient(900px_400px_at_80%_10%,rgba(147,197,253,0.10),transparent)]" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 py-6 flex items-center justify-between">
-
-        </div>
-
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-6 flex items-center justify-between" />
         <header className="relative z-10 mx-auto max-w-4xl px-4 pb-6 text-center">
           <div className="inline-flex items-center gap-2 rounded-2xl bg-blue-600/20 px-3 py-1 text-blue-300">
             <Layers className="h-4 w-4" />
@@ -113,8 +181,10 @@ const ORDERED_DIVISION = [
             Hierarki Gachaverse
           </h1>
           <p className="mt-2 text-white/80">
-            Urutan divisi & contoh peran. <span className="text-white/60">Beberapa
-            informasi bersifat internal dan tidak ditampilkan publik.</span>
+            Urutan divisi & peran.{" "}
+            <span className="text-white/60">
+              Beberapa informasi bersifat internal dan tidak ditampilkan publik.
+            </span>
           </p>
         </header>
       </div>
@@ -147,7 +217,7 @@ const ORDERED_DIVISION = [
 
         {/* grid divisi */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-  {ORDERED_DIVISION.map((div) => {
+          {ORDERED_DIVISION.map((div) => {
             const desc = DIVISION_DESC?.[div] ?? "";
             const roles = DIVISION_ROLES[div] ?? [];
             const locked = div.toLowerCase() === "pentung";
@@ -170,7 +240,11 @@ const ORDERED_DIVISION = [
                 </div>
 
                 {/* deskripsi */}
-                <p className={`text-sm ${locked ? "text-white/50 blur-[1px] select-none" : "text-white/80"}`}>
+                <p
+                  className={`text-sm ${
+                    locked ? "text-white/50 blur-[1px] select-none" : "text-white/80"
+                  }`}
+                >
                   {locked ? "Informasi divisi ini bersifat rahasia." : desc}
                 </p>
 
@@ -180,7 +254,7 @@ const ORDERED_DIVISION = [
                 ) : roles.length ? (
                   <div className="mt-4 flex flex-wrap gap-2">
                     {roles.map((r) => (
-                      <RoleChip key={r} role={r} />
+                      <RoleChip key={r} role={r} division={div} />
                     ))}
                   </div>
                 ) : null}
@@ -199,6 +273,31 @@ const ORDERED_DIVISION = [
           </Link>
         </div>
       </section>
+
+      {/* ====== Global CSS untuk efek shimmer ====== */}
+      <style jsx global>{`
+        @keyframes role-shimmer {
+          0% {
+            transform: translateX(-150%);
+          }
+          50% {
+            transform: translateX(-60%);
+          }
+          100% {
+            transform: translateX(150%);
+          }
+        }
+        .shine {
+          background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.28) 22%,
+            rgba(255, 255, 255, 0) 45%
+          );
+          filter: blur(4px);
+          animation: role-shimmer 2.8s ease-in-out infinite;
+        }
+      `}</style>
     </main>
   );
 }

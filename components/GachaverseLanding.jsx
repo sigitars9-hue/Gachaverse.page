@@ -11,6 +11,7 @@ import {
   Trophy,
   ChevronRight,
   Sparkles,
+  HelpCircle,
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -26,7 +27,7 @@ const GALLERY_DATA = [
   { src: '/gallery/cos-5.jpeg', title: 'CF20 Day 2', date: '2025-05-25', location: 'ICE BSD, Tangerang', desc: 'Rame-rame setelah event utama.' },
   { src: '/gallery/cos-6.jpeg', title: 'Nobar dan Bertemu Foundah', date: '2025-05-11', location: 'BSD, Tangerang', desc: 'Nobar COLORFUL STAGE! THE MOVIE: A MIKU WHO CANT SING.' },
 ];
-// --- POJOK KREASI: daftar karya/kreasi (ganti src & credit sesuai file kamu) ---
+// --- POJOK KREASI: daftar karya/kreasi ---
 const CREATIONS = [
   { src: '/kreasi/yura-1.jpg', credit: '@maehel.heehl' },
   { src: '/kreasi/yura-2.jpg', credit: '@jody_winner' },
@@ -45,8 +46,11 @@ const NAV = [
   { href: '#events', label: 'Event' },
   { href: '#admins', label: 'Admin' },
   { href: '#groups', label: 'Grup WA' },
+  { href: '#discord', label: 'Discord' },   // 🔹 ditambah
   { href: '#sponsors', label: 'Sponsor' },
   { href: '#gallery', label: 'Galeri' },
+  { href: '#faq', label: 'FAQ' },           // 🔹 ditambah
+  { href: '#join', label: 'Gabung' },       // 🔹 ditambah
 ];
 
 const ADMIN_PREVIEW = [
@@ -99,7 +103,7 @@ const MEDIA_PARTNERS = [
     url: 'https://www.instagram.com/bigbob_arknights?igsh=MXd6cGpwaWt4b3oxbw==',
     topic: 'Arknights',
     followers: '3.770',
-    avatar: '/partners/bigbob-arknights.jpg',
+    avatar: '/partners/bigbob.jpg',
   },
   {
     name: '@infoarknights.id',
@@ -107,20 +111,6 @@ const MEDIA_PARTNERS = [
     topic: 'Arknights',
     followers: '13,6 K',
     avatar: '/partners/infoarknights.jpg',
-  },
-  {
-    name: '@arknights_chiave',
-    url: 'https://www.instagram.com/arknights_chiave/',
-    topic: 'Arknights',
-    followers: '2 K',
-    avatar: '/partners/arknights-chiave.jpg',
-  },
-  {
-    name: '@anitomochi',
-    url: 'https://www.instagram.com/anitomochi/',
-    topic: 'Jejepangan, Game',
-    followers: '33 K',
-    avatar: '/partners/anitomochi.jpg',
   },
   {
     name: '@fategrand_indonesia',
@@ -136,16 +126,7 @@ const MEDIA_PARTNERS = [
     followers: '2.851',
     avatar: '/partners/neo-fgo-world.jpg',
   },
-  {
-    name: '@fgo_jackbonaparte',
-    url: 'https://www.instagram.com/fgo_jackbonaparte/',
-    topic: 'FGO, game yang aku mainin, juga Hollow Knight',
-    followers: '6 K',
-    avatar: '/partners/fgo-jackbonaparte.jpg',
-  },
 ];
-
-
 
 const SPONSORS = [
   { tag: '@tokowendigg', url: 'https://www.tokowendigg.com' },
@@ -166,7 +147,7 @@ const GROUPS = [
   },
   {
     name: 'Wuthering Waves',
-   desc: 'Echo route, boss timer, dan tanya sepuh.',
+    desc: 'Echo route, boss timer, dan tanya sepuh.',
     link: 'https://chat.whatsapp.com/Dk25iGaF4siE0zUbRmQl1J'
   },
   {
@@ -187,7 +168,7 @@ const AI_CONTACTS = {
   // Ganti nomor/link sesuai kebutuhan
   waBot: 'https://wa.me/6285179546561?text=Halo%20mau%20pakai%20Bot%20WhatsApp',
   ocr:   '#',
-  // Asisten komunitas aku arahkan ke Discord invite yang sudah ada
+  // Asisten komunitas aku arahkan ke Discord/WA
   assistant:'https://wa.me/6285179546561?text=Halo%20Yura%20Apakah%20Yura%2FOnline',
 };
 
@@ -196,7 +177,7 @@ function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="fixed inset-x-0 top-0 z-50 md:backdrop-blur supports-[backdrop-filter]:bg-black/30 bg-black/60 md:bg-black/40">
+    <div className="fixed inset-x-0 top-0 z-50 md:backdrop-blur supports-[backdrop-filter]:bg-black/30 bg-black/60 md:bg-black/40 border-b border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <a href="#top" className="flex items-center gap-3">
@@ -213,37 +194,25 @@ function NavBar() {
             </a>
           </nav>
 
-          {/* mobile quick actions (3 item): Discord • Gabung • Menu */}
+          {/* mobile quick actions + menu */}
           <div className="md:hidden flex items-center gap-2">
-            <a
-              href={DISCORD.invite}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Join Discord"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 hover:bg-white/20 text-white/90"
+            <button
+              onClick={() => setOpen(v => !v)}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/15 bg-white/10 text-white"
+              aria-label="Toggle Menu"
             >
-              {/* inline discord icon */}
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
-                <path d="M20.5 4.5a16 16 0 00-4.1-1.3l-.2.4a12.9 12.9 0 013.2 1.5c-1.45-.68-2.92-1.03-4.39-1.18a10.3 10.3 0 00-3.22 0c-1.47.15-2.94.5-4.39 1.18a13.2 13.2 0 013.2-1.5l-.2-.4A16 16 0 003.5 4.5 16.4 16.4 0 000 15.5c2.48 2.92 6.1 3.25 9.4 3.5l.7-.9c-.95-.28-1.84-.7-2.65-1.25 1.78 1.34 3.82 1.98 5.95 1.98s4.17-.64 5.95-1.98c-.81.55-1.7.97-2.65 1.25l.7.9c3.3-.25 6.92-.58 9.4-3.5A16.4 16.4 0 0020.5 4.5zM8.8 14.1c-1.02 0-1.85-.93-1.85-2.07 0-1.15.83-2.08 1.85-2.08s1.85.93 1.85 2.08c0 1.14-.83 2.07-1.85 2.07zm6.4 0c-1.02 0-1.85-.93-1.85-2.07 0-1.15.83-2.08 1.85-2.08s1.85.93 1.85 2.08c0 1.14-.83 2.07-1.85 2.07z"/>
-              </svg>
-            </a>
-
-            <a
-              href="#join"
-              className="rounded-xl bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-blue-500"
-            >
-              Gabung
-            </a>
+              ☰
+            </button>
           </div>
         </div>
       </div>
 
       {/* mobile menu panel */}
       {open && (
-        <div className="md:hidden border-t border-white/10 bg-black/80">
+        <div className="md:hidden border-t border-white/10 bg-black/90">
           <div className="mx-auto max-w-7xl px-4 py-3 space-y-2 text-white/80">
             {NAV.map(n => (
-              <a key={n.href} href={n.href} className="block py-2" onClick={() => setOpen(false)}>
+              <a key={n.href} href={n.href} className="block py-2 hover:text-white" onClick={() => setOpen(false)}>
                 {n.label}
               </a>
             ))}
@@ -257,8 +226,6 @@ function NavBar() {
   );
 }
 
-
-
 function Hero() {
   const reduce = useReducedMotion();
   return (
@@ -269,7 +236,7 @@ function Hero() {
         <div className="absolute inset-0 bg-[url('/banner.jpg')] bg-cover bg-[position:center_35%] opacity-15" />
       </div>
 
-      {/* Konten (fade awal bisa dimatikan jika reduce) */}
+      {/* Konten */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 text-center pt-28 md:pt-32">
         {reduce ? (
           <div className="flex flex-col items-center gap-8">
@@ -282,10 +249,17 @@ function Hero() {
               </a>
               <a href="#join" className="inline-flex items-center gap-2 rounded-2xl border border-white/20 px-5 py-3 text-white/90 hover:bg-white/10">Gabung Komunitas</a>
             </div>
+            {/* METRIK → LINK */}
             <div className="mt-8 grid grid-cols-3 gap-4 text-xs text-white/70">
-              <div className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur">80+ Admin</div>
-              <div className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur">20K+ Anggota</div>
-              <div className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur">Event Komunitas</div>
+              <Link href="/admins" className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
+                80 Lebih Admin
+              </Link>
+              <Link href="/groups" className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
+                2K+ Anggota
+              </Link>
+              <a href="#events" className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Event Komunitas
+              </a>
             </div>
           </div>
         ) : (
@@ -304,10 +278,17 @@ function Hero() {
               </a>
               <a href="#join" className="inline-flex items-center gap-2 rounded-2xl border border-white/20 px-5 py-3 text-white/90 hover:bg-white/10">Gabung Komunitas</a>
             </div>
+            {/* METRIK → LINK */}
             <div className="mt-8 grid grid-cols-3 gap-4 text-xs text-white/70">
-              <div className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur">80+ Admin</div>
-              <div className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur">20K+ Anggota</div>
-              <div className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur">Event Komunitas</div>
+              <Link href="/admins" className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
+                80 Lebih Admin
+              </Link>
+              <Link href="/groups" className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
+                2K+ Anggota
+              </Link>
+              <a href="#events" className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Event Komunitas
+              </a>
             </div>
           </motion.div>
         )}
@@ -324,9 +305,9 @@ function Section({ id, icon: Icon, title, subtitle, children }) {
       id={id}
       className="relative scroll-mt-24 bg-black"
       style={{
-        contentVisibility: 'auto',           // tunda paint saat offscreen
-        containIntrinsicSize: '800px',       // ukuran perkiraan agar layout stabil
-        contain: 'layout paint style',       // batasi reflow ke section ini
+        contentVisibility: 'auto',
+        containIntrinsicSize: '800px',
+        contain: 'layout paint style',
       }}
     >
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -346,7 +327,6 @@ function Section({ id, icon: Icon, title, subtitle, children }) {
 }
 
 function Card({ children, className = '' }) {
-  // Ganti framer-motion → CSS transition ringan
   return (
     <div
       className={`group rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:backdrop-blur shadow-lg shadow-black/30 transition-transform duration-200 md:hover:-translate-y-1 ${className}`}
@@ -374,7 +354,7 @@ function About() {
         <Card>
           <div className="mb-2 text-white/70">Dukungan</div>
           <h3 className="mb-1.5 text-xl font-semibold text-white">Support & Edukasi</h3>
-          <p className="text-white/70">Kami memberi ruang untuk kreator dan pemain baru agar bisa belajar bersama, termasuk panduan build karakter dan lelang akun.</p>
+          <p className="text-white/70">Kami memberi ruang untuk kreator dan pemain baru agar bisa belajar bersama, termasuk panduan build karakter dan bertanya kepada Sepuh.</p>
         </Card>
       </div>
     </Section>
@@ -383,8 +363,7 @@ function About() {
 
 function AIBot() {
   const btnClass =
-    "mt-4 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 " +
-    "text-sm font-medium text-white hover:bg-blue-500";
+    "mt-4 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-500";
 
   return (
     <Section id="ai-bot" icon={Bot} title="Dukungan AI & Bot" subtitle="Inovasi untuk mempermudah komunitas">
@@ -437,6 +416,7 @@ function AIBot() {
     </Section>
   );
 }
+
 function EventCard({ badge, title, desc, href = "#", img, ctaText = "Ikut sekarang" }) {
   return (
     <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/90 shadow-xl">
@@ -464,14 +444,13 @@ function EventCard({ badge, title, desc, href = "#", img, ctaText = "Ikut sekara
             ctaText === 'Coming Soon' ? 'cursor-not-allowed opacity-60' : 'hover:bg-white/10'
           }`}
         >
-          {ctaText}                            {/* 🔹 teks dinamis */}
+          {ctaText}
           {ctaText !== 'Coming Soon' && <ChevronRight className="h-4 w-4" />}
         </a>
       </div>
     </div>
   );
 }
-
 
 function Events() {
   const EVENTS = [
@@ -481,7 +460,7 @@ function Events() {
       badge: 'Bulanan',
       img: '/event/mlbb.jpg',
       href: 'https://chat.whatsapp.com/K77YYPDwx6o8Pj7lfMPBBY',
-      ctaText: 'Segera',              // 🔹 teks tombol khusus
+      ctaText: 'Segera',
     },
     {
       title: 'Pojok Kreator Event ',
@@ -489,7 +468,7 @@ function Events() {
       badge: 'Seasonal',
       img: '/event/yura-2.jpg',
       href: 'https://chat.whatsapp.com/E0ORyfe4U6dGzho5gQZz2k',
-      ctaText: 'Segera',               // 🔹 teks tombol khusus
+      ctaText: 'Segera',
     },
     {
       title: 'Cosplay Meet-Up',
@@ -497,7 +476,7 @@ function Events() {
       badge: 'Seasonal',
       img: '/gallery/cos-3.jpeg',
       href: 'https://chat.whatsapp.com/FpmVawBdqKU60mJYSA6M5s',
-      ctaText: 'November 2025 di Comifuro',                // 🔹 teks tombol khusus
+      ctaText: 'November 2025 di Comifuro',
     },
   ];
 
@@ -512,14 +491,13 @@ function Events() {
             desc={e.desc}
             img={e.img}
             href={e.href}
-            ctaText={e.ctaText}      // 🔹 kirim ke kartu
+            ctaText={e.ctaText}
           />
         ))}
       </div>
     </Section>
   );
 }
-
 
 function toRoleKey(label = '') {
   return String(label).trim().toLowerCase().replace(/\s+/g, '-');
@@ -535,10 +513,9 @@ const ROLE_BADGE = {
 };
 
 function getRoleGradient(roleLabel) {
-  const key = toRoleKey(roleLabel); // "Best Creator" -> "best-creator"
+  const key = toRoleKey(roleLabel);
   return ROLE_BADGE[key] || 'from-slate-700 via-blue-700 to-sky-600';
 }
-
 
 function Admins() {
   return (
@@ -563,8 +540,8 @@ function Admins() {
                   'mt-1.5 inline-flex items-center justify-center rounded-full',
                   'px-2.5 py-0.5 sm:px-3 sm:py-1',
                   'text-[11px] sm:text-[12px] font-semibold text-white leading-none',
-                  'bg-gradient-to-r',               // Wajib, arah gradien
-                  getRoleGradient(a.role),          // Mapping gradien berdasar role
+                  'bg-gradient-to-r',
+                  getRoleGradient(a.role),
                   'ring-1 ring-white/10 shadow-[0_6px_20px_rgba(30,58,138,0.25)]',
                   'max-w-[170px] mx-auto whitespace-normal text-center'
                 ].join(' ')}
@@ -578,18 +555,16 @@ function Admins() {
       </div>
 
       <div className="mt-6 text-center">
-        <a
+        <Link
           href="/admins"
           className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-500"
         >
           Lihat 80+ Admin Lainnya <ChevronRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
     </Section>
   );
 }
-
-
 
 function Groups() {
   return (
@@ -606,9 +581,9 @@ function Groups() {
         ))}
       </div>
       <div className="mt-6 text-center">
-        <a href="/groups" className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-500">
+        <Link href="/groups" className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-500">
           20+ Grup Aktif Lainnya <ChevronRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
       <p className="mt-4 text-center text-xs text-white/60">Catatan: link grup akan diverifikasi admin. Jaga etika & isi intro.</p>
     </Section>
@@ -642,33 +617,30 @@ function DiscordSection() {
     </Section>
   );
 }
+
 function CreativeCorner() {
-  // gandakan data 3× supaya ada ruang “buffer” di kiri/kanan
   const BASE = Array.isArray(CREATIONS) ? CREATIONS : [];
   const SLIDES = [...BASE, ...BASE, ...BASE];
-  const MID = BASE.length;           // panjang satu siklus
-  const START = MID;                 // mulai di salinan tengah (aman)
+  const MID = BASE.length;
+  const START = MID;
 
   const [index, setIndex] = useState(START);
   const [cardW, setCardW] = useState(320);
-  const [animTrack, setAnimTrack] = useState(true);   // kontrol transition track
-  const [animCard, setAnimCard] = useState(true);     // kontrol transition kartu
+  const [animTrack, setAnimTrack] = useState(true);
+  const [animCard, setAnimCard] = useState(true);
   const trackRef = useRef(null);
   const lockedRef = useRef(false);
 
-  // transition durations (ms) centralized so we can reuse for timeouts/fallbacks
   const TRACK_MS = 700;
   const CARD_MS = 380;
-  const TRANSITION_MARGIN = 120; // extra ms for safety
+  const TRANSITION_MARGIN = 120;
 
   const beginTransition = () => {
-    // mark locked and attach a one-time transitionend fallback to ensure unlock
     if (!trackRef.current) {
       lockedRef.current = true;
       setTimeout(() => { lockedRef.current = false; }, TRACK_MS + TRANSITION_MARGIN);
       return;
     }
-
     lockedRef.current = true;
     const track = trackRef.current;
     let done = false;
@@ -680,7 +652,6 @@ function CreativeCorner() {
       lockedRef.current = false;
     };
     track.addEventListener('transitionend', onEnd);
-    // fallback
     setTimeout(() => {
       if (done) return;
       done = true;
@@ -688,20 +659,12 @@ function CreativeCorner() {
       lockedRef.current = false;
     }, TRACK_MS + TRANSITION_MARGIN);
   };
-  const debugRef = useRef(null);
 
-  const clientLog = (payload) => {
-    try {
-      fetch('/api/log', { method: 'POST', body: JSON.stringify(payload), headers: { 'content-type': 'application/json' } });
-    } catch {}
-  };
-
-  // ukur lebar kartu + gap, supaya translateX presisi
   useEffect(() => {
     const measure = () => {
       const first = document.querySelector('.kc-slide');
       if (!first) return;
-      const style = getComputedStyle(first.parentElement); // parent = track (punya gap)
+      const style = getComputedStyle(first.parentElement);
       const gap = parseInt(style.columnGap || style.gap || '24', 10);
       setCardW(first.offsetWidth + gap);
     };
@@ -711,7 +674,6 @@ function CreativeCorner() {
     return () => ro.disconnect();
   }, []);
 
-  // autoplay
   useEffect(() => {
     const t = setInterval(() => {
       if (lockedRef.current) return;
@@ -721,39 +683,24 @@ function CreativeCorner() {
     return () => clearInterval(t);
   }, []);
 
-  // RESET TANPA KEDIP:
-  // ketika mencapai ujung salinan tengah (>= MID*2), lompat balik ke cermin (−MID)
-  // matikan transition track & kartu sesaat agar tidak ada anim “mundur”
   useLayoutEffect(() => {
-    // no-op when there's no data
     if (MID === 0) return;
-
     const track = trackRef.current;
 
-    // forward wrap: when we step past the right buffer, allow the browser to
-    // finish the visible transition to the right copy, then silently reset the
-    // index back to the middle copy without animation. This avoids any
-    // mid-transition toggles that could cause visible jumps.
     if (index >= MID * 2) {
-      const target = index - MID; // same item in the middle copy
-
+      const target = index - MID;
       if (track) {
         let cleared = false;
-
         const restore = () => {
           if (cleared) return;
           cleared = true;
-          // disable react-driven transitions so index change happens without anim
           setAnimTrack(false);
           setAnimCard(false);
-          // also disable DOM transitions immediately so the manual transform doesn't animate
           const slides = track ? track.querySelectorAll('.kc-slide') : [];
           if (track) track.style.transition = 'none';
           slides.forEach((s) => (s.style.transition = 'none'));
-          // directly set DOM transform to the target position (no transition)
           if (track && typeof cardW === 'number') track.style.transform = `translateX(-${target * cardW}px)`;
           setIndex(target);
-          // restore DOM transitions and React-driven anim flags on next frame
           requestAnimationFrame(() => {
             if (track) track.style.transition = '';
             slides.forEach((s) => (s.style.transition = ''));
@@ -761,22 +708,17 @@ function CreativeCorner() {
             setAnimCard(true);
           });
         };
-
         const onEnd = (ev) => {
           if (ev.propertyName && ev.propertyName !== 'transform') return;
           track.removeEventListener('transitionend', onEnd);
           clearTimeout(timeout);
-          clientLog({ ev: 'wrap-forward-end', index, target, animTrack, animCard });
           restore();
         };
-
         const timeout = setTimeout(() => {
           track.removeEventListener('transitionend', onEnd);
           restore();
         }, 900);
-
         track.addEventListener('transitionend', onEnd);
-        clientLog({ ev: 'wrap-forward-start', index, target, animTrack, animCard });
       } else {
         setAnimTrack(false);
         setAnimCard(false);
@@ -786,18 +728,13 @@ function CreativeCorner() {
           setAnimCard(true);
         });
       }
-
       return;
     }
 
-    // backward wrap: when we step past the left buffer (below 0..MID-1),
-    // jump forward by MID so we stay in the middle copy. Mirror the forward logic.
     if (index < MID) {
       const target = index + MID;
-
       if (track) {
         let cleared = false;
-
         const restore = () => {
           if (cleared) return;
           cleared = true;
@@ -815,22 +752,17 @@ function CreativeCorner() {
             setAnimCard(true);
           });
         };
-
         const onEnd = (ev) => {
           if (ev.propertyName && ev.propertyName !== 'transform') return;
           track.removeEventListener('transitionend', onEnd);
           clearTimeout(timeout);
-          clientLog({ ev: 'wrap-backward-end', index, target, animTrack, animCard });
           restore();
         };
-
         const timeout = setTimeout(() => {
           track.removeEventListener('transitionend', onEnd);
           restore();
         }, 900);
-
         track.addEventListener('transitionend', onEnd);
-        clientLog({ ev: 'wrap-backward-start', index, target, animTrack, animCard });
       } else {
         setAnimTrack(false);
         setAnimCard(false);
@@ -841,9 +773,8 @@ function CreativeCorner() {
         });
       }
     }
-  }, [index, MID]);
+  }, [index, MID, cardW]);
 
-  // if no creations provided, render nothing (avoids runtime errors)
   if (MID === 0) {
     return (
       <Section id="creative" icon={ImageIcon} title="Pojok Kreasi" subtitle="Karya komunitas: desain, ilustrasi, dan poster">
@@ -852,7 +783,6 @@ function CreativeCorner() {
     );
   }
 
-  // jarak “melingkar” ke pusat supaya highlight tidak meloncat saat reset
   const nearestDist = (i) => {
     const d0 = Math.abs(i - index);
     const d1 = Math.abs(i - (index + MID));
@@ -863,11 +793,9 @@ function CreativeCorner() {
   return (
     <Section id="creative" icon={ImageIcon} title="Pojok Kreasi" subtitle="Karya komunitas: desain, ilustrasi, dan poster">
       <div className="relative">
-        {/* gradient gelap sisi kiri/kanan */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black via-black/70 to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black via-black/70 to-transparent" />
 
-        {/* TRACK */}
         <div
           ref={trackRef}
           className="flex gap-6 items-center will-change-transform"
@@ -877,7 +805,7 @@ function CreativeCorner() {
           }}
         >
           {SLIDES.map((it, i) => {
-            const d = Math.min(nearestDist(i), 2); // pusat, tetangga, lainnya
+            const d = Math.min(nearestDist(i), 2);
             const scale = d === 0 ? 1 : d === 1 ? 0.94 : 0.9;
             const opacity = d === 0 ? 1 : d === 1 ? 0.78 : 0.58;
             const ring = d === 0 ? 'ring-white/20' : 'ring-white/10';
@@ -916,7 +844,6 @@ function CreativeCorner() {
         </div>
       </div>
 
-      {/* kontrol manual (opsional) */}
       <div className="mt-4 flex justify-center gap-3">
         <button
           onClick={() => {
@@ -994,7 +921,7 @@ function Gallery() {
                   </div>
                 </div>
 
-                {/* Overlay statis di mobile (ringan, tanpa animasi) */}
+                {/* Overlay statis di mobile */}
                 <div className="absolute inset-x-0 bottom-0 md:hidden bg-gradient-to-t from-black/70 to-transparent p-2">
                   <div className="text-[13px] font-medium text-white">{title}</div>
                   {(date || location) && (
@@ -1011,6 +938,7 @@ function Gallery() {
     </Section>
   );
 }
+
 function MediaPartners() {
   return (
     <Section id="media-partners" icon={Sparkles} title="Media Partner">
@@ -1051,7 +979,6 @@ function MediaPartners() {
   );
 }
 
-
 function Sponsors() {
   return (
     <Section id="sponsors" icon={Sparkles} title="Disponsori oleh">
@@ -1061,6 +988,53 @@ function Sponsors() {
             {s.tag}
           </a>
         ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ============== FAQ (baru) ============== */
+function FAQ() {
+  const QA = [
+    {
+      q: 'Bagaimana cara bergabung ke komunitas?',
+      a: 'Scroll ke bagian “Grup WhatsApp” dan pilih grup game yang kamu mainkan, atau tekan tombol “Pilih Grup” di bagian Join.',
+    },
+    {
+      q: 'Apakah ada biaya untuk bergabung?',
+      a: 'Tidak ada. Komunitas ini gratis. Pastikan baca peraturan dan ikuti etika komunitas.',
+    },
+    {
+      q: 'Siapa saja admin Gachaverse.id?',
+      a: 'Kami memiliki 80+ admin dari berbagai divisi. Kamu bisa melihat seluruh daftar di halaman /admins.',
+    },
+    {
+      q: 'Kapan ada event komunitas?',
+      a: 'Event berjalan secara berkala. Lihat detailnya pada bagian “Event Komunitas” di halaman ini.',
+    },
+    {
+      q: 'Apakah ada Discord server?',
+      a: 'Ada. Kamu bisa bergabung lewat tombol “Join Discord” pada bagian Server Discord.',
+    },
+  ];
+  return (
+    <Section id="faq" icon={HelpCircle} title="FAQ" subtitle="Pertanyaan yang sering ditanyakan">
+      <div className="mx-auto max-w-3xl divide-y divide-white/10 rounded-3xl border border-white/10 bg-white/[0.03]">
+        {QA.map((item, i) => (
+          <details key={i} className="group px-5 sm:px-6 py-4 open:bg-white/[0.02]">
+            <summary className="flex cursor-pointer list-none items-center justify-between text-white/90 font-semibold">
+              <span className="pr-4">{item.q}</span>
+              <span className="ml-2 rounded-md border border-white/10 px-2 py-0.5 text-xs text-white/70 group-open:rotate-90 transition-transform">›</span>
+            </summary>
+            <div className="mt-2 text-white/70 text-sm leading-relaxed">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <div className="mt-6 text-center text-sm text-white/60">
+        Masih ada yang ingin ditanyakan? <a href="#groups" className="text-blue-300 hover:text-blue-200 underline-offset-2 hover:underline">Gabung grup</a> atau <Link href="/admins" className="text-blue-300 hover:text-blue-200 underline-offset-2 hover:underline">hubungi admin</Link>.
       </div>
     </Section>
   );
@@ -1085,7 +1059,7 @@ function Closing() {
 /* ==================== Root ==================== */
 if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
   console.groupCollapsed('[Gachaverse Landing] Sanity Tests');
-  console.assert(Array.isArray(NAV) && NAV.length >= 5, 'NAV should have items');
+  console.assert(Array.isArray(NAV) && NAV.length >= 8, 'NAV should have items (including FAQ & Gabung)');
   console.assert(Array.isArray(ADMIN_PREVIEW) && ADMIN_PREVIEW.length === 6, 'ADMIN_PREVIEW should be 6 items');
   console.assert(Array.isArray(SPONSORS) && SPONSORS.length === 3, 'SPONSORS should have 3 items');
   console.assert(Array.isArray(GROUPS) && GROUPS.length >= 4, 'GROUPS should have at least 4 items');
@@ -1110,6 +1084,8 @@ export default function GachaverseLanding() {
         <MediaPartners /> 
         <Sponsors />
         <Gallery />
+        {/* FAQ baru */}
+        <FAQ />
         <Closing />
       </main>
     </div>

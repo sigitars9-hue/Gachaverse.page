@@ -1,4 +1,3 @@
-// app/admins/page.jsx
 'use client';
 
 import Link from 'next/link';
@@ -6,21 +5,21 @@ import { useEffect, useMemo, useState } from 'react';
 import { Search } from 'lucide-react';
 
 import { admins } from '../../data/admins';
-import SortModal from '../../components/SortModal';
+// ⬇️ Hapus SortModal & sorters yang tidak dipakai
+// import SortModal from '../../components/SortModal';
+// import { byDivision, byGenderPriority, byName } from '../../utils/sorters';
 import { normalizeDivisions } from '../../utils/normalizeDivisions';
-import { byDivision, byGenderPriority, byName } from '../../utils/sorters';
 
 /* ───────────────────────── Card dengan BG blur ───────────────────────── */
-/* ───────────────────────── Card dengan BG blur ½ atas ───────────────────────── */
 function Card({
   children,
   className = '',
   bgSrc,
-  blur = 16,           // intensitas blur
-  imgOpacity = 0.55,   // opasitas foto yang diblur
-  topHeight = 0.25,    // proporsi area blur (0–1) → 58% atas
+  blur = 16,
+  imgOpacity = 0.55,
+  topHeight = 0.25,
 }) {
-  const topH = Math.max(0.35, Math.min(topHeight, 0.8)) * 100; // guard 35–80%
+  const topH = Math.max(0.35, Math.min(topHeight, 0.8)) * 100;
   return (
     <div
       className={[
@@ -32,10 +31,7 @@ function Card({
     >
       {/* LAYER: foto diblur hanya di bagian atas */}
       <div className="pointer-events-none absolute inset-0">
-        <div
-          className="absolute top-0 left-0 w-full"
-          style={{ height: `${topH}%` }}
-        >
+        <div className="absolute top-0 left-0 w-full" style={{ height: `${topH}%` }}>
           {bgSrc ? (
             <>
               <img
@@ -50,19 +46,15 @@ function Card({
                   opacity: imgOpacity,
                 }}
               />
-              {/* fade ke bawah supaya transisi halus */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/20 to-transparent" />
             </>
           ) : (
             <div className="absolute inset-0 bg-white/[0.03]" />
           )}
         </div>
-
-        {/* LAYER global: tambahkan shading agar teks kebaca */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/45" />
       </div>
 
-      {/* Konten: selalu center & konsisten */}
       <div className="relative z-10 p-4 sm:p-6 flex flex-col items-center text-center">
         {children}
       </div>
@@ -109,28 +101,21 @@ function GenderBadge({ gender }) {
   );
 }
 
-/* ------ helper: cek apakah admin punya platform tertentu (filter) ------ */
+/* ------ helper: cek platform ------ */
 function hasPlatform(a, platform) {
   const p = String(platform || '').toLowerCase();
   if (!p) return false;
 
-  // channels[].platform (standar baru)
-  if (Array.isArray(a?.channels) && a.channels.some(c => String(c?.platform || '').toLowerCase() === p)) {
-    return true;
-  }
+  if (Array.isArray(a?.channels) && a.channels.some(c => String(c?.platform || '').toLowerCase() === p)) return true;
+  if (Array.isArray(a?.platforms) && a.platforms.some(x => String(x).toLowerCase() === p)) return true;
 
-  // platforms[] (standar baru)
-  if (Array.isArray(a?.platforms) && a.platforms.some(x => String(x).toLowerCase() === p)) {
-    return true;
-  }
-
-  // fallback: field langsung
   if (p === 'whatsapp' && a?.whatsapp && a.whatsapp !== '#') return true;
   if (p === 'discord'  && a?.discord) return true;
 
   return false;
 }
-// ===== Hierarki peran (label -> urutan) =====
+
+/* ===== Hierarki peran (tetap sama) ===== */
 const ROLE_ALIASES = {
   'Founder': 'Co-founder',
   'Co-founder': 'Co-founder',
@@ -159,12 +144,10 @@ const ROLE_ORDER = [
 const roleRank = (a) => {
   const label = canonicalRole(a.role || '');
   const i = ROLE_ORDER.findIndex(r => r.toLowerCase() === label.toLowerCase());
-  return i >= 0 ? i : 999; // yang tidak dikenal taruh di bawah
+  return i >= 0 ? i : 999;
 };
 
 const cmpHierarchy = (a, b) => roleRank(a) - roleRank(b);
-
-// optional: tetap dorong Pentung ke bawah
 const isPentung = (a) => Array.isArray(a?._divisions) && a._divisions.some(d => /pentung/i.test(d));
 
 /* ───────────────────────────────── Page ───────────────────────────────── */
@@ -172,14 +155,14 @@ export default function AdminsPage() {
   // UI state
   const [q, setQ] = useState('');
   const [platformFilter, setPlatformFilter] = useState('all'); // all | whatsapp | discord
-  const [sortOpen, setSortOpen] = useState(false);
 
-  // sort states
-  const [nameDir, setNameDir] = useState('az'); // 'az' | 'za'
-  const [useDivisionOrder, setUseDivisionOrder] = useState(true);
-  const [useGenderPriority, setUseGenderPriority] = useState(false);
+  // ⬇️ Hapus semua state/komponen Sort
+  // const [sortOpen, setSortOpen] = useState(false);
+  // const [nameDir, setNameDir] = useState('az');
+  // const [useDivisionOrder, setUseDivisionOrder] = useState(true);
+  // const [useGenderPriority, setUseGenderPriority] = useState(false);
 
-  // inject divisions & flag pentung
+  // inject divisions
   const source = useMemo(() => {
     return admins.map((a) => {
       const _divisions = normalizeDivisions(a);
@@ -209,7 +192,7 @@ export default function AdminsPage() {
     });
   }, [platformFilter, q, source]);
 
-  // ringkasan total (berdasarkan hasil TERFILTER)
+  // ringkasan
   const summary = useMemo(() => {
     let male = 0, female = 0, unknown = 0;
     for (const a of filtered) {
@@ -221,59 +204,37 @@ export default function AdminsPage() {
     return { total: filtered.length, male, female, unknown };
   }, [filtered]);
 
-  // sort
-// --- comparator helper ---
-const cmpName = (dir) => (a, b) =>
-  (dir === 'za'
-    ? b.name.localeCompare(a.name)
-    : a.name.localeCompare(b.name));
+  // sorting default (tanpa UI "Sort by", tetap sama urutan sebelumnya)
+  const cmpName = (a, b) => a.name.localeCompare(b.name);
+  const cmpGender = (a, b) => {
+    const rank = { male: 0, female: 1, unknown: 2 };
+    const ga = normalizeGender(a.gender) ?? 'unknown';
+    const gb = normalizeGender(b.gender) ?? 'unknown';
+    return rank[ga] - rank[gb];
+  };
+  const DIVISION_ORDER = [
+    'Babel', 'Posting', 'Translator', 'Leaks',
+    'Owner Grup', 'Admin Grup', 'Discord', 'AI',
+    'Gvs', 'Partnership', 'Pentung',
+  ];
+  const firstDivIndex = (divs = []) => {
+    const idxs = divs.map((d) => DIVISION_ORDER.indexOf(d)).filter((i) => i >= 0);
+    return idxs.length ? Math.min(...idxs) : 999;
+  };
+  const cmpDivision = (a, b) => firstDivIndex(a._divisions) - firstDivIndex(b._divisions);
 
-const cmpGender = (a, b) => {
-  const rank = { male: 0, female: 1, unknown: 2 };
-  const ga = normalizeGender(a.gender) ?? 'unknown';
-  const gb = normalizeGender(b.gender) ?? 'unknown';
-  return (rank[ga] - rank[gb]);
-};
-
-// urutkan berdasarkan divisi pertama yang dikenal (kalau tak ada, taruh di bawah)
-const DIVISION_ORDER = [
-  'Babel', 'Posting', 'Translator', 'Leaks',
-  'Owner Grup', 'Admin Grup', 'Discord', 'AI',
-  'Gvs', 'Partnership', 'Pentung',
-];
-const firstDivIndex = (divs = []) => {
-  const idxs = divs
-    .map((d) => DIVISION_ORDER.indexOf(d))
-    .filter((i) => i >= 0);
-  return idxs.length ? Math.min(...idxs) : 999;
-};
-const cmpDivision = (a, b) =>
-  firstDivIndex(a._divisions) - firstDivIndex(b._divisions);
-
-// --- single sort (semua kriteria dirangkai) ---
-const sorted = useMemo(() => {
-  const arr = [...filtered];
-
-  const nameCmp = cmpName(nameDir);
-
-  arr.sort((a, b) => {
-    // 1) division (opsional)
-    if (useDivisionOrder) {
+  const sorted = useMemo(() => {
+    const arr = [...filtered];
+    // Default: urut divisi → gender → nama (sama seperti konfigurasi awal on)
+    arr.sort((a, b) => {
       const d = cmpDivision(a, b);
       if (d !== 0) return d;
-    }
-    // 2) gender priority (opsional)
-    if (useGenderPriority) {
       const g = cmpGender(a, b);
       if (g !== 0) return g;
-    }
-    // 3) name (selalu jadi tie-breaker)
-    return nameCmp(a, b);
-  });
-
-  return arr;
-}, [filtered, nameDir, useDivisionOrder, useGenderPriority]);
-
+      return cmpName(a, b);
+    });
+    return arr;
+  }, [filtered]);
 
   // pagination
   const PAGE = 10;
@@ -286,36 +247,47 @@ const sorted = useMemo(() => {
 
   useEffect(() => {
     setVisible(PAGE);
-  }, [q, platformFilter, nameDir, useDivisionOrder, useGenderPriority]);
+  }, [q, platformFilter]);
 
   return (
     <main className="min-h-screen bg-black text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 flex flex-col items-center">
         {/* Header */}
-        <div className="mb-8 text-center">
+        <div className="mb-6 text-center">
           <div className="inline-flex items-center gap-2 rounded-2xl bg-blue-600/20 px-3 py-1 text-blue-300">
-            <span>All Staf Gachaverse</span>
+            <span>All Staff Gachaverse</span>
           </div>
           <h1 className="mt-2 text-xl sm:text-2xl md:text-3xl font-bold">
             Daftar Admin ({admins.length})
           </h1>
           <p className="text-white/60">Klik salah satu untuk melihat profil admin lengkap.</p>
+        </div>
 
-          {/* Ringkasan total */}
-          <div className="mt-3 flex flex-wrap items-center justify-center gap-2 text-xs text-white/70">
-            <span className="rounded-full bg-white/5 px-3 py-1 border border-white/10">
-              Total: <span className="text-white">{summary.total}</span>
-            </span>
-            <span className="rounded-full bg-white/5 px-3 py-1 border border-white/10">
-              Laki-laki: <span className="text-white">{summary.male}</span>
-            </span>
-            <span className="rounded-full bg-white/5 px-3 py-1 border border-white/10">
-              Perempuan: <span className="text-white">{summary.female}</span>
-            </span>
-            <span className="rounded-full bg-white/5 px-3 py-1 border border-white/10">
-              Unknown: <span className="text-white">{summary.unknown}</span>
-            </span>
-          </div>
+        {/* 🔹 Hierarki di TENGAH tepat di atas pencarian */}
+        <div className="w-full max-w-5xl mb-4 flex justify-center">
+          <Link
+            href="/admins/hierarki"
+           className="rounded-2xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-500"
+
+          >
+            Hierarki Gachaverse
+          </Link>
+        </div>
+
+        {/* Ringkasan total */}
+        <div className="mb-6 flex flex-wrap items-center justify-center gap-2 text-xs text-white/70">
+          <span className="rounded-full bg-white/5 px-3 py-1 border border-white/10">
+            Total: <span className="text-white">{summary.total}</span>
+          </span>
+          <span className="rounded-full bg-white/5 px-3 py-1 border border-white/10">
+            Laki-laki: <span className="text-white">{summary.male}</span>
+          </span>
+          <span className="rounded-full bg-white/5 px-3 py-1 border border-white/10">
+            Perempuan: <span className="text-white">{summary.female}</span>
+          </span>
+          <span className="rounded-full bg-white/5 px-3 py-1 border border-white/10">
+            Unknown: <span className="text-white">{summary.unknown}</span>
+          </span>
         </div>
 
         {/* Controls */}
@@ -355,21 +327,8 @@ const sorted = useMemo(() => {
             })}
           </div>
 
-          {/* Sort + Hierarki */}
-          <div className="flex gap-2">
-            <button
-              onClick={() => setSortOpen(true)}
-              className="rounded-2xl border border-white/15 px-4 py-2 text-sm text-white/90 hover:bg-white/10"
-            >
-              Sort by
-            </button>
-            <Link
-              href="/admins/hierarki"
-              className="rounded-2xl border border-white/15 px-4 py-2 text-sm text-white/90 hover:bg-white/10"
-            >
-              Hierarki Gachaverse
-            </Link>
-          </div>
+          {/* ⬇️ Hapus blok Sort by + Hierarki (diganti dengan link di atas) */}
+          {/* <div className="flex gap-2"> ... </div> */}
         </div>
 
         {/* Hasil / counter */}
@@ -393,12 +352,10 @@ const sorted = useMemo(() => {
                   }}
                   className="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-3xl block h-full"
                 >
-                  {/* >>> Card dengan bg blur dari foto profil <<< */}
                   <Card
                     bgSrc={a.img || '/admins/placeholder.jpg'}
                     className="text-center flex flex-col items-center justify-start"
                   >
-                    {/* Lock badge utk Pentung */}
                     {isRestricted && (
                       <span className="absolute right-3 top-3 rounded-full bg-red-500/20 px-2 py-0.5 text-[11px] text-red-300 border border-red-300/30">
                         Terkunci
@@ -424,7 +381,7 @@ const sorted = useMemo(() => {
                       <GenderBadge gender={a.gender} />
                     </div>
 
-                    {/* Divisions badge */}
+                    {/* Divisions */}
                     {Array.isArray(a._divisions) && a._divisions.length > 0 ? (
                       <div className="mt-2 flex items-center justify-center gap-1 flex-nowrap overflow-hidden min-h-[28px]">
                         {a._divisions.slice(0, 2).map((d) => (
@@ -446,7 +403,7 @@ const sorted = useMemo(() => {
           })}
         </div>
 
-        {/* Kontrol pagination */}
+        {/* Pagination */}
         <div className="mt-6 w-full max-w-6xl flex items-center justify-between gap-3">
           <button
             onClick={showMore}
@@ -457,7 +414,7 @@ const sorted = useMemo(() => {
             Lihat 10 lainnya
           </button>
 
-        <button
+          <button
             onClick={showAll}
             disabled={allShown}
             className="rounded-2xl bg-white/10 px-5 py-2.5 text-sm text-white hover:bg-white/15 border border-white/10 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -478,17 +435,8 @@ const sorted = useMemo(() => {
         </div>
       </div>
 
-      {/* Sort modal */}
-      <SortModal
-        open={sortOpen}
-        onClose={() => setSortOpen(false)}
-        nameDir={nameDir}
-        setNameDir={setNameDir}
-        useDivisionOrder={useDivisionOrder}
-        setUseDivisionOrder={setUseDivisionOrder}
-        useGenderPriority={useGenderPriority}
-        setUseGenderPriority={setUseGenderPriority}
-      />
+      {/* ⬇️ Hapus SortModal */}
+      {/* <SortModal ... /> */}
     </main>
   );
 }

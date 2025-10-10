@@ -116,9 +116,9 @@ const ICON_MAP = [
  { test: /gamefreak|pok(e|é)mon/i,            icons: ['pokemon'] },
 
  { test: /honkai:\s*star\s*rail|pom\s*pom/i,  icons: ['hsr'] },
- { test: /honkai\s*impact\s*3rd|kubis|hi3/i,  icons: ['hi3'] },
+ { test: /honkai\s*impact\s*3rd|kubis|hi3/i,  icons: ['hi'] },
  { test: /zenless\s*zone\s*zero|eridu|zzz/i,  icons: ['zzz'] },
- { test: /reverse[:\s]*1999|arcanist/i,       icons: ['reverse-1999'] },
+ { test: /reverse/i,       icons: ['reverse'] },
  { test: /kurogames|wuwa/i,                   icons: ['wuwa'] },
 
  { test: /mihoyo|hoyoverse/i,                 icons: ['gi','hsr','zzz','hi3'] },
@@ -236,22 +236,34 @@ export default function GroupsPage() {
     <main className="min-h-screen bg-black text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
-        <div className="mb-10 text-center">
-          <div className="inline-flex items-center gap-2 rounded-2xl bg-blue-600/20 px-3 py-1 text-blue-300">
-            <span className="h-2 w-2 rounded-full bg-blue-400" />
-            <span>Grup WhatsApp</span>
-          </div>
-          <h1 className="mt-3 text-3xl sm:text-4xl font-bold">
-            Daftar Seluruh Grup Gachaverse.id
-          </h1>
-          <p className="text-white/70">
-            Komunitas Gachaverse.id merupakan komunitas ramah bagi semua kalangan dengan
-            banyaknya admin yang mengatur grup-grup.
-          </p>
-          <div className="mt-3 text-sm text-white/60">
-            Total grup: <span className="text-white">{groups.length}</span>
-          </div>
-        </div>
+        {/* Header */}
+<div className="mb-10 text-center">
+  <div className="inline-flex items-center gap-2 rounded-2xl bg-blue-600/20 px-3 py-1 text-blue-300">
+    <span className="h-2 w-2 rounded-full bg-blue-400" />
+    <span>Grup WhatsApp</span>
+  </div>
+  <h1 className="mt-3 text-3xl sm:text-4xl font-bold">
+    Daftar Seluruh Grup Gachaverse.id
+  </h1>
+  <p className="text-white/70">
+    Komunitas Gachaverse.id merupakan komunitas ramah bagi semua kalangan dengan
+    banyaknya admin yang mengatur grup-grup.
+  </p>
+  <div className="mt-3 text-sm text-white/60">
+    Total grup: <span className="text-white">{groups.length}</span>
+  </div>
+
+  {/* tombol baru: Peraturan Umum */}
+  <div className="mt-4">
+    <Link
+      href="/peraturan"
+      className="inline-flex items-center gap-2 rounded-xl bg-white/10 px-4 py-2 text-sm font-medium text-white ring-1 ring-white/15 hover:bg-white/20 transition-colors"
+    >
+      Peraturan Umum Komunitas
+    </Link>
+  </div>
+</div>
+
 
         {/* Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

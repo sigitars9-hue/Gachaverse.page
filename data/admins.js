@@ -31,7 +31,9 @@ export const admins = [
     platforms: [
       "whatsapp",
       "discord",
-      "instagram"
+      "instagram",
+      "tiktok",
+      "x"
     ],
     games: [
       "hi",
@@ -53,6 +55,10 @@ export const admins = [
       "pubg",
     ],
     whatsapp: "6282123710880",
+    discord: "Ryuu#6888",
+    instagram: "https://www.instagram.com/sigitars9",
+    tiktok: "https://www.tiktok.com/@gachaverse.id",
+    x: "https://x.com/gachaverse_id",
     channels: [
       {
         platform: "whatsapp",
@@ -3404,7 +3410,8 @@ export const admins = [
       "Admin Grup"
     ],
     languages: [
-      "ID"
+      "ID",
+      "EN"
     ],
     timezone: "WIB",
     status: "active",
@@ -3413,7 +3420,8 @@ export const admins = [
       "whatsapp"
     ],
     games: [
-      "hsr"
+      "hsr",
+      "umamusume"
     ],
     whatsapp: "6285814060508",
     discord: "",
