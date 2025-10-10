@@ -517,7 +517,8 @@ export const admins = [
     gender: "laki laki",
     skills: [
       "Game Guide",
-      "Game Strategy"
+      "Game Strategy",
+      "Game Analysis"
     ],
     responsibility: "Owner group di beberapa group chat WA. Sesekali membantu guide untuk posting.",
     joined: 2021,
@@ -960,9 +961,9 @@ export const admins = [
     skills: [
       "Gameplay",
       "Guide",
-      "Game Information (LADS)"
+      "Game Information (Otome Game)"
     ],
-    responsibility: "Admin grup.",
+    responsibility: "Mengawasi grup, membuka diskusi terkait informasi lore/leaks, menjaga suasana grup tetap positif, aman, dan nyaman dengan menjaga aturan yang berlaku.",
     joined: 2025,
     divisions: [
       "Admin Grup"
@@ -978,7 +979,8 @@ export const admins = [
       "whatsapp"
     ],
     games: [
-      "lads"
+      "lads",
+      "tot"
     ],
     whatsapp: "6285797027714",
     channels: [
@@ -1363,6 +1365,7 @@ export const admins = [
     ],
     games: [
       "umamusume",
+      "pjsk"
     ],
     whatsapp: "6282114911824",
     channels: [
@@ -1749,7 +1752,8 @@ export const admins = [
     skills: [
       "Guide (Rhythm)",
       "Game Information (Rhythm)",
-      "Leluhur Gameplay (Rhythm) Terutama OSU"
+      "Leluhur Gameplay (Rhythm) Terutama OSU",
+      "Timpa Teks Expert"
     ],
     responsibility: "Menyambut dan mengawasi member, menjawab pertanyaan member",
     joined: 2025,
