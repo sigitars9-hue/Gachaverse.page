@@ -32,7 +32,7 @@ function buildCandidates({ slug, src }) {
   return list;
 }
 
-export default function TinyMusicButton({ slug, src, autoHideMs = 3500 }) {
+export default function TinyMusicButton({ slug, src, autoHideMs = 3500, autoPlayOnLoad = false }) {
   const aRef = useRef(null);
   const hideRef = useRef(null);
 
@@ -45,6 +45,32 @@ export default function TinyMusicButton({ slug, src, autoHideMs = 3500 }) {
   const [prog, setProg] = useState(0);
   const [cur, setCur] = useState(0);
   const [dur, setDur] = useState(0);
+   const triedAutoRef = useRef(false);
+
+  useEffect(() => {
+    if (!autoPlayOnLoad) return;
+    const a = aRef.current; if (!a || triedAutoRef.current) return;
+
+    const attempt = async () => {
+      triedAutoRef.current = true;
+      try {
+        await a.play();
+        setPlaying(true);
+        setOpen(false);
+        if (autoHideMs) setTimeout(() => setOpen(false), autoHideMs);
+      } catch {
+        // ditolak policy → tampilkan dock agar user tap Play
+        setOpen(true);
+      }
+    };
+
+    if (a.readyState >= 2) attempt();
+    else {
+      const onCanPlay = () => attempt();
+      a.addEventListener('canplay', onCanPlay, { once: true });
+      return () => a.removeEventListener('canplay', onCanPlay);
+    }
+  }, [autoPlayOnLoad, autoHideMs]);
 
   const prefersReducedMotion = useMemo(() => {
     if (typeof window === "undefined") return false;

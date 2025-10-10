@@ -3711,7 +3711,7 @@ export const admins = [
   },
   {
   slug: "mizi",
-  name: "Mizuno Shinryu",
+  name: "Mizuno",
   img: "/admins/mizi.jpg",
   role: "Moderator",
   gender: "laki laki",

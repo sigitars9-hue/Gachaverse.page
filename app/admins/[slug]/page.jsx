@@ -1041,7 +1041,7 @@ export default function AdminProfile({ params }) {
           </Link>
         </div>
       </div>
-         <TinyMusicButton slug={admin.slug} />
+        <TinyMusicButton slug={admin.slug} autoPlayOnLoad />
     </main>
   );
 }
