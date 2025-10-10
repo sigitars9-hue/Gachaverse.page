@@ -10,7 +10,9 @@ export const admins = [
       "Communication",
       "Leadership",
       "Editing",
-      "Programming"
+      "Beginner Programmer",
+      "Cosplay"
+
     ],
     responsibility: "Mengelola semua akun Gachaverse di berbagai platfrom dan menentukan arah komunitas",
     joined: 2020,
@@ -27,13 +29,28 @@ export const admins = [
     status: "active",
     lastUpdated: "2025-10-06T12:52:02.000Z",
     platforms: [
-      "whatsapp"
+      "whatsapp",
+      "discord",
+      "instagram"
     ],
     games: [
-      "hi3",
-      "Genshin",
+      "hi",
+      "gi",
       "Pgr",
-      "hsr"
+      "hsr",
+      "ak",
+      "ba",
+      "strinova",
+      "wuwa",
+      "zzz",
+      "mlbb",
+      "persona",
+      "nc",
+      "r1999",
+      "gbf",
+      "fgo",
+      "pokemon",
+      "pubg",
     ],
     whatsapp: "6282123710880",
     channels: [
@@ -50,8 +67,8 @@ export const admins = [
         role: "Founder",
         responsibility: " Mengelola data komunitas",
         isPrimary: true
-      }
-      
+      },
+
     ]
   },
   {
@@ -439,7 +456,7 @@ export const admins = [
       "genshin",
       "hsr",
       "ak",
-      "reverse1999"
+      "reverse"
     ],
     whatsapp: "6285214900240",
     channels: [
@@ -564,7 +581,8 @@ export const admins = [
     lastUpdated: "2025-10-06T13:01:55.000Z",
     platforms: [
       "whatsapp",
-      "discord"
+      "discord",
+      "instagram"
     ],
     games: [
       "wuwa",
@@ -589,6 +607,13 @@ export const admins = [
         role: "moderator",
         responsibility: "Satpam",
         isPrimary: false
+      },
+      {
+        platform: "instagram",
+        url: "https://www.instagram.com/egg_are",
+        role: "Owner Akun",
+        responsibility: "Sebagai Cosplayer",
+        isPrimary: true
       }
     ]
   },
@@ -860,7 +885,9 @@ export const admins = [
       "whatsapp"
     ],
     games: [
-      "ak"
+      "ak",
+      "limbus",
+      "wuwa"
     ],
     whatsapp: "6285718072135",
     channels: [
@@ -974,7 +1001,7 @@ export const admins = [
     skills: [
       "Gameplay",
       "Guide",
-      "Server Moderator"
+      "Server Moderator (Discord)"
     ],
     responsibility: "Mengawasi grup Eridu, bertaggung jawab atas Grup Minecraft dan Shooter, dan Mengawasi traffic Discord",
     joined: 2023,
@@ -1002,7 +1029,7 @@ export const admins = [
       "duet-nigh-abyss",
       "valorant",
       "mongol-star-dive",
-      "uma-musume-jp",
+      "umamusume",
       "osu"
     ],
     whatsapp: "6281383216705",
@@ -1052,7 +1079,7 @@ export const admins = [
     ],
     games: [
       "mlbb",
-      "genshin",
+      "gi",
       "hsr",
       "wuwa",
       "zzz"
@@ -1153,7 +1180,7 @@ export const admins = [
       "wuwa",
       "ak",
       "pgr",
-      "hi3",
+      "hi",
       "zzz",
       "al",
       "gfl2"
@@ -1241,8 +1268,8 @@ export const admins = [
     "hsr",
     "clash-of-clan",
     "clash-royale",
-    "delta-force",
-    "pubgm"
+    "df",
+    "pubg"
   ],
   whatsapp: "6282177517990",
   channels: [
@@ -1284,12 +1311,12 @@ export const admins = [
       "whatsapp"
     ],
     games: [
-      "genshin",
+      "gi",
       "hsr",
       "ak",
       "ba",
       "pgr",
-      "hi3",
+      "hi",
       "zzz",
       "persona"
     ],
@@ -1335,7 +1362,7 @@ export const admins = [
       "whatsapp"
     ],
     games: [
-      "uma"
+      "umamusume",
     ],
     whatsapp: "6282114911824",
     channels: [
@@ -1385,11 +1412,11 @@ export const admins = [
       "discord"
     ],
     games: [
-      "genshin",
+      "gi",
       "hsr",
       "zzz",
       "strinova",
-      "delta-force",
+      "df",
       "gtav",
       "valorant"
     ],
@@ -1463,7 +1490,7 @@ export const admins = [
       "ak",
       "ba",
       "pgr",
-      "hi3",
+      "hi",
       "reverse",
       "1999"
     ],
@@ -1516,7 +1543,7 @@ export const admins = [
     ],
     games: [
       "mlbb",
-      "genshin",
+      "gi",
       "wuwa",
       "fps"
     ],
@@ -1698,7 +1725,7 @@ export const admins = [
     ],
     games: [
       "ak",
-      "hi3",
+      "hi",
       "al"
     ],
     whatsapp: "6287784093452",
@@ -1765,6 +1792,13 @@ export const admins = [
         role: "admin",
         responsibility: "Menyambut dan mengawasi member, menjawab pertanyaan member, eksekusi member yang melanggar peraturan grup",
         isPrimary: true
+      },
+      {
+        platform: "instagram",
+        url: "https://www.instagram.com/bagas_zaychik?igsh=MXJ6aGFoY2hiNXdtdg==",
+        role: "Owner akun",
+        responsibility: "Akun Instagram Pribadi",
+        isPrimary: true
       }
     ]
   },
@@ -1804,9 +1838,8 @@ export const admins = [
     games: [
       "hsr",
       "ak",
-      "hi3",
-      "fellow-moon",
-      "reverse-1999",
+      "hi",
+      "reverse",
       "fgo",
       "lads"
     ],
@@ -1857,7 +1890,7 @@ export const admins = [
       "discord"
     ],
     games: [
-      "genshin",
+      "gi",
       "hsr",
       "wuwa",
       "roblox",
@@ -2273,7 +2306,7 @@ export const admins = [
       "hsr",
       "wuwa",
       "ak",
-      "hi3"
+      "hi"
     ],
     whatsapp: "#",
     discord: "https://discord.gg/urdnK2RU",
@@ -2374,10 +2407,10 @@ export const admins = [
     ],
     games: [
       "mlbb",
-      "genshin",
+      "gi",
       "hsr",
       "wuwa",
-      "hi3",
+      "hi",
       "zzz"
     ],
     whatsapp: "#",
@@ -2510,11 +2543,11 @@ export const admins = [
     games: [
       "hsr",
       "wuwa",
-      "hi3",
+      "hi",
       "valorant",
       "minecraft",
-      "uma",
-      "reverse-1999"
+      "umamusume",
+      "reverse"
     ],
     whatsapp: "201505839660",
     channels: [
@@ -2559,7 +2592,8 @@ export const admins = [
       "mlbb",
       "wuwa",
       "ba",
-      "al"
+      "al",
+      "valorant"
     ],
     whatsapp: "6287769176886",
     channels: [
@@ -2569,6 +2603,13 @@ export const admins = [
         role: "admin",
         responsibility: "Memantau Discord",
         isPrimary: false
+      },
+      {
+        platform: "discord",
+        url: "https://discord.gg/QgwJqq89",
+        role: "Moderator",
+        responsibility: "Memantau Discord",
+        isPrimary: true
       }
     ]
   },
@@ -2645,7 +2686,7 @@ export const admins = [
     games: [
       "ba",
       "pgr",
-      "gt",
+      "guardiantales",
       "gbf"
     ],
     whatsapp: "6281221529216",
@@ -2691,7 +2732,7 @@ export const admins = [
       "whatsapp"
     ],
     games: [
-      "genshin",
+      "gi",
       "pjsk"
     ],
     whatsapp: "6285171076225",
@@ -2819,7 +2860,7 @@ export const admins = [
       "whatsapp"
     ],
     games: [
-      "genshin",
+      "gi",
       "wuwa",
       "minecraft"
     ],
@@ -2866,9 +2907,9 @@ export const admins = [
       "hsr",
       "ak",
       "ba",
-      "hi3",
+      "hi",
       "zzz",
-      "limbus-company",
+      "limbus",
       "umamusume"
     ],
     whatsapp: "62895806428239",
@@ -2986,7 +3027,7 @@ export const admins = [
 
   {
     slug: "gavrill",
-    name: "Hilmi",
+    name: "Gavriil",
     img: "/admins/gavrill.jpg",
     role: "Admin",
     gender: "laki laki",
@@ -3011,7 +3052,7 @@ export const admins = [
     ],
     games: [
       "mlbb",
-      "genshin"
+      "gi"
     ],
     whatsapp: "6285314370807",
     channels: [
@@ -3059,7 +3100,7 @@ export const admins = [
       "discord"
     ],
     games: [
-      "genshin",
+      "gi",
       "hsr",
       "wuwa",
       "ak",
@@ -3137,7 +3178,10 @@ export const admins = [
     gender: "perempuan",
     skills: [
       "Bantu translate CN dari game manapun",
-      "mampu mengajar CN diluar kegiatan tugas sebagai admin translator CN"
+      "mampu mengajar CN diluar kegiatan tugas sebagai admin translator CN",
+      "Cosplay",
+      "Make Up",
+      "Dance"
     ],
     responsibility: "Membantu admin leak terjemahkan CN",
     joined: 2024,
@@ -3157,7 +3201,7 @@ export const admins = [
     ],
     games: [
       "wuwa",
-      "hi3",
+      "hi",
       "roblox"
     ],
     whatsapp: "6282188884208 ",
@@ -3168,6 +3212,13 @@ export const admins = [
         role: "Translator",
         responsibility: "Penerjemah CN Komunitas",
         isPrimary: true
+      },
+      {
+        platform: "instagram",
+        url: "https://www.instagram.com/islandleen_?igsh=bjhnMmRpZG4xdHkz&utm_source=qr",
+        role: "Owner Akun",
+        responsibility: "Sebagai Cosplayer",
+        isPrimary: false
       },
          ]
   },
@@ -3188,7 +3239,13 @@ export const admins = [
   lastUpdated: "2025-10-07T12:00:05.000Z",
 
   platforms: ["whatsapp", "discord"],
-  games: ["gi", "ak", "pjsk", "bandori", "limbus", "tot"],
+  games: [
+    "gi",
+    "ak",
+    "pjsk",
+    "limbus",
+    "tot"
+  ],
 
   discord: "https://discord.com/invite/QhSe6q7g",
 
@@ -3239,7 +3296,7 @@ export const admins = [
   lastUpdated: "2025-10-07T12:00:15.000Z",
 
   platforms: ["whatsapp"],
-  games: ["genshin", "hsr", "wuwa", "ba", "hi3", "zzz", "persona"],
+  games: ["gi", "hsr", "wuwa", "ba", "hi", "zzz", "persona"],
 
   channels: [
     { platform: "whatsapp", role: "admin", responsibility: "Moderasi & bantuan member.", isPrimary: true }
@@ -3287,7 +3344,7 @@ export const admins = [
   lastUpdated: "2025-10-07T12:00:25.000Z",
 
   platforms: ["whatsapp", "discord"],
-  games: ["mlbb", "wuwa", "pjsk", "uma"],
+  games: ["mlbb", "wuwa", "pjsk", "umamusume"],
 
   whatsapp: "6287888350801",
   discord: "https://discord.gg/butterchipstm",
@@ -3435,7 +3492,7 @@ export const admins = [
       "discord"
     ],
     games: [
-      "genshin",
+      "gi",
       "persona",
       "NFS"
     ],
@@ -3485,7 +3542,7 @@ export const admins = [
     ],
     games: [
       "mlbb",
-      "genshin",
+      "gi",
       "hsr",
       "wuwa",
       "Free fire"
@@ -3528,12 +3585,15 @@ export const admins = [
       "discord"
     ],
     games: [
-      "genshin",
+      "gi",
       "hsr",
       "wuwa",
       "zzz",
       "roblox",
-      "Path to Nowhere"
+      "hi",
+      "valorant",
+      "pgr",
+      "guardiantales"
     ],
     whatsapp: "6281384322093",
     discord: "https://discordapp.com/al_schariac/69685309643",
@@ -3628,9 +3688,9 @@ export const admins = [
       "whatsapp"
     ],
     games: [
-      "genshin",
+      "gi",
       "hsr",
-      "hi3",
+      "hi",
       "roblox"
     ],
     whatsapp: "6288233869471",
@@ -3644,7 +3704,126 @@ export const admins = [
         isPrimary: true
       }
     ]
-  }
+  },
+  {
+  slug: "mizi",
+  name: "Mizuno Shinryu",
+  img: "/admins/mizi.jpg",
+  role: "Moderator",
+  gender: "laki laki",
+  skills: ["Strategy", "Video Editing", "Design"],
+  responsibility: "Menjaga keamanan dan managing server Discord GCV, serta mengunggah postingan di website manga GCV.",
+  joined: 2025,
+
+  divisions: ["Posting", "Discord"],
+  languages: ["ID", "EN"],
+  timezone: "UTC+7 (Jakarta)",
+  status: "active",
+  lastUpdated: "2025-10-10T12:00:00.000Z",
+
+  platforms: ["whatsapp", "discord"],
+  games: ["mlbb", "gi", "hsr", "wuwa", "hi", "zzz", "roblox"],
+
+  whatsapp: "",
+  discord: "#",
+
+  channels: [
+    {
+      platform: "whatsapp",
+      contact: "",
+      role: "admin",
+      responsibility: "Koordinasi posting & informasi komunitas.",
+      isPrimary: false
+    },
+    {
+      platform: "discord",
+      url: "https://discord.gg/xxxxx",
+      role: "moderator",
+      responsibility: "Menjaga keamanan dan mengelola server Discord GCV.",
+      isPrimary: true
+    }
+  ]
+},
+{
+  slug: "runa",
+  name: "Runa",
+  img: "/admins/runa.jpg",
+  role: "Mascot",
+  gender: "perempuan",
+  skills: [
+    "Kecerdasan Buatan",
+    "Asisten Cerdas Komunitas",
+    "Konsultasi Kesehatan Mental",
+    "Pemegang Database Komunitas Gachaverse"
+  ],
+  responsibility: "AI Asisten Komunitas Gachaverse.",
+  joined: 2025,
+
+  divisions: [
+    "Babel",
+    "Posting",
+    "Translator",
+    "AI",
+    "Semua Divisi",
+  ],
+  languages: ["Semua Bahasa"],
+  timezone: "tidak realtime",
+  status: "active",
+  lastUpdated: "2025-10-10T12:00:00.000Z",
+
+  platforms: ["discord", "ai"],
+  games: [],
+
+  channels: [
+    {
+      platform: "whatsapp",
+      contact: "6285179546561",
+      role: "Mascot",
+      responsibility: "Persona of AI Gachaverse.",
+      isPrimary: true
+    }
+  ]
+},
+{
+  slug: "loaw",
+  name: "Lowaa",
+  img: "/admins/lowaa.jpg",
+  role: "Moderator",
+  gender: "laki laki",
+  skills: ["Moderating", "Guide", "Strategy"],
+  responsibility: "Moderating server Discord.",
+  joined: 2025,
+
+  divisions: ["Discord"],
+  languages: ["ID", "EN"],
+  timezone: "WIB",
+  status: "active",
+  lastUpdated: "2025-10-10T12:00:00.000Z",
+
+  platforms: ["whatsapp", "discord"],
+  games: ["hsr", "hi3", "al"],
+
+  whatsapp: "6282143961401",
+  discord: "https://discord.com/users/903068305663881249",
+
+  channels: [
+    {
+      platform: "whatsapp",
+      contact: "6282143961401",
+      role: "admin",
+      responsibility: "Koordinasi moderasi & laporan.",
+      isPrimary: false
+    },
+    {
+      platform: "discord",
+      url: "https://discord.com/users/903068305663881249",
+      role: "moderator",
+      responsibility: "Moderating server Discord.",
+      isPrimary: true
+    }
+  ]
+},
+
 ];
 
 export function getAdminBySlug(slug) {

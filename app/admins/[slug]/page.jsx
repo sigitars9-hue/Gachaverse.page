@@ -200,7 +200,7 @@ const GAME_ICON_MAP = {
   ba:      { base: '/icons/games/ba',      title: 'Blue Archive' },
   pgr:     { base: '/icons/games/pgr',     title: 'Punishing: Gray Raven' },
   wuwa:    { base: '/icons/games/wuwa',    title: 'Wuthering Waves' },
-  hi3:     { base: '/icons/games/hi3',     title: 'Honkai Impact 3rd' },
+  hi:     { base: '/icons/games/hi',     title: 'Honkai Impact 3rd' },
   zzz:     { base: '/icons/games/zzz',     title: 'Zenless Zone Zero' },
   al:      { base: '/icons/games/al',      title: 'Azur Lane' },
   gfl:     { base: '/icons/games/gfl',    title: 'Girls’ Frontline' },
@@ -217,13 +217,14 @@ const GAME_ICON_MAP = {
   gbf:  { base: '/icons/games/gbf',  title: 'Granblue Fantasy' },
   fgo:  { base: '/icons/games/fgo',  title: 'Fate Grand Order' },
   pokemon:  { base: '/icons/games/pokemon',  title: 'Pokemon' },
-  reverse:  { base: '/icons/games/reverse-1999',  title: 'Reverse' },
+  reverse:  { base: '/icons/games/reverse',  title: 'Reverse' },
   mlbb:  { base: '/icons/games/mlbb',  title: 'Mobile Legends: Bang Bang' },
   nc:  { base: '/icons/games/nc',  title: 'Neural Cloud' },
   minecraft:  { base: '/icons/games/minecraft',  title: 'Minecraft' },
   umamusume:  { base: '/icons/games/umamusume',  title: 'Umamusume: Pretty Derby' },
   pubg:  { base: '/icons/games/pubg',  title: 'PUBG' },
-  guardian:  { base: '/icons/games/guardiantales',  title: 'Guardian Tales' },
+  guardiantales:  { base: '/icons/games/guardiantales',  title: 'Guardian Tales' },
+  limbus:  { base: '/icons/games/limbus',  title: 'Limbus Company' },
 
 };
 
@@ -234,7 +235,7 @@ export const GAME_MATCHERS = [
   { key: 'ba',        title: 'Blue Archive',             aliases: ['ba','blue archive'] },
   { key: 'pgr',       title: 'Punishing: Gray Raven',    aliases: ['pgr','punishing gray raven','punishing: gray raven'] },
   { key: 'wuwa',      title: 'Wuthering Waves',          aliases: ['wuwa','wuthering waves'] },
-  { key: 'hi3',       title: 'Honkai Impact 3rd',        aliases: ['hi3','honkai impact 3','honkai impact 3rd','hi3rd'] },
+  { key: 'hi',       title: 'Honkai Impact 3rd',        aliases: ['hi','honkai impact 3','honkai impact 3rd','hi3rd'] },
   { key: 'zzz',       title: 'Zenless Zone Zero',        aliases: ['zzz','zenless zone zero','zenless'] },
   { key: 'al',        title: 'Azur Lane',                aliases: ['al','azur lane'] },
   { key: 'gfl',       title: 'Girls’ Frontline',         aliases: ['gfl','girls frontline',"girls' frontline"] },
@@ -251,13 +252,14 @@ export const GAME_MATCHERS = [
   { key: 'gbf',       title: 'Granblue Fantasy',         aliases: ['gbf','granblue fantasy','gran blue fantasy'] },
   { key: 'fgo',       title: 'Fate Grand Order',         aliases: ['fgo','fate grand order','fate/go'] },
   { key: 'pokemon',   title: 'Pokemon',                  aliases: ['pokemon','pokémon','poke'] },
-  { key: 'reverse',   title: 'Reverse',                  aliases: ['reverse 1999','reverse-1999','reverse'] },
+  { key: 'reverse',   title: 'reverse',                  aliases: ['reverse 1999','reverse-1999','reverse'] },
   { key: 'mlbb',      title: 'Mobile Legends: Bang Bang',aliases: ['mlbb','mobile legends','mobile legends bang bang'] },
   { key: 'nc',        title: 'Neural Cloud',             aliases: ['nc','neural cloud'] },
   { key: 'minecraft', title: 'Minecraft',                aliases: ['minecraft','mc'] },
   { key: 'umamusume', title: 'Umamusume: Pretty Derby',  aliases: ['umamusume','uma musume','pretty derby'] },
   { key: 'pubg',      title: 'PUBG',                     aliases: ['pubg','playerunknown battlegrounds','playerunknown’s battlegrounds'] },
-  { key: 'guardian',  title: 'Guardian Tales',           aliases: ['guardian tales','guardiantales','guardian'] },
+  { key: 'guardiantales',  title: 'Guardian Tales',           aliases: ['guardian tales','guardiantales','guardian'] },
+  { key: 'limbus',    title: 'Limbus Company',           aliases: ['limbus company','limbus','limbus: company'] },
 ];
 
 const PLATFORM_ICONS = {
@@ -408,16 +410,16 @@ export function normalizeGames(list) {
     'fate grand order': 'grand-order', 'fate/grand order': 'grand-order',
 
     // Guardian Tales
-    'guardian tales': 'guardian-tales', 'guardiantales': 'guardian-tales',
+    'guardiantales': 'guardiantales', 'guardian tales': 'guardiantales',
 
     // Honkai Impact 3rd
-    'hi3': 'hi3rd', 'hi3rd': 'hi3rd', 'honkai impact 3rd': 'hi3rd',
+    'hi': 'hi',
 
     // Honkai: Star Rail
     'hsr': 'hsr', 'honkai star rail': 'hsr', 'honkai: star rail': 'hsr', 'star rail': 'hsr',
 
     // Limbus Company
-    'limbus company': 'limbus-company', 'limbuscompany': 'limbus-company',
+    'limbus': 'limbus',
 
     // LaDS (internal)
     'lads': 'lads',
@@ -451,7 +453,7 @@ export function normalizeGames(list) {
     'pubg': 'pubg', 'pubg mobile': 'pubg',
 
     // Reverse: 1999
-    'reverse 1999': 'reverse-1999', 'r1999': 'reverse-1999',
+    'reverse': 'reverse',
 
     // Roblox
     'roblox': 'roblox',
