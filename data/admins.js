@@ -294,7 +294,7 @@ export const admins = [
 
   {
     slug: "yasan",
-    name: "yasan",
+    name: "Mel",
     img: "/admins/yasan.jpg",
     role: "Admin",
     gender: "laki laki",
@@ -1470,7 +1470,8 @@ export const admins = [
     skills: [
       "Typesetter",
       "Manga",
-      "Game Information"
+      "Game Information",
+      "Server Moderator (Discord)"
     ],
     responsibility: "mengawasi traffic discord",
     joined: 2023,
@@ -2411,7 +2412,10 @@ export const admins = [
     status: "active",
     lastUpdated: "2025-10-06T14:35:18.000Z",
     platforms: [
-      "discord"
+      "discord",
+      "whatsapp",
+      "instagram",
+      "X"
     ],
     games: [
       "mlbb",
@@ -2427,7 +2431,7 @@ export const admins = [
       {
         platform: "whatsapp",
         contact: "",
-        role: "admin",
+        role: "Sekretaris",
         responsibility: "Mengatur Pencatatan GVStore, Mengatur Admin Grup Anak Coklat Moonton, Prompter Yura AI, Worker Joki",
         isPrimary: true
       },
@@ -2765,7 +2769,7 @@ export const admins = [
       "Video editing",
       "graphic designer"
     ],
-    responsibility: "Mengatur ketertiban di dalam grup",
+    responsibility: "Menjaga keamanan casual",
     joined: 2025,
     divisions: [
       "Admin Grup"

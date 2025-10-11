@@ -28,5 +28,5 @@ export const groups = [
   { name: "GVstore",               category: "JB All Game",            monthlyChats: 387,   link: waGroup("H89rNmnlzV76nXxZ4tdyhw") },
   { name: "Detektif Gelap",        category: "Silver Palace",          monthlyChats:  43,   link: waGroup("KdasdzO5sRa60JcMuQCdFP") },
   { name: "Seputar AI",            category: "AI & Bot",               monthlyChats:  88,   link: waGroup("IzgmV1fL8GKHpmNZ6Yte5i") },
-  { name: "Mahasiswa Abadi",       category: "all About Mahasigma",    monthlyChats:  153,  link: waGroup("J9DUWhacx8x4kDoPNetFWK") },
+  { name: "Mahasiswa Abadi",       category: "Mahasigma Abadi",        monthlyChats:  153,  link: waGroup("J9DUWhacx8x4kDoPNetFWK") },
 ];
