@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import AiChatWidget from '../components/AiChatWidget';
 
 /** Jika sudah punya data/gallery.js, ganti konstanta ini dengan import */
 // import { gallery as GALLERY_DATA } from '@/data/gallery';
@@ -1011,6 +1012,7 @@ export default function GachaverseLanding() {
         <Gallery />
         <FAQ />
         <Closing />
+        <AiChatWidget />
       </main>
     </div>
   );

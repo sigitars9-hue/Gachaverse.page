@@ -2,7 +2,8 @@
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import FloatingHeaderControls from "../components/FloatingHeaderControls";
-import ToTopButton from "../components/ToTopButton"; // ← tambahkan ini
+import ToTopButton from "../components/ToTopButton";
+import AiChatWidget from "@/components/AiChatWidget";
 
 export const metadata = {
   title: "Gachaverse.id",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         {/* jika perlu geser posisinya:
         <ToTopButton className="bottom-24 right-6 md:bottom-10" />
         */}
+          <AiChatWidget />
       </body>
     </html>
   );
