@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
@@ -25,9 +26,9 @@ const GALLERY_DATA = [
   { src: '/gallery/cos-3.jpeg', title: 'CF20 Day 2', date: '2025-05-25', location: 'ICE BSD, Tangerang', desc: 'Sesi foto bersama member dan admin.' },
   { src: '/gallery/cos-4.jpeg', title: 'Meet and Play Maimai', date: '2025-09-28', location: 'Mall Ciputra Cibubur', desc: 'Arcade Games.' },
   { src: '/gallery/cos-5.jpeg', title: 'CF20 Day 2', date: '2025-05-25', location: 'ICE BSD, Tangerang', desc: 'Rame-rame setelah event utama.' },
-  { src: '/gallery/cos-6.jpeg', title: 'Nobar dan Bertemu Foundah', date: '2025-05-11', location: 'BSD, Tangerang', desc: 'Nobar COLORFUL STAGE! THE MOVIE: A MIKU WHO CANT SING.' },
+  { src: '/gallery/cf22.jpeg', title: 'CF22', date: '2025-11-16', location: 'ICE BSD, Tangerang', desc: 'Foto bersama komunitas gachaverse.id dan Maskot Yura Naomi' },
 ];
-// --- POJOK KREASI: daftar karya/kreasi ---
+
 const CREATIONS = [
   { src: '/kreasi/yura-1.jpg', credit: '@maehel.heehl' },
   { src: '/kreasi/yura-2.jpg', credit: '@jody_winner' },
@@ -46,11 +47,11 @@ const NAV = [
   { href: '#events', label: 'Event' },
   { href: '#admins', label: 'Admin' },
   { href: '#groups', label: 'Grup WA' },
-  { href: '#discord', label: 'Discord' },   // 🔹 ditambah
+  { href: '#discord', label: 'Discord' },
   { href: '#sponsors', label: 'Sponsor' },
   { href: '#gallery', label: 'Galeri' },
-  { href: '#faq', label: 'FAQ' },           // 🔹 ditambah
-  { href: '#join', label: 'Gabung' },       // 🔹 ditambah
+  { href: '#faq', label: 'FAQ' },
+  { href: '#join', label: 'Gabung' },
 ];
 
 const ADMIN_PREVIEW = [
@@ -63,69 +64,15 @@ const ADMIN_PREVIEW = [
 ];
 
 const MEDIA_PARTNERS = [
-  {
-    name: '@alvethia.logic',
-    url: 'https://www.instagram.com/alvethia.logic?igsh=aTloMzJ3cW41aTg5',
-    topic: 'Epistemologi & interpretasi lore HI3',
-    followers: '10,3 K',
-    avatar: '/partners/alvethia.jpg',
-  },
-  {
-    name: '@reverse1999.fyi',
-    url: 'https://www.instagram.com/reverse1999.fyi?igsh=MXdpamR6cXI4aWQ4Zw==',
-    topic: 'Reverse 1999',
-    followers: '890',
-    avatar: '/partners/reverse1999fyi.jpg',
-  },
-  {
-    name: '@reverse_1999_indonesia',
-    url: 'https://www.instagram.com/reverse_1999_indonesia?igsh=MTZhbXc1c3N3ZXpsNA==',
-    topic: 'Reverse 1999',
-    followers: '2.539',
-    avatar: '/partners/reverse1999indo.jpg',
-  },
-  {
-    name: '@kapten.semmelweiss',
-    url: 'https://www.instagram.com/kapten.semmelweiss?igsh=ZzFiYnJ2MmxnYWlh',
-    topic: 'Reverse: 1999, info seputar Arcanist, dll.',
-    followers: '445',
-    avatar: '/partners/kapten-semmelweiss.jpg',
-  },
-  {
-    name: '@kysekai.id',
-    url: 'https://www.instagram.com/kysekai.id?igsh=MW5maTB0eWlnM3ZkeA==',
-    topic: 'Project Sekai',
-    followers: '15,9 K',
-    avatar: '/partners/kysekai.jpg',
-  },
-  {
-    name: '@bigbob_arknights',
-    url: 'https://www.instagram.com/bigbob_arknights?igsh=MXd6cGpwaWt4b3oxbw==',
-    topic: 'Arknights',
-    followers: '3.770',
-    avatar: '/partners/bigbob.jpg',
-  },
-  {
-    name: '@infoarknights.id',
-    url: 'https://www.instagram.com/infoarknights.id',
-    topic: 'Arknights',
-    followers: '13,6 K',
-    avatar: '/partners/infoarknights.jpg',
-  },
-  {
-    name: '@fategrand_indonesia',
-    url: 'https://www.instagram.com/fategrand_indonesia?igsh=ajB5b2lkdGR0NjY3',
-    topic: 'Seputar info Fate Series',
-    followers: '1.927',
-    avatar: '/partners/fategrand-id.jpg',
-  },
-  {
-    name: '@neo_fgo_world',
-    url: 'https://www.instagram.com/neo_fgo_world?igsh=MXRzNHNva29uZmM4Yw==',
-    topic: 'All content Type-Moon',
-    followers: '2.851',
-    avatar: '/partners/neo-fgo-world.jpg',
-  },
+  { name: '@alvethia.logic', url: 'https://www.instagram.com/alvethia.logic?igsh=aTloMzJ3cW41aTg5', topic: 'Epistemologi & interpretasi lore HI3', followers: '10,3 K', avatar: '/partners/alvethia.jpg' },
+  { name: '@reverse1999.fyi', url: 'https://www.instagram.com/reverse1999.fyi?igsh=MXdpamR6cXI4aWQ4Zw==', topic: 'Reverse 1999', followers: '890', avatar: '/partners/reverse1999fyi.jpg' },
+  { name: '@reverse_1999_indonesia', url: 'https://www.instagram.com/reverse_1999_indonesia?igsh=MTZhbXc1c3N3ZXpsNA==', topic: 'Reverse 1999', followers: '2.539', avatar: '/partners/reverse1999indo.jpg' },
+  { name: '@kapten.semmelweiss', url: 'https://www.instagram.com/kapten.semmelweiss?igsh=ZzFiYnJ2MmxnYWlh', topic: 'Reverse: 1999, info seputar Arcanist, dll.', followers: '445', avatar: '/partners/kapten-semmelweiss.jpg' },
+  { name: '@kysekai.id', url: 'https://www.instagram.com/kysekai.id?igsh=MW5maTB0eWlnM3ZkeA==', topic: 'Project Sekai', followers: '15,9 K', avatar: '/partners/kysekai.jpg' },
+  { name: '@bigbob_arknights', url: 'https://www.instagram.com/bigbob_arknights?igsh=MXd6cGpwaWt4b3oxbw==', topic: 'Arknights', followers: '3.770', avatar: '/partners/bigbob.jpg' },
+  { name: '@infoarknights.id', url: 'https://www.instagram.com/infoarknights.id', topic: 'Arknights', followers: '13,6 K', avatar: '/partners/infoarknights.jpg' },
+  { name: '@fategrand_indonesia', url: 'https://www.instagram.com/fategrand_indonesia?igsh=ajB5b2lkdGR0NjY3', topic: 'Seputar info Fate Series', followers: '1.927', avatar: '/partners/fategrand-id.jpg' },
+  { name: '@neo_fgo_world', url: 'https://www.instagram.com/neo_fgo_world?igsh=MXRzNHNva29uZmM4Yw==', topic: 'All content Type-Moon', followers: '2.851', avatar: '/partners/neo-fgo-world.jpg' },
 ];
 
 const SPONSORS = [
@@ -135,26 +82,10 @@ const SPONSORS = [
 ];
 
 const GROUPS = [
-  {
-    name: 'Honkai: Star Rail',
-    desc: 'Diskusi meta, build, banner, dan tanya sepuh.',
-    link: 'https://chat.whatsapp.com/FFKfA8EM0Bw3O9FwXilRjl'
-  },
-  {
-    name: 'Genshin Impact',
-    desc: 'Diskusi build, rotasi, dan tanya sepuh.',
-    link: 'https://chat.whatsapp.com/KHeINGtWIlKK1smxuIatwr'
-  },
-  {
-    name: 'Wuthering Waves',
-    desc: 'Echo route, boss timer, dan tanya sepuh.',
-    link: 'https://chat.whatsapp.com/Dk25iGaF4siE0zUbRmQl1J'
-  },
-  {
-    name: 'Arknights',
-    desc: 'Guide CC, base layout, pull discuss dan tanya sepuh.',
-    link: 'https://chat.whatsapp.com/LHVEp4pNskdCm3nIqIZmot'
-  },
+  { name: 'Honkai: Star Rail', desc: 'Diskusi meta, build, banner, dan tanya sepuh.', link: 'https://chat.whatsapp.com/FFKfA8EM0Bw3O9FwXilRjl' },
+  { name: 'Genshin Impact', desc: 'Diskusi build, rotasi, dan tanya sepuh.', link: 'https://chat.whatsapp.com/KHeINGtWIlKK1smxuIatwr' },
+  { name: 'Wuthering Waves', desc: 'Echo route, boss timer, dan tanya sepuh.', link: 'https://chat.whatsapp.com/Dk25iGaF4siE0zUbRmQl1J' },
+  { name: 'Arknights', desc: 'Guide CC, base layout, pull discuss dan tanya sepuh.', link: 'https://chat.whatsapp.com/LHVEp4pNskdCm3nIqIZmot' },
 ];
 
 const DISCORD = {
@@ -164,15 +95,68 @@ const DISCORD = {
   online: 297,
   members: 1527,
 };
+
 const AI_CONTACTS = {
-  // Ganti nomor/link sesuai kebutuhan
   waBot: 'https://wa.me/6285179546561?text=Halo%20mau%20pakai%20Bot%20WhatsApp',
   ocr:   '#',
-  // Asisten komunitas aku arahkan ke Discord/WA
   assistant:'https://wa.me/6285179546561?text=Halo%20Yura%20Apakah%20Yura%2FOnline',
 };
 
 /* ==================== UI helpers ==================== */
+/** Hook REVEAL (JS murni) */
+function useReveal() {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  const [past, setPast] = useState(false);
+
+  // Visible via IntersectionObserver
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const el = ref.current;
+    if (!el) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) setVisible(true);
+          else setVisible(false);
+        }
+      },
+      { threshold: 0.15, rootMargin: '-5% 0px -5% 0px' }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  // Past (sudah lewat atas) via rAF-throttled scroll
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const el = ref.current;
+    if (!el) return;
+
+    let raf = 0;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const rect = el.getBoundingClientRect();
+        const isPast = rect.bottom < window.innerHeight * 0.18;
+        setPast(isPast && rect.top < 0);
+      });
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  return { ref, visible, past };
+}
+
 function NavBar() {
   const [open, setOpen] = useState(false);
 
@@ -184,7 +168,6 @@ function NavBar() {
             <img src="/logo-text.png" alt="Gachaverse.id" className="h-8 w-auto" loading="lazy" decoding="async" />
           </a>
 
-          {/* desktop nav */}
           <nav className="hidden md:flex items-center gap-6 text-sm text-white/80">
             {NAV.map(n => (
               <a key={n.href} href={n.href} className="hover:text-white transition-colors">{n.label}</a>
@@ -194,7 +177,6 @@ function NavBar() {
             </a>
           </nav>
 
-          {/* mobile quick actions + menu */}
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={() => setOpen(v => !v)}
@@ -207,7 +189,6 @@ function NavBar() {
         </div>
       </div>
 
-      {/* mobile menu panel */}
       {open && (
         <div className="md:hidden border-t border-white/10 bg-black/90">
           <div className="mx-auto max-w-7xl px-4 py-3 space-y-2 text-white/80">
@@ -230,13 +211,11 @@ function Hero() {
   const reduce = useReducedMotion();
   return (
     <section id="top" className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-black">
-      {/* BG statis (ringan) */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-black" />
         <div className="absolute inset-0 bg-[url('/banner.jpg')] bg-cover bg-[position:center_35%] opacity-15" />
       </div>
 
-      {/* Konten */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 text-center pt-28 md:pt-32">
         {reduce ? (
           <div className="flex flex-col items-center gap-8">
@@ -249,7 +228,6 @@ function Hero() {
               </a>
               <a href="#join" className="inline-flex items-center gap-2 rounded-2xl border border-white/20 px-5 py-3 text-white/90 hover:bg-white/10">Gabung Komunitas</a>
             </div>
-            {/* METRIK → LINK */}
             <div className="mt-8 grid grid-cols-3 gap-4 text-xs text-white/70">
               <Link href="/admins" className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
                 80 Lebih Admin
@@ -263,12 +241,7 @@ function Hero() {
             </div>
           </div>
         ) : (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col items-center gap-8"
-          >
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="flex flex-col items-center gap-8">
             <img src="/logo-text.png" alt="Gachaverse.id" className="w-[320px] sm:w-[420px]" loading="lazy" decoding="async" />
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">All About Gacha</h1>
             <p className="max-w-2xl text-white/80">Gachaverse.id adalah rumah bagi para penggemar game gacha di Indonesia. Kami menyatukan pemain, kreator, cosplayer, dan penggemar dalam satu komunitas yang aktif dan menyenangkan.</p>
@@ -278,7 +251,6 @@ function Hero() {
               </a>
               <a href="#join" className="inline-flex items-center gap-2 rounded-2xl border border-white/20 px-5 py-3 text-white/90 hover:bg-white/10">Gabung Komunitas</a>
             </div>
-            {/* METRIK → LINK */}
             <div className="mt-8 grid grid-cols-3 gap-4 text-xs text-white/70">
               <Link href="/admins" className="rounded-xl bg-white/5 px-4 py-3 md:backdrop-blur hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
                 80 Lebih Admin
@@ -299,38 +271,52 @@ function Hero() {
   );
 }
 
+/** SECTION dengan efek reveal + fade-out atas */
 function Section({ id, icon: Icon, title, subtitle, children }) {
+  const reduce = useReducedMotion();
+  const { ref, visible, past } = useReveal();
+
+  const variants = reduce
+    ? { show: { opacity: 1, y: 0 }, hide: { opacity: 1, y: 0 } }
+    : {
+        show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 0.61, 0.36, 1] } },
+        hide: { opacity: 0, y: 12, transition: { duration: 0.45 } },
+      };
+
+  const passedClass = past ? 'opacity-0 pointer-events-none' : '';
+
   return (
     <section
       id={id}
-      className="relative scroll-mt-24 bg-black"
+      ref={ref}
+      className={`relative scroll-mt-24 bg-black transition-opacity duration-500 ${passedClass}`}
       style={{
         contentVisibility: 'auto',
         containIntrinsicSize: '800px',
         contain: 'layout paint style',
       }}
     >
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-10 flex items-center gap-3">
-          <div className="rounded-2xl bg-blue-600/20 p-2 text-blue-400">
-            <Icon className="h-6 w-6" />
+      <motion.div initial="hide" animate={visible ? 'show' : 'hide'} variants={variants}>
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mb-10 flex items-center gap-3">
+            <div className="rounded-2xl bg-blue-600/20 p-2 text-blue-400">
+              <Icon className="h-6 w-6" />
+            </div>
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">{title}</h2>
+              {subtitle && <p className="text-white/70">{subtitle}</p>}
+            </div>
           </div>
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">{title}</h2>
-            {subtitle && <p className="text-white/70">{subtitle}</p>}
-          </div>
+          {children}
         </div>
-        {children}
-      </div>
+      </motion.div>
     </section>
   );
 }
 
 function Card({ children, className = '' }) {
   return (
-    <div
-      className={`group rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:backdrop-blur shadow-lg shadow-black/30 transition-transform duration-200 md:hover:-translate-y-1 ${className}`}
-    >
+    <div className={`group rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:backdrop-blur shadow-lg shadow-black/30 transition-transform duration-200 md:hover:-translate-y-1 ${className}`}>
       {children}
     </div>
   );
@@ -362,53 +348,31 @@ function About() {
 }
 
 function AIBot() {
-  const btnClass =
-    "mt-4 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-500";
+  const btnClass = "mt-4 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-500";
 
   return (
     <Section id="ai-bot" icon={Bot} title="Dukungan AI & Bot" subtitle="Inovasi untuk mempermudah komunitas">
       <div className="grid gap-6 md:grid-cols-3">
         <Card>
           <h3 className="mb-2 text-lg font-semibold text-white">Bot WhatsApp</h3>
-          <p className="text-white/70">
-            Bot otomatis untuk cek banner, info event, hingga log aktivitas grup secara cepat.
-          </p>
-          <a
-            href={AI_CONTACTS.waBot}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={btnClass}
-          >
+          <p className="text-white/70">Bot otomatis untuk cek banner, info event, hingga log aktivitas grup secara cepat.</p>
+          <a href={AI_CONTACTS.waBot} target="_blank" rel="noopener noreferrer" className={btnClass}>
             Chat sekarang <ChevronRight className="h-4 w-4" />
           </a>
         </Card>
 
         <Card>
-          <h3 className="mb-2 text-lg font-semibold text-white">AI Vision & OCR</h3>
-          <p className="text-white/70">
-            Membaca hasil gacha, teks di gambar, dan fitur vision untuk event interaktif.
-          </p>
-          <a
-            href={AI_CONTACTS.ocr}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={btnClass}
-          >
-            On Going <ChevronRight className="h-4 w-4" />
+          <h3 className="mb-2 text-lg font-semibold text-white">AI Multimodal</h3>
+          <p className="text-white/70">Membaca gambar, Respon interaktif, dan 99% seperti chat dengan manusia.</p>
+          <a href={AI_CONTACTS.ocr} target="_blank" rel="noopener noreferrer" className={btnClass}>
+            Chat Sekarang <ChevronRight className="h-4 w-4" />
           </a>
         </Card>
 
         <Card>
           <h3 className="mb-2 text-lg font-semibold text-white">Asisten Komunitas</h3>
-          <p className="text-white/70">
-            AI persona seperti Yura Naomi yang siap membantu member.
-          </p>
-          <a
-            href={AI_CONTACTS.assistant}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={btnClass}
-          >
+          <p className="text-white/70">AI persona seperti Yura Naomi yang siap membantu member.</p>
+          <a href={AI_CONTACTS.assistant} target="_blank" rel="noopener noreferrer" className={btnClass}>
             Chat sekarang <ChevronRight className="h-4 w-4" />
           </a>
         </Card>
@@ -420,15 +384,9 @@ function AIBot() {
 function EventCard({ badge, title, desc, href = "#", img, ctaText = "Ikut sekarang" }) {
   return (
     <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/90 shadow-xl">
-      {/* Foto */}
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-right bg-cover md:bg-[length:auto_120%]"
-        style={{ backgroundImage: `url('${img}')` }}
-      />
+      <div aria-hidden className="absolute inset-0 bg-right bg-cover md:bg-[length:auto_120%]" style={{ backgroundImage: `url('${img}')` }} />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent" />
 
-      {/* Konten */}
       <div className="relative p-6 md:p-8 lg:p-10 max-w-[680px]">
         <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-xs text-blue-300/90 ring-1 ring-white/10">
           <Stars className="h-3.5 w-3.5" />
@@ -438,12 +396,7 @@ function EventCard({ badge, title, desc, href = "#", img, ctaText = "Ikut sekara
         <h3 className="text-xl font-semibold text-white">{title}</h3>
         <p className="mt-2 text-white/80">{desc}</p>
 
-        <a
-          href={href}
-          className={`mt-5 inline-flex items-center gap-2 rounded-2xl border border-white/15 px-4 py-2 text-sm text-white ${
-            ctaText === 'Coming Soon' ? 'cursor-not-allowed opacity-60' : 'hover:bg-white/10'
-          }`}
-        >
+        <a href={href} className={`mt-5 inline-flex items-center gap-2 rounded-2xl border border-white/15 px-4 py-2 text-sm text-white ${ctaText === 'Coming Soon' ? 'cursor-not-allowed opacity-60' : 'hover:bg-white/10'}`}>
           {ctaText}
           {ctaText !== 'Coming Soon' && <ChevronRight className="h-4 w-4" />}
         </a>
@@ -454,45 +407,16 @@ function EventCard({ badge, title, desc, href = "#", img, ctaText = "Ikut sekara
 
 function Events() {
   const EVENTS = [
-    {
-      title: 'Funmatch Mlbb',
-      desc: '5vs5 dengan sistem eliminasi (Minimal 1 bulan ada digrup ACM).',
-      badge: 'Bulanan',
-      img: '/event/mlbb.jpg',
-      href: 'https://chat.whatsapp.com/K77YYPDwx6o8Pj7lfMPBBY',
-      ctaText: 'Segera',
-    },
-    {
-      title: 'Pojok Kreator Event ',
-      desc: 'GFX, ART, dan konten kreatif lainnya. (join grup kreator sekarang)',
-      badge: 'Seasonal',
-      img: '/event/yura-2.jpg',
-      href: 'https://chat.whatsapp.com/E0ORyfe4U6dGzho5gQZz2k',
-      ctaText: 'Segera',
-    },
-    {
-      title: 'Cosplay Meet-Up',
-      desc: 'Sesi foto + mini games di event lokal. (Yura akan datang)',
-      badge: 'Seasonal',
-      img: '/gallery/cos-3.jpeg',
-      href: 'https://chat.whatsapp.com/FpmVawBdqKU60mJYSA6M5s',
-      ctaText: 'November 2025 di Comifuro',
-    },
+    { title: 'Funmatch Mlbb', desc: '5vs5 dengan sistem eliminasi (Minimal 1 bulan ada digrup ACM).', badge: 'Bulanan', img: '/event/mlbb.jpg', href: 'https://chat.whatsapp.com/K77YYPDwx6o8Pj7lfMPBBY', ctaText: 'Segera' },
+    { title: 'Pojok Kreator Event ', desc: 'GFX, ART, dan konten kreatif lainnya. (join grup kreator sekarang)', badge: 'Seasonal', img: '/event/yura-2.jpg', href: 'https://chat.whatsapp.com/E0ORyfe4U6dGzho5gQZz2k', ctaText: 'Segera' },
+    { title: 'Yura Naomi on CF22', desc: 'Foto Bersama Maskot Gachaverse.id', badge: 'Comifuro', img: '/gallery/cf22.jpeg', href: 'https://chat.whatsapp.com/FpmVawBdqKU60mJYSA6M5s', ctaText: '16 November 2025 di Comifuro' },
   ];
 
   return (
     <Section id="events" icon={Trophy} title="Event Komunitas" subtitle="Ikut seru-seruan bareng!">
       <div className="grid gap-6 md:grid-cols-3">
         {EVENTS.map((e) => (
-          <EventCard
-            key={e.title}
-            badge={e.badge}
-            title={e.title}
-            desc={e.desc}
-            img={e.img}
-            href={e.href}
-            ctaText={e.ctaText}
-          />
+          <EventCard key={e.title} badge={e.badge} title={e.title} desc={e.desc} img={e.img} href={e.href} ctaText={e.ctaText} />
         ))}
       </div>
     </Section>
@@ -502,7 +426,6 @@ function Events() {
 function toRoleKey(label = '') {
   return String(label).trim().toLowerCase().replace(/\s+/g, '-');
 }
-
 const ROLE_BADGE = {
   'founder':        'from-amber-500 via-amber-400 to-yellow-400',
   'co-founder':     'from-orange-500 via-amber-500 to-yellow-400',
@@ -511,7 +434,6 @@ const ROLE_BADGE = {
   'sekretaris':     'from-rose-500 via-pink-500 to-fuchsia-500',
   'owner-gvstore':  'from-fuchsia-600 via-pink-600 to-rose-500',
 };
-
 function getRoleGradient(roleLabel) {
   const key = toRoleKey(roleLabel);
   return ROLE_BADGE[key] || 'from-slate-700 via-blue-700 to-sky-600';
@@ -524,29 +446,11 @@ function Admins() {
         {ADMIN_PREVIEW.map((a) => (
           <Link key={a.slug} href={`/admins/${a.slug}`} className="block focus:outline-none group">
             <Card className="text-center p-3 sm:p-4 hover:cursor-pointer">
-              {/* Avatar */}
               <div className="mx-auto mb-2 h-16 w-16 sm:h-20 sm:w-20 overflow-hidden rounded-full border border-white/20 bg-white/10">
                 <img src={a.img} alt={a.name} className="h-full w-full object-cover" loading="lazy" decoding="async" />
               </div>
-
-              {/* Nama */}
-              <div className="text-xs sm:text-sm font-medium text-white/80 leading-tight">
-                {a.name}
-              </div>
-
-              {/* Role badge */}
-              <span
-                className={[
-                  'mt-1.5 inline-flex items-center justify-center rounded-full',
-                  'px-2.5 py-0.5 sm:px-3 sm:py-1',
-                  'text-[11px] sm:text-[12px] font-semibold text-white leading-none',
-                  'bg-gradient-to-r',
-                  getRoleGradient(a.role),
-                  'ring-1 ring-white/10 shadow-[0_6px_20px_rgba(30,58,138,0.25)]',
-                  'max-w-[170px] mx-auto whitespace-normal text-center'
-                ].join(' ')}
-                title={a.role}
-              >
+              <div className="text-xs sm:text-sm font-medium text-white/80 leading-tight">{a.name}</div>
+              <span className={['mt-1.5 inline-flex items-center justify-center rounded-full','px-2.5 py-0.5 sm:px-3 sm:py-1','text-[11px] sm:text-[12px] font-semibold text-white leading-none','bg-gradient-to-r',getRoleGradient(a.role),'ring-1 ring-white/10 shadow-[0_6px_20px_rgba(30,58,138,0.25)]','max-w-[170px] mx-auto whitespace-normal text-center'].join(' ')} title={a.role}>
                 {a.role}
               </span>
             </Card>
@@ -555,10 +459,7 @@ function Admins() {
       </div>
 
       <div className="mt-6 text-center">
-        <Link
-          href="/admins"
-          className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-500"
-        >
+        <Link href="/admins" className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-500">
           Lihat 80+ Admin Lainnya <ChevronRight className="h-4 w-4" />
         </Link>
       </div>
@@ -618,6 +519,7 @@ function DiscordSection() {
   );
 }
 
+/* ====== CreativeCorner (JS murni) ====== */
 function CreativeCorner() {
   const BASE = Array.isArray(CREATIONS) ? CREATIONS : [];
   const SLIDES = [...BASE, ...BASE, ...BASE];
@@ -664,14 +566,20 @@ function CreativeCorner() {
     const measure = () => {
       const first = document.querySelector('.kc-slide');
       if (!first) return;
-      const style = getComputedStyle(first.parentElement);
-      const gap = parseInt(style.columnGap || style.gap || '24', 10);
-      setCardW(first.offsetWidth + gap);
+      const parent = first.parentElement;
+      const style = parent ? getComputedStyle(parent) : null;
+      const gap = style ? parseInt(style.columnGap || style.gap || '24', 10) : 24;
+      setCardW(first.getBoundingClientRect().width + gap);
     };
     measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(document.body);
-    return () => ro.disconnect();
+    const RO = typeof ResizeObserver !== 'undefined' ? ResizeObserver : null;
+    const ro = RO ? new RO(measure) : null;
+    if (ro) ro.observe(document.body);
+    window.addEventListener('resize', measure);
+    return () => {
+      if (ro) ro.disconnect();
+      window.removeEventListener('resize', measure);
+    };
   }, []);
 
   useEffect(() => {
@@ -845,32 +753,14 @@ function CreativeCorner() {
       </div>
 
       <div className="mt-4 flex justify-center gap-3">
-        <button
-          onClick={() => {
-            if (lockedRef.current) return;
-            setIndex((i) => i - 1);
-            beginTransition();
-          }}
-          className="rounded-xl border border-white/15 px-3 py-1.5 text-sm text-white/90 hover:bg-white/10"
-        >
-          ‹
-        </button>
-        <button
-          onClick={() => {
-            if (lockedRef.current) return;
-            setIndex((i) => i + 1);
-            beginTransition();
-          }}
-          className="rounded-xl border border-white/15 px-3 py-1.5 text-sm text-white/90 hover:bg-white/10"
-        >
-          ›
-        </button>
+        <button onClick={() => { if (lockedRef.current) return; setIndex((i) => i - 1); beginTransition(); }} className="rounded-xl border border-white/15 px-3 py-1.5 text-sm text-white/90 hover:bg-white/10">‹</button>
+        <button onClick={() => { if (lockedRef.current) return; setIndex((i) => i + 1); beginTransition(); }} className="rounded-xl border border-white/15 px-3 py-1.5 text-sm text-white/90 hover:bg-white/10">›</button>
       </div>
     </Section>
   );
 }
 
-/* ============== GALLERY with hover/tap overlay ============== */
+/* ====== Gallery ====== */
 function formatDate(idDateLike) {
   try {
     const d = new Date(idDateLike);
@@ -879,7 +769,6 @@ function formatDate(idDateLike) {
     return idDateLike;
   }
 }
-
 function Gallery() {
   const items = Array.isArray(GALLERY_DATA) ? GALLERY_DATA : [];
 
@@ -908,7 +797,6 @@ function Gallery() {
                   />
                 </div>
 
-                {/* Overlay dihover/fokus (md+) */}
                 <div className="pointer-events-none absolute inset-0 hidden md:flex items-end justify-start opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100">
                   <div className="w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
                     <div className="text-white font-semibold">{title}</div>
@@ -921,7 +809,6 @@ function Gallery() {
                   </div>
                 </div>
 
-                {/* Overlay statis di mobile */}
                 <div className="absolute inset-x-0 bottom-0 md:hidden bg-gradient-to-t from-black/70 to-transparent p-2">
                   <div className="text-[13px] font-medium text-white">{title}</div>
                   {(date || location) && (
@@ -944,29 +831,12 @@ function MediaPartners() {
     <Section id="media-partners" icon={Sparkles} title="Media Partner">
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {MEDIA_PARTNERS.map((p) => (
-          <a
-            key={p.name}
-            href={p.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition-colors flex gap-3"
-          >
-            {/* Avatar */}
+          <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition-colors flex gap-3">
             <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
-              <img
-                src={p.avatar}
-                alt={p.name}
-                className="h-full w-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src={p.avatar} alt={p.name} className="h-full w-full object-cover" loading="lazy" decoding="async" />
             </div>
-
-            {/* Detail */}
             <div className="flex flex-col justify-center">
-              <div className="text-sm font-semibold text-white group-hover:text-blue-300">
-                {p.name}
-              </div>
+              <div className="text-sm font-semibold text-white group-hover:text-blue-300">{p.name}</div>
               <div className="text-xs text-white/70">{p.topic}</div>
               <div className="mt-1 inline-block rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] text-white/75">
                 {p.followers} followers
@@ -993,29 +863,13 @@ function Sponsors() {
   );
 }
 
-/* ============== FAQ (baru) ============== */
 function FAQ() {
   const QA = [
-    {
-      q: 'Bagaimana cara bergabung ke komunitas?',
-      a: 'Scroll ke bagian “Grup WhatsApp” dan pilih grup game yang kamu mainkan, atau tekan tombol “Pilih Grup” di bagian Join.',
-    },
-    {
-      q: 'Apakah ada biaya untuk bergabung?',
-      a: 'Tidak ada. Komunitas ini gratis. Pastikan baca peraturan dan ikuti etika komunitas.',
-    },
-    {
-      q: 'Siapa saja admin Gachaverse.id?',
-      a: 'Kami memiliki 80+ admin dari berbagai divisi. Kamu bisa melihat seluruh daftar di halaman /admins.',
-    },
-    {
-      q: 'Kapan ada event komunitas?',
-      a: 'Event berjalan secara berkala. Lihat detailnya pada bagian “Event Komunitas” di halaman ini.',
-    },
-    {
-      q: 'Apakah ada Discord server?',
-      a: 'Ada. Kamu bisa bergabung lewat tombol “Join Discord” pada bagian Server Discord.',
-    },
+    { q: 'Bagaimana cara bergabung ke komunitas?', a: 'Scroll ke bagian “Grup WhatsApp” dan pilih grup game yang kamu mainkan, atau tekan tombol “Pilih Grup” di bagian Join.' },
+    { q: 'Apakah ada biaya untuk bergabung?', a: 'Tidak ada. Komunitas ini gratis. Pastikan baca peraturan dan ikuti etika komunitas.' },
+    { q: 'Siapa saja admin Gachaverse.id?', a: 'Kami memiliki 80+ admin dari berbagai divisi. Kamu bisa melihat seluruh daftar di halaman /admins.' },
+    { q: 'Kapan ada event komunitas?', a: 'Event berjalan secara berkala. Lihat detailnya pada bagian “Event Komunitas” di halaman ini.' },
+    { q: 'Apakah ada Discord server?', a: 'Ada. Kamu bisa bergabung lewat tombol “Join Discord” pada bagian Server Discord.' },
   ];
   return (
     <Section id="faq" icon={HelpCircle} title="FAQ" subtitle="Pertanyaan yang sering ditanyakan">
@@ -1026,9 +880,7 @@ function FAQ() {
               <span className="pr-4">{item.q}</span>
               <span className="ml-2 rounded-md border border-white/10 px-2 py-0.5 text-xs text-white/70 group-open:rotate-90 transition-transform">›</span>
             </summary>
-            <div className="mt-2 text-white/70 text-sm leading-relaxed">
-              {item.a}
-            </div>
+            <div className="mt-2 text-white/70 text-sm leading-relaxed">{item.a}</div>
           </details>
         ))}
       </div>
@@ -1081,10 +933,9 @@ export default function GachaverseLanding() {
         <Groups />
         <DiscordSection />
         <CreativeCorner />
-        <MediaPartners /> 
+        <MediaPartners />
         <Sponsors />
         <Gallery />
-        {/* FAQ baru */}
         <FAQ />
         <Closing />
       </main>

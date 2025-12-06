@@ -1,0 +1,64 @@
+{
+  "slug": "Siganteng Ryuu",
+  "name": "March 7th",
+  "path": "Preservation",
+  "element": "Ice",
+  "rarity": 4,
+  "role": "anuan / Freeze Support",
+  "portrait": "/builds/march7th/portrait.png",
+  "splash": "/builds/march7th/splash.png",
+  "tags": ["Support", "F2P-friendly", "Starter"],
+  "statPriority": ["DEF%", "Effect Hit Rate", "HP%", "Speed"],
+  "lightCones": [
+    {
+      "name": "Day One of My New Life",
+      "rarity": 4,
+      "reason": "DEF + All-Type RES cocok buat perma-shield.",
+      "img": "/builds/_shared/cones/day-one.png"
+    },
+    {
+      "name": "Landau's Choice",
+      "rarity": 4,
+      "reason": "Aggro + DMG reduction.",
+      "img": "/builds/_shared/cones/landau.png"
+    }
+  ],
+  "relics": {
+    "sets": [
+      {
+        "name": "Knight of Purity Palace (4pc)",
+        "reason": "Shield strength + DEF% terbaik overall.",
+        "img": "/builds/_shared/relics/knight.png"
+      }
+    ],
+    "ornaments": [
+      {
+        "name": "Belobog of the Architects",
+        "reason": "+DEF% jika EHR tinggi.",
+        "img": "/builds/_shared/relics/belobog.png"
+      }
+    ],
+    "mainStats": {
+      "body": "DEF% / Effect Hit Rate",
+      "feet": "Speed",
+      "sphere": "DEF% or HP%",
+      "rope": "Energy Regen Rate / DEF%"
+    },
+    "subStats": ["Effect Hit Rate", "DEF%", "Speed", "HP%"]
+  },
+  "skills": [
+    { "name": "Technique — Freezing Beauty", "tip": "Pre-freeze wave trash saat perlu." },
+    { "name": "Skill — The Power of Cuteness", "tip": "Pilih ally squishy untuk shield lebih tebal." }
+  ],
+  "eidolons": [
+    { "no": 1, "title": "Girl Power", "note": "Uptime shield naik pada ally low HP." }
+  ],
+  "teams": [
+    {
+      "name": "Freeze Control (F2P)",
+      "core": ["March 7th", "Dan Heng", "Asta", "Natasha"],
+      "idea": "March shield DPS, Asta SPD, manfaatkan Freeze untuk tempo."
+    }
+  ],
+  "notes": "Prioritaskan DEF% + EHR secukupnya. SPD checkpoint tim & ER bila sering mengandalkan Ult."
+}
