@@ -104,16 +104,27 @@ const AI_CONTACTS = {
 
 /* ==================== UI helpers ==================== */
 /** Hook REVEAL (JS murni) */
+/** Hook REVEAL (dibikin ringan di mobile) */
 function useReveal() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
   const [past, setPast] = useState(false);
 
-  // Visible via IntersectionObserver
+  const isClient = typeof window !== 'undefined';
+  const isMobile = isClient ? window.innerWidth < 768 : false;
+
+  // Visible via IntersectionObserver (NON-mobile)
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (!isClient) return;
     const el = ref.current;
     if (!el) return;
+
+    // Di mobile: selalu visible, tanpa IO dan tanpa animasi scroll
+    if (isMobile) {
+      setVisible(true);
+      setPast(false);
+      return;
+    }
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -124,13 +135,14 @@ function useReveal() {
       },
       { threshold: 0.15, rootMargin: '-5% 0px -5% 0px' }
     );
+
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [isClient, isMobile]);
 
-  // Past (sudah lewat atas) via rAF-throttled scroll
+  // Past (sudah lewat atas) via scroll — disable di mobile
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (!isClient || isMobile) return;
     const el = ref.current;
     if (!el) return;
 
@@ -152,10 +164,11 @@ function useReveal() {
       window.removeEventListener('resize', onScroll);
       if (raf) cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [isClient, isMobile]);
 
   return { ref, visible, past };
 }
+
 
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -316,11 +329,14 @@ function Section({ id, icon: Icon, title, subtitle, children }) {
 
 function Card({ children, className = '' }) {
   return (
-    <div className={`group rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:backdrop-blur shadow-lg shadow-black/30 transition-transform duration-200 md:hover:-translate-y-1 ${className}`}>
+    <div
+      className={`group rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:backdrop-blur shadow-lg shadow-black/30 transition-transform duration-200 md:hover:-translate-y-1 ${className}`}
+    >
       {children}
     </div>
   );
 }
+
 
 /* ==================== Sections ==================== */
 function About() {
@@ -519,11 +535,38 @@ function DiscordSection() {
   );
 }
 
-/* ====== CreativeCorner (JS murni) ====== */
+/* ====== CreativeCorner (optimized, JS only) ====== */
+/* ====== CreativeCorner (optimized, hooks aman) ====== */
 function CreativeCorner() {
   const BASE = Array.isArray(CREATIONS) ? CREATIONS : [];
-  const SLIDES = [...BASE, ...BASE, ...BASE];
   const MID = BASE.length;
+
+  // Tidak ada data sama sekali (ini aman karena CREATIONS statis, tidak berubah-ubah)
+  if (MID === 0) {
+    return (
+      <Section
+        id="creative"
+        icon={ImageIcon}
+        title="Pojok Kreasi"
+        subtitle="Karya komunitas: desain, ilustrasi, dan poster"
+      >
+        <div className="text-white/70">Belum ada kreasi untuk ditampilkan.</div>
+      </Section>
+    );
+  }
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Deteksi lebar layar
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  const SLIDES = [...BASE, ...BASE, ...BASE];
   const START = MID;
 
   const [index, setIndex] = useState(START);
@@ -538,13 +581,17 @@ function CreativeCorner() {
   const TRANSITION_MARGIN = 120;
 
   const beginTransition = () => {
-    if (!trackRef.current) {
-      lockedRef.current = true;
-      setTimeout(() => { lockedRef.current = false; }, TRACK_MS + TRANSITION_MARGIN);
+    if (isMobile) return; // di mobile tidak pakai animasi track sama sekali
+    const track = trackRef.current;
+    lockedRef.current = true;
+
+    if (!track) {
+      setTimeout(() => {
+        lockedRef.current = false;
+      }, TRACK_MS + TRANSITION_MARGIN);
       return;
     }
-    lockedRef.current = true;
-    const track = trackRef.current;
+
     let done = false;
     const onEnd = (ev) => {
       if (ev.propertyName && ev.propertyName !== 'transform') return;
@@ -553,6 +600,7 @@ function CreativeCorner() {
       track.removeEventListener('transitionend', onEnd);
       lockedRef.current = false;
     };
+
     track.addEventListener('transitionend', onEnd);
     setTimeout(() => {
       if (done) return;
@@ -562,7 +610,10 @@ function CreativeCorner() {
     }, TRACK_MS + TRANSITION_MARGIN);
   };
 
+  // Hitung lebar kartu (skip kalau mobile)
   useEffect(() => {
+    if (typeof window === 'undefined' || isMobile) return;
+
     const measure = () => {
       const first = document.querySelector('.kc-slide');
       if (!first) return;
@@ -571,125 +622,86 @@ function CreativeCorner() {
       const gap = style ? parseInt(style.columnGap || style.gap || '24', 10) : 24;
       setCardW(first.getBoundingClientRect().width + gap);
     };
+
     measure();
+
     const RO = typeof ResizeObserver !== 'undefined' ? ResizeObserver : null;
     const ro = RO ? new RO(measure) : null;
+
     if (ro) ro.observe(document.body);
     window.addEventListener('resize', measure);
+
     return () => {
       if (ro) ro.disconnect();
       window.removeEventListener('resize', measure);
     };
-  }, []);
+  }, [isMobile]);
 
+  // Auto-slide (skip kalau mobile)
   useEffect(() => {
+    if (isMobile) return;
     const t = setInterval(() => {
       if (lockedRef.current) return;
       setIndex((i) => i + 1);
       beginTransition();
     }, 2600);
     return () => clearInterval(t);
-  }, []);
+  }, [isMobile]);
 
+  // Looping index (skip kalau mobile)
   useLayoutEffect(() => {
-    if (MID === 0) return;
+    if (isMobile || MID === 0) return;
     const track = trackRef.current;
+    if (!track) return;
+
+    const jumpTo = (target) => {
+      let cleared = false;
+      const restore = () => {
+        if (cleared) return;
+        cleared = true;
+        setAnimTrack(false);
+        setAnimCard(false);
+
+        const slides = track.querySelectorAll('.kc-slide');
+        track.style.transition = 'none';
+        slides.forEach((s) => (s.style.transition = 'none'));
+
+        if (typeof cardW === 'number') {
+          track.style.transform = `translateX(-${target * cardW}px)`;
+        }
+        setIndex(target);
+
+        requestAnimationFrame(() => {
+          track.style.transition = '';
+          slides.forEach((s) => (s.style.transition = ''));
+          setAnimTrack(true);
+          setAnimCard(true);
+        });
+      };
+
+      const onEnd = (ev) => {
+        if (ev.propertyName && ev.propertyName !== 'transform') return;
+        track.removeEventListener('transitionend', onEnd);
+        clearTimeout(timeout);
+        restore();
+      };
+
+      const timeout = setTimeout(() => {
+        track.removeEventListener('transitionend', onEnd);
+        restore();
+      }, 900);
+
+      track.addEventListener('transitionend', onEnd);
+    };
 
     if (index >= MID * 2) {
-      const target = index - MID;
-      if (track) {
-        let cleared = false;
-        const restore = () => {
-          if (cleared) return;
-          cleared = true;
-          setAnimTrack(false);
-          setAnimCard(false);
-          const slides = track ? track.querySelectorAll('.kc-slide') : [];
-          if (track) track.style.transition = 'none';
-          slides.forEach((s) => (s.style.transition = 'none'));
-          if (track && typeof cardW === 'number') track.style.transform = `translateX(-${target * cardW}px)`;
-          setIndex(target);
-          requestAnimationFrame(() => {
-            if (track) track.style.transition = '';
-            slides.forEach((s) => (s.style.transition = ''));
-            setAnimTrack(true);
-            setAnimCard(true);
-          });
-        };
-        const onEnd = (ev) => {
-          if (ev.propertyName && ev.propertyName !== 'transform') return;
-          track.removeEventListener('transitionend', onEnd);
-          clearTimeout(timeout);
-          restore();
-        };
-        const timeout = setTimeout(() => {
-          track.removeEventListener('transitionend', onEnd);
-          restore();
-        }, 900);
-        track.addEventListener('transitionend', onEnd);
-      } else {
-        setAnimTrack(false);
-        setAnimCard(false);
-        setIndex(target);
-        requestAnimationFrame(() => {
-          setAnimTrack(true);
-          setAnimCard(true);
-        });
-      }
+      jumpTo(index - MID);
       return;
     }
-
     if (index < MID) {
-      const target = index + MID;
-      if (track) {
-        let cleared = false;
-        const restore = () => {
-          if (cleared) return;
-          cleared = true;
-          setAnimTrack(false);
-          setAnimCard(false);
-          const slides = track ? track.querySelectorAll('.kc-slide') : [];
-          if (track) track.style.transition = 'none';
-          slides.forEach((s) => (s.style.transition = 'none'));
-          if (track && typeof cardW === 'number') track.style.transform = `translateX(-${target * cardW}px)`;
-          setIndex(target);
-          requestAnimationFrame(() => {
-            if (track) track.style.transition = '';
-            slides.forEach((s) => (s.style.transition = ''));
-            setAnimTrack(true);
-            setAnimCard(true);
-          });
-        };
-        const onEnd = (ev) => {
-          if (ev.propertyName && ev.propertyName !== 'transform') return;
-          track.removeEventListener('transitionend', onEnd);
-          clearTimeout(timeout);
-          restore();
-        };
-        const timeout = setTimeout(() => {
-          track.removeEventListener('transitionend', onEnd);
-          restore();
-        }, 900);
-        track.addEventListener('transitionend', onEnd);
-      } else {
-        setAnimTrack(false);
-        setAnimCard(false);
-        setIndex(target);
-        requestAnimationFrame(() => {
-          setAnimTrack(true);
-          setAnimCard(true);
-        });
-      }
+      jumpTo(index + MID);
     }
-  }, [index, MID, cardW]);
-
-  if (MID === 0) {
-    return (
-      <Section id="creative" icon={ImageIcon} title="Pojok Kreasi" subtitle="Karya komunitas: desain, ilustrasi, dan poster">
-        <div className="text-white/70">Belum ada kreasi untuk ditampilkan.</div>
-      </Section>
-    );
-  }
+  }, [index, MID, cardW, isMobile]);
 
   const nearestDist = (i) => {
     const d0 = Math.abs(i - index);
@@ -698,67 +710,128 @@ function CreativeCorner() {
     return Math.min(d0, d1, d2);
   };
 
+  // ===== RENDER =====
   return (
-    <Section id="creative" icon={ImageIcon} title="Pojok Kreasi" subtitle="Karya komunitas: desain, ilustrasi, dan poster">
-      <div className="relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black via-black/70 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black via-black/70 to-transparent" />
-
-        <div
-          ref={trackRef}
-          className="flex gap-6 items-center will-change-transform"
-          style={{
-            transform: `translateX(-${index * cardW}px)`,
-            transition: animTrack ? `transform ${TRACK_MS}ms cubic-bezier(.22,.61,.36,1)` : 'none',
-          }}
-        >
-          {SLIDES.map((it, i) => {
-            const d = Math.min(nearestDist(i), 2);
-            const scale = d === 0 ? 1 : d === 1 ? 0.94 : 0.9;
-            const opacity = d === 0 ? 1 : d === 1 ? 0.78 : 0.58;
-            const ring = d === 0 ? 'ring-white/20' : 'ring-white/10';
-
-            return (
-              <div
-                key={`${i}-${it.src}`}
-                className={`kc-slide shrink-0 rounded-3xl overflow-hidden ring-1 ${ring} bg-white/[0.03]`}
-                style={{
-                  width: 'min(78vw, 520px)',
-                  aspectRatio: '4 / 5',
-                  transform: `scale(${scale})`,
-                  opacity,
-                  transition: animCard ? `transform ${CARD_MS}ms, opacity ${CARD_MS}ms` : 'none',
-                }}
-                aria-hidden={d !== 0}
-              >
-                <div className="relative w-full h-full">
-                  <Image
-                    src={it.src}
-                    alt={it.credit || 'Karya komunitas'}
-                    fill
-                    priority={false}
-                    sizes="(max-width: 640px) 78vw, (max-width: 1024px) 420px, 520px"
-                    className="object-cover"
-                  />
-                  {it.credit && (
-                    <div className="absolute left-2 bottom-2 rounded-md bg-black/55 px-2 py-1 text-[11px] text-white/85">
-                      {it.credit}
-                    </div>
-                  )}
-                </div>
+    <Section
+      id="creative"
+      icon={ImageIcon}
+      title="Pojok Kreasi"
+      subtitle="Karya komunitas: desain, ilustrasi, dan poster"
+    >
+      {isMobile ? (
+        /* MODE MOBILE: simple scroll */
+        <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
+          {BASE.map((it, i) => (
+            <div
+              key={`${i}-${it.src}`}
+              className="snap-center shrink-0 w-[80vw] max-w-xs rounded-3xl overflow-hidden border border-white/10 bg-white/[0.03]"
+            >
+              <div className="relative w-full aspect-[4/5]">
+                <Image
+                  src={it.src}
+                  alt={it.credit || 'Karya komunitas'}
+                  fill
+                  sizes="80vw"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  className="object-cover"
+                />
+                {it.credit && (
+                  <div className="absolute left-2 bottom-2 rounded-md bg-black/55 px-2 py-1 text-[11px] text-white/85">
+                    {it.credit}
+                  </div>
+                )}
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
-      </div>
+      ) : (
+        /* MODE DESKTOP: slider animasi */
+        <>
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black via-black/70 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black via-black/70 to-transparent" />
 
-      <div className="mt-4 flex justify-center gap-3">
-        <button onClick={() => { if (lockedRef.current) return; setIndex((i) => i - 1); beginTransition(); }} className="rounded-xl border border-white/15 px-3 py-1.5 text-sm text-white/90 hover:bg-white/10">‹</button>
-        <button onClick={() => { if (lockedRef.current) return; setIndex((i) => i + 1); beginTransition(); }} className="rounded-xl border border-white/15 px-3 py-1.5 text-sm text-white/90 hover:bg-white/10">›</button>
-      </div>
+            <div
+              ref={trackRef}
+              className="flex gap-6 items-center will-change-transform"
+              style={{
+                transform: `translateX(-${index * cardW}px)`,
+                transition: animTrack
+                  ? `transform ${TRACK_MS}ms cubic-bezier(.22,.61,.36,1)`
+                  : 'none',
+              }}
+            >
+              {SLIDES.map((it, i) => {
+                const d = Math.min(nearestDist(i), 2);
+                const scale = d === 0 ? 1 : d === 1 ? 0.94 : 0.9;
+                const opacity = d === 0 ? 1 : d === 1 ? 0.78 : 0.58;
+                const ring = d === 0 ? 'ring-white/20' : 'ring-white/10';
+
+                return (
+                  <div
+                    key={`${i}-${it.src}`}
+                    className={`kc-slide shrink-0 rounded-3xl overflow-hidden ring-1 ${ring} bg-white/[0.03]`}
+                    style={{
+                      width: 'min(78vw, 520px)',
+                      aspectRatio: '4 / 5',
+                      transform: `scale(${scale})`,
+                      opacity,
+                      transition: animCard
+                        ? `transform ${CARD_MS}ms, opacity ${CARD_MS}ms`
+                        : 'none',
+                    }}
+                    aria-hidden={d !== 0}
+                  >
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={it.src}
+                        alt={it.credit || 'Karya komunitas'}
+                        fill
+                        priority={false}
+                        sizes="(max-width: 1024px) 420px, 520px"
+                        className="object-cover"
+                      />
+                      {it.credit && (
+                        <div className="absolute left-2 bottom-2 rounded-md bg-black/55 px-2 py-1 text-[11px] text-white/85">
+                          {it.credit}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="mt-4 flex justify-center gap-3">
+            <button
+              onClick={() => {
+                if (lockedRef.current) return;
+                setIndex((i) => i - 1);
+                beginTransition();
+              }}
+              className="rounded-xl border border-white/15 px-3 py-1.5 text-sm text-white/90 hover:bg-white/10"
+            >
+              ‹
+            </button>
+            <button
+              onClick={() => {
+                if (lockedRef.current) return;
+                setIndex((i) => i + 1);
+                beginTransition();
+              }}
+              className="rounded-xl border border-white/15 px-3 py-1.5 text-sm text-white/90 hover:bg-white/10"
+            >
+              ›
+            </button>
+          </div>
+        </>
+      )}
     </Section>
   );
 }
+
 
 /* ====== Gallery ====== */
 function formatDate(idDateLike) {
