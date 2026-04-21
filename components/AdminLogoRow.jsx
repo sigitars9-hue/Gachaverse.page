@@ -1,22 +1,6 @@
 // components/AdminLogoRow.jsx
 import { normalizeDivisions } from "@/utils/normalizeDivisions";
-
-// peta ikon game (ubah path kalau beda)
-const GAME_ICON_MAP = {
-  hsr: { src: "/icons/games/hsr.png", title: "Honkai: Star Rail" },
-  genshin: { src: "/icons/games/genshin.png", title: "Genshin Impact" },
-  ak: { src: "/icons/games/ak.png", title: "Arknights" },
-  ba: { src: "/icons/games/ba.png", title: "Blue Archive" },
-  pgr: { src: "/icons/games/pgr.png", title: "Punishing: Gray Raven" },
-  wuwa: { src: "/icons/games/wuwa.png", title: "Wuthering Waves" },
-  hi3: { src: "/icons/games/hi3.png", title: "Honkai Impact 3rd" },
-  zzz: { src: "/icons/games/zzz.png", title: "Zenless Zone Zero" },
-  al: { src: "/icons/games/al.png", title: "Azur Lane" },
-  gfl2: { src: "/icons/games/gfl2.png", title: "Girls' Frontline 2" },
-  persona: { src: "/icons/games/persona.png", title: "Persona" },
-  roblox: { src: "/icons/games/roblox.png", title: "Roblox" },
-};
-
+import { GAME_ICON_MAP } from "@/data/gameIconMap";
 // pencocokan kata kunci game
 const GAME_MATCHERS = [
   { key: "hsr", kws: ["hsr", "star rail", "honkai: star rail"] },
@@ -90,9 +74,9 @@ export default function AdminLogoRow({ admin }) {
   // 1) Game icons
   const gameKeys = detectGames(admin);
   const gameIcons = gameKeys
-    .map((k) => GAME_ICON_MAP[k])
-    .filter(Boolean)
-    .map((g) => ({ ...g, href: null })); // game ikon non-link
+.map((k) => GAME_ICON_MAP[k])
+.filter(Boolean)
+.map((g) => ({ ...g, href: null }))
 
   // 2) Platform icons (aktif jika ada data, else tampil disabled bila relevan)
   const wa = cleanWa(admin.whatsapp);
@@ -142,7 +126,7 @@ export default function AdminLogoRow({ admin }) {
             title={it.title}
             aria-label={it.title}
           >
-            <img src={it.src} alt={it.title} className="h-5 w-5 object-contain" />
+           <MultiIcon base={it.base} title={it.title} size={20} />
           </a>
         ) : (
           <span
@@ -151,7 +135,7 @@ export default function AdminLogoRow({ admin }) {
             title={it.title}
             aria-label={it.title}
           >
-            <img src={it.src} alt={it.title} className="h-5 w-5 object-contain" />
+            <MultiIcon base={it.base} title={it.title} size={20} />
           </span>
         )
       )}

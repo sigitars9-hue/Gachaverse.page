@@ -110,7 +110,7 @@ export default function AiChatWidget() {
       {/* Tombol bulat di pojok KIRI */}
 <button
   onClick={() => setOpen((v) => !v)}
-  className="fixed bottom-4 left-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 shadow-lg shadow-blue-600/40 hover:bg-blue-500"
+  className="fixed bottom-4 left-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500"
   aria-label="Buka chat AI"
 >
   <img

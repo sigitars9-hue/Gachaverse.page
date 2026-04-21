@@ -126,7 +126,8 @@ export const admins = [
     skills: [
       "Guide",
       "gameplay",
-      "build reviews"
+      "build reviews",
+      "pentung"
     ],
     responsibility: "Menangani member rusuh atau melanggar peraturan group dengan counter pendapat mereka",
     joined: 2024,
@@ -360,7 +361,6 @@ export const admins = [
     lastUpdated: "2025-10-06T12:58:44.000Z",
     platforms: [
       "whatsapp",
-      "discord"
     ],
     games: [
       "genshin",
@@ -380,13 +380,6 @@ export const admins = [
         responsibility: "Memastikan grup tetap aktif dan kondusif",
         isPrimary: true
       },
-      {
-        platform: "discord",
-        url: "https://discord.gg/RaidenZ#0927",
-        role: "admin",
-        responsibility: "Memastikan grup tetap aktif dan kondusif",
-        isPrimary: false
-      }
     ]
   },
 
@@ -462,7 +455,8 @@ export const admins = [
       "genshin",
       "hsr",
       "ak",
-      "reverse"
+      "reverse",
+      "wuwa"
     ],
     whatsapp: "6285214900240",
     channels: [
@@ -545,7 +539,8 @@ export const admins = [
       "hsr",
       "wuwa",
       "gbf",
-      "r1999"
+      "reverse1999",
+      "pokemon"
     ],
     whatsapp: "6282265091966",
     channels: [
@@ -1971,45 +1966,6 @@ export const admins = [
       }
     ]
   },
-  {
-    slug: "jul",
-    name: "Jul",
-    img: "/admins/jul.jpg",
-    role: "Admin",
-    gender: "laki laki",
-    skills: [
-      "Guide"
-    ],
-    responsibility: "Bertanggung jawab sebagai admin gc casual",
-    joined: 2023,
-    divisions: [
-      "Admin Grup"
-    ],
-    languages: [
-      "ID"
-    ],
-    timezone: "UTC+7 (Jakarta)",
-    status: "active",
-    lastUpdated: "2025-10-06T13:54:39.000Z",
-    platforms: [
-      "whatsapp"
-    ],
-    games: [
-      "wuwa",
-      "valorant",
-      "war-thunder"
-    ],
-    whatsapp: "6285156119507",
-    channels: [
-      {
-        platform: "whatsapp",
-        contact: "6285156119507",
-        role: "admin",
-        responsibility: "Bertanggung jawab sebagai admin gc casual",
-        isPrimary: true
-      }
-    ]
-  },
 
   {
     slug: "wldanee",
@@ -2761,18 +2717,18 @@ export const admins = [
 
   {
     slug: "kalandra",
-    name: "Kalandra",
+    name: "Kall",
     img: "/admins/kalandra.jpg",
-    role: "Admin",
+    role: "Head Admin",
     gender: "perempuan",
     skills: [
       "Video editing",
       "graphic designer"
     ],
-    responsibility: "Menjaga keamanan casual",
+    responsibility: "penanggung jawab seluruh admin, menjadi pengarah dan penentu dalam membuat keputusan di dalam lingkup komunitas",
     joined: 2025,
     divisions: [
-      "Admin Grup"
+      "Babel"
     ],
     languages: [
       "ID",
@@ -3234,38 +3190,6 @@ export const admins = [
       },
          ]
   },
-{
-  slug: "chuzo",
-  name: "Chuzo",
-  img: "/admins/chuzo.jpg",
-  role: "Co-founder",
-  gender: "laki laki",
-  skills: ["Psychology", "Counseling", "communication", "Checker Translation (EN)"],
-  responsibility: "Menggantikan founder bila berhalangan dan membantu meringankan tugas founder.",
-  joined: 2023,
-
-  divisions: ["Babel", "Translator"],
-  languages: ["ID", "EN"],
-  timezone: "WIB",
-  status: "active",
-  lastUpdated: "2025-10-07T12:00:05.000Z",
-
-  platforms: ["whatsapp", "discord"],
-  games: [
-    "gi",
-    "ak",
-    "pjsk",
-    "limbus",
-    "tot"
-  ],
-
-  discord: "https://discord.com/invite/QhSe6q7g",
-
-  channels: [
-    { platform: "whatsapp", role: "co-founder", responsibility: "Koordinasi harian komunitas.", isPrimary: true },
-    { platform: "discord", url: "https://discord.com/invite/QhSe6q7g", role: "co-founder", responsibility: "Koordinasi & komunikasi tim." }
-  ]
-},
 {
   slug: "mitsune2eima",
   name: "Mitsune2eima",
@@ -3837,6 +3761,50 @@ export const admins = [
     }
   ]
 },
+{
+  slug: "oblivion",
+  name: "Zwei",
+  img: "/admins/zwei.jpg",
+  role: "Admin",
+  gender: "laki laki",
+  skills: [
+    "Strats",
+    "Guide"
+  ],
+  responsibility: "Mengurus dan mengawasi grup.",
+  joined: 2025,
+  divisions: [
+    "Admin Grup Whatsapp"
+  ],
+  languages: [
+    "ID",
+    "EN"
+  ],
+  timezone: "UTC+7",
+  status: "active",
+  lastUpdated: "2025-10-08T00:00:00.000Z",
+  platforms: [
+    "whatsapp"
+  ],
+  games: [
+    "wuwa",
+    "ak",
+    "ba",
+    "zzz",
+    "uma_musume"
+  ],
+  whatsapp: "6282136505016",
+  discord: "",
+  channels: [
+    {
+      platform: "whatsapp",
+      contact: "6282136505016",
+      role: "admin",
+      responsibility: "mengurus dan mengawasi grup Cygames",
+      isPrimary: true
+    }
+  ]
+}
 
 ];
 

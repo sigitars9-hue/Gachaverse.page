@@ -57,11 +57,12 @@ const NAV = [
 
 const ADMIN_PREVIEW = [
   { name: 'Ryuu',  slug: 'pacar-elysia',  role: 'Founder',        img: '/admins/ryuu.jpg' },
-  { name: 'Chuzo', slug: 'chuzo', role: 'Co-Founder',     img: '/admins/chuzo.jpg' },
+  { name: 'Haru',  slug: 'haru',          role: 'Co-Founder',     img: '/admins/haru.jpg' },
   { name: 'Rizz',  slug: 'rizzmustdie',  role: 'Head Admin',     img: '/admins/rizz.jpg' },
+  { name: 'Kall',  slug: 'kalandra',  role: 'Head Admin',     img: '/admins/kalandra.jpg' },
   { name: 'Asuka', slug: 'asuka', role: 'Best Creator',   img: '/admins/asuka.jpg' },
   { name: 'Imy',   slug: 'imy',   role: 'Sekretaris',     img: '/admins/imy.jpg' },
-  { name: 'Haru',  slug: 'haru',  role: 'Owner Gvstore',  img: '/admins/haru.jpg' },
+
 ];
 
 const MEDIA_PARTNERS = [
@@ -78,7 +79,6 @@ const MEDIA_PARTNERS = [
 
 const SPONSORS = [
   { tag: '@tokowendigg', url: 'https://www.tokowendigg.com' },
-  { tag: '@juraganakun.official', url: 'https://instagram.com/juraganakun.official' },
   { tag: '@gachaverse.store', url: 'https://instagram.com/gachaverse.store' },
 ];
 
