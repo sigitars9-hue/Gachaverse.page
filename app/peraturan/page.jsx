@@ -62,7 +62,7 @@ export default function PeraturanPage() {
           Aturan Gachaverse.ID
         </h1>
         <p className="mt-2 text-white/80">
-          Panduan perilaku, kebijakan konten, dan tata tertib lintas semua grup Gachaverse.ID.
+          Panduan perilaku, kebijakan konten, dan tata tertib yang berlaku di semua grup Gachaverse.ID.
         </p>
 
         {/* intro notice */}
@@ -84,33 +84,41 @@ export default function PeraturanPage() {
             <SectionTitle
               id="etika"
               icon={ShieldAlert}
-              subtitle="Dasar perilaku dan kepatuhan terhadap penerapan aturan."
+              subtitle="Dasar Perilaku dan Kepatuhan Terhadap Penerapan Aturan."
             >
               Etika & Kepatuhan
             </SectionTitle>
             <ol className="mt-4 space-y-4 list-decimal pl-6 text-white/90">
               <li>
-                Menjunjung <strong>integritas & kejujuran</strong>. Menghalangi penegakan aturan
-                dianggap pelanggaran. <em>Warn Tipe 1</em>.
+                Setiap admin dan member <strong>diwajibkan</strong> untuk menjunjung tinggi integritas dan kejujuran. 
+                Jika terjadi pelanggaran dan member tidak melaporkannya kepada admin atau bahkan berusaha menutupi/menghapus bukti pelanggaran, 
+                maka member terkait akan dikenakan <strong>WARN TIPE 1</strong>. 
+                Jika Admin yang terbukti berusaha menutupi/menghapus bukti pelanggaran, akan dikenakan <strong>WARN TIPE 2</strong>.
               </li>
               <li>
-                Patuhi fungsi setiap grup. Topik di luar pembahasan pindah ke{" "}
-                <em>Casual Talk</em>. Out of Topic berlebihan: <em>Warn Tipe 1</em>.
+                Pahami dan hormati fungsi dari setiap grup yang ada. 
+                Pembahasan yang tidak tersedia grupnya atau bahkan pembahasan casual/sehari-hari bahaslah di grup <strong>Casual Talk</strong>. 
+                Melakukan pembahasan yang Out Of Topic secara berlebihan akan dikenakan <strong>WARN TIPE 1</strong>
               </li>
               <li>
-                Dilarang promosi fanpage/channel/komunitas di luar Gachaverse.ID & partner.{" "}
-                <em>Warn Tipe 1</em>.
-                <div className="mt-2 rounded-xl border-l-4 border-white/20 bg-white/5 px-4 py-2 text-sm text-white/80">
-                  Lihat daftar partner pada caption pengumuman atau tanya <strong>Yura AI</strong>.
-                </div>
+                Member dilarang melakukan kegiatan promosi, jual-beli, dan tawar menawar selain pada grup yang telah disediakan. 
+                Dengan kata lain, HANYA ADMIN yang memiliki izin yang diperbolehkan melakukan Promosi di Grup non JB. 
+                Pelanggaran akan dikenakan <strong>WARN TIPE 1</strong>
               </li>
               <li>
-                Jual beli hanya di <strong>GVstore | JB All Game</strong>. Pelanggaran:{" "}
-                <em>Warn Tipe 1</em>.
+                Dilarang membagikan unggahan yang berasal dari fanpage / channel / komunitas / grup yang bukan merupakan Partner dari Gachaverse.ID. 
+                Sedikit keringanan, diperbolehkan membagikan unggahan tersebut, asalkan <strong>WM dari fanpage / channel / komunitas / grup tersebut</strong> sudah disensor hingga tidak terlihat. 
+                Untuk informasi lebih lanjut, silahkan tanya kepada Admin Grup untuk list dari Partner Gachaverse.ID. 
+                Pelanggaran akan dikenakan <strong>WARN TIPE 1</strong>
               </li>
               <li>
-                Perbedaan pendapat itu wajar. Jaga etika, hindari drama berkepanjangan.{" "}
-                <em>Warn Tipe 1 + Sanksi Sosial</em>.
+                Perbedaan pendapat dalam berdiskusi adalah hal yang sangat wajar. 
+                Namun jika sampai menimbulkan keributan yang tidak perlu atau bahkan berlebihan, <strong>WARN TIPE 1</strong> sampai <strong>KICK PERMANEN</strong> dapat diberlakukan
+              </li>
+              <li>
+                Dalam diskusi umum, Admin dan member memang berada pada posisi yang setara dan terikat aturan yang sama. 
+                Namun Member juga harus memahami posisinya dalam grup. Jika Teguran dan Peringatan dari Admin tidak dihiraukan, 
+                maka Admin BERHAK memberikan <strong>WARN TIPE 1</strong> terhadap member tersebut
               </li>
             </ol>
           </Card>
@@ -120,55 +128,80 @@ export default function PeraturanPage() {
             <SectionTitle
               id="yura"
               icon={Sparkles}
-              subtitle="Gunakan dengan bijak, sesuai grup, dan tidak untuk spam."
+              subtitle="Gunakan Dengan Bijak, Sesuai Grup, dan Tidak Untuk Spam."
             >
               Penggunaan Yura AI
             </SectionTitle>
-            <p className="mt-3 text-white/90">
-              <strong>Yura AI</strong> tersedia bagi seluruh member untuk membantu kebutuhan info,
-              arsip, atau tanya-jawab. Dilarang spam, konten tidak pantas, atau penggunaan yang
-              tidak sesuai konteks grup. Pelanggaran: <em>Warn Tipe 1</em>.
-            </p>
+            <ol className="mt-4 space-y-4 list-decimal pl-6 text-white/90">
+              <li>
+                <strong>Yura AI</strong> tersedia bagi seluruh member untuk membantu kebutuhan info,
+                arsip, atau sekadar dialog dua arah. Menggunakan Yura AI tidak pada tempatnya akan dikenakan <strong>WARN TIPE 1</strong>
+              </li>
+              <li>
+                Menggunakan Yura AI untuk hal hal yang tidak sesuai fungsinya 
+                atau bahkan hal tidak senonoh akan dikenakan <strong>WARN TIPE 1</strong> hingga <strong>KICK PERMANEN</strong>
+              </li>
+            </ol>
           </Card>
 
-          {/* C. Konten Terlarang */}
+          {/* C. Pelanggaran Kelas Berat */}
           <Card>
             <SectionTitle
               id="konten"
               icon={MessageSquareWarning}
-              subtitle="Jaga lingkungan yang nyaman untuk semua kalangan."
+              subtitle="Pelanggaran Dengan Konsekuensi Serius."
             >
-              Konten Terlarang
+              Pelanggaran Kelas Berat
             </SectionTitle>
-            <ul className="mt-4 space-y-3 text-white/90">
+            <ol className="mt-4 space-y-4 list-decimal pl-6 text-white/90">
               <li>
-                Dilarang konten <strong>Rasisme, 18+, Vulgar, NSFW</strong>. Pelanggaran:{" "}
-                <em>Warn Tipe 2</em>.
-                <div className="mt-2 rounded-xl border-l-4 border-white/20 bg-white/5 px-4 py-2 text-sm text-white/80">
-                  Ambang toleransi NSFW? Silakan konsultasi ke Admin terkait.
-                </div>
+                Admin dan Member <strong>WAJIB</strong> Mematuhi dan menghormati setiap peraturan yang ada. 
+                Menganggap remeh dan mengejek aturan yang ada akan dikenakan <strong>WARN TIPE 2</strong>
               </li>
               <li>
-                Politik dalam negeri <strong>dilarang keras</strong>. Pelanggaran:{" "}
-                <em>Warn Tipe 2</em>.
+                Dilarang keras mengirimkan segala jenis konten, pesan, 
+                atau sekadar stiker yang mengandung unsur <strong>RASISME</strong>. 
+                Pelanggaran akan dikenakan <strong>WARN TIPE 2</strong>
               </li>
               <li>
-                Tindakan/propaganda <strong>LGBT</strong> dalam bentuk apa pun{" "}
-                <strong>tidak diperbolehkan</strong>. Sanksi: <strong>KICK TANPA WARN</strong>.
+                Dilarang keras mengirimkan segala jenis konten, pesan, atau sekadar stiker yang mengandung 
+                unsur <strong>NSFW</strong> dan <strong>18+</strong>, KECUALI jika memang original source nya demikian 
+                 (contoh: Atago, Azurlane dan Rapi Red Hood, NIKKE). 
+                Pelanggaran akan dikenakan <strong>WARN TIPE 2</strong>
               </li>
-            </ul>
+              <li>
+                Dilarang keras mengirimkan segala jenis konten, pesan, atau sekadar stiker 
+                yang mengandung unsur <strong>Politik Dalam Negeri</strong>. 
+                Pelanggaran akan dikenakan <strong>WARN TIPE 2</strong>
+              </li>
+              <li>
+                <strong>Dilarang keras melakukan pembahasan terkait topik sensitif seperti Komunisme dan Fasisme.</strong> Sedikit keringanan, pembahasan diperbolehkan SELAMA original source nya memang 
+                terkait dengan hal hal tersebut (contoh: story GFL2 dan Reverse1999). 
+                Pelanggaran akan dikenakan <strong>WARN TIPE 2</strong>
+              </li>
+            </ol>
           </Card>
 
-          {/* D. Tag Group */}
+          {/* D. Pelanggaran Super Berat */}
           <Card>
-            <SectionTitle id="tag" icon={Megaphone} subtitle="Fitur sensitif, gunakan hanya oleh admin.">
-              Penggunaan Tag Group
+            <SectionTitle 
+              id="tag" 
+              icon={MessageSquareWarning} 
+              subtitle="Pelanggaran Dengan Konsekuensi Permanen"
+              >
+              Pelanggaran Super Berat
             </SectionTitle>
-            <p className="mt-3 text-white/90">
-              <strong>Dilarang keras Tag Group</strong> kecuali pengumuman penting oleh admin
-              Gachaverse.ID. Penyalahgunaan akan terkena{" "}
-              <strong>KICK TANPA WARN</strong>.
-            </p>
+            <ol className="mt-4 space-y-4 list-decimal pl-6 text-white/90">
+              <li>
+                Member dilarang keras melakukan <strong>TAG GROUP</strong>. 
+                Hanya Admin yang memiliki izin tertentulah yang diperbolehkan melakukan <strong>TAG GROUP</strong>. 
+                Pelanggaran akan dikenakan <strong>KICK TANPA WARN</strong>
+              </li>
+              <li>
+                Dilarang keras mengirimkan segala jenis konten, pesan, atau sekadar stiker yang mengandung unsur <strong>LGBTQ</strong>. 
+                Pelanggaran akan dikenakan <strong>KICK PERMANEN TANPA WARN</strong>
+              </li>
+            </ol>
           </Card>
 
           {/* E. Bantuan Cepat */}
@@ -184,12 +217,12 @@ export default function PeraturanPage() {
               </li>
               <li className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
                 <p className="text-sm text-white/80">
-                  Pertanyaan game & admin sedang off? <strong>Tag Yura AI</strong>.
+                  Pertanyaan terkait game & Admin sedang off? <strong>Tag Yura AI</strong>.
                 </p>
               </li>
               <li className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 sm:col-span-2">
                 <p className="text-sm text-white/80">
-                  Informasi belum ada di Yura AI? <strong>Tag Admin Penanggungjawab Grup</strong>.
+                  Informasi belum ada di Yura AI? <strong>Tag Admin Penanggungjawab Grup / Head Admin</strong>.
                 </p>
               </li>
             </ul>
@@ -199,27 +232,30 @@ export default function PeraturanPage() {
 {/* F. Tipe Warn (UPDATED) */}
 <Card className="sm:col-span-2">
   <SectionTitle id="warn" icon={CircleAlert}>
-    Tingkatan Peringatan (Warn)
+    Penjelasan Lebih Lanjut (Warn)
   </SectionTitle>
 
   <div className="mt-4 space-y-4 text-white/90">
     <p className="font-semibold text-white">
-      𝗣𝗲𝗻𝗷𝗲𝗹𝗮𝘀𝗮𝗻 𝗽𝗲𝗿𝗯𝗲𝗱𝗮𝗮𝗻 𝗧𝗶𝗽𝗲 𝗪𝗮𝗿𝗻
+      Penjelasan Terkait Konsekuensi yang Diberikan
     </p>
 
     <div className="rounded-2xl border border-yellow-300/25 bg-yellow-500/10 p-5">
       <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-yellow-500/20 px-3 py-1 text-xs text-yellow-200 ring-1 ring-yellow-300/25">
-        <Info className="h-3.5 w-3.5" />
+        <Ban className="h-3.5 w-3.5" />
         𝗪𝗮𝗿𝗻 𝗧𝗶𝗽𝗲 𝟭
       </div>
       <p>
-        Peringatan yang diberikan terhadap pelanggar yang melakukan pelanggaran
-        taraf ringan – menengah. Warn Tipe 1 ini dapat diberikan hingga maksimal
-        3 (tiga) kali, dan jika sudah mencapai batas maksimal, pelaku dapat
-        dikenakan hukuman <em>Kick</em>. Kick pertama berlangsung selama
-        <strong> 1 Minggu</strong>, Kick kedua selama <strong>1 Bulan</strong>,
-        Kick ketiga selama <strong>2 Bulan</strong>, dan Kick selanjutnya akan
-        bersifat <strong>permanen</strong>.
+        Peringatan yang diberikan terhadap pelanggar yang melakukan pelanggaran taraf Ringan. <strong>WARN TIPE 1</strong> ini 
+        dapat diberikan hingga maksimal 3 (tiga) kali, dan jika sudah mencapai batas maksimal, 
+        pelaku dapat dikenakan hukuman Kick. Kick pertama berlangsung selama 1 Bulan, Kick kedua selama 3 Bulan, 
+        dan Kick ketiga dari <strong>WARN TIPE 1</strong> ini akan bersifat <strong>PERMANEN</strong>. 
+      </p>
+      <br> 
+      </br>
+      <p>
+        Setiap <strong>WARN TIPE 1</strong> yang diberikan bersifat independent. Jika A dikenakan WARN TIPE 1 di grup X dan Y, 
+        maka A dihitung memiliki 1 <strong>WARN TIPE 1</strong> di grup X dan 1 <strong>WARN TIPE 1</strong> di grup Y  
       </p>
     </div>
 
@@ -229,14 +265,37 @@ export default function PeraturanPage() {
         𝗪𝗮𝗿𝗻 𝗧𝗶𝗽𝗲 𝟮
       </div>
       <p>
-        Peringatan yang diberikan terhadap pelanggar yang melakukan pelanggaran
-        taraf menengah – berat. Warn Tipe 2 ini hanya diberlakukan sekali dan
-        pelanggaran selanjutnya akan dikenakan hukuman <strong>Kick</strong>.
-        Kick pertama akan berlangsung selama <strong>1 Bulan</strong>, Kick
-        kedua akan bersifat <strong>Permanent</strong>, dan pelanggaran berulang
-        pada beberapa grup akan <strong> Dikeluarkan dari Komunitas
-        Gachaverse.ID</strong>.
+        Peringatan yang diberikan terhadap pelanggar yang melakukan pelanggaran taraf Berat. 
+        <strong>WARN TIPE 2</strong> ini hanya diberlakukan sekali dan pelanggaran selanjutnya akan dikenakan hukuman Kick. 
+        Kick pertama akan berlangsung selama 3 Bulan dan Kick kedua akan bersifat <strong>Permanen</strong>.
       </p>
+      <br>
+      </br>
+      <p>
+        Setiap <strong>WARN TIPE 2</strong> yang diberikan bersifat akumulatif. 
+        Jika A dikenakan <strong>WARN TIPE 2</strong> di grup X dan Y, maka A berhak untuk 
+        dikeluarkan dari salah satu di antara dua grup tersebut dan 
+        A berhak untuk memilih untuk dikeluarkan dari grup mana.
+      </p>
+    </div>
+    <div className="rounded-2xl border border-blue-300/25 bg-blue-500/10 p-5">
+      <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-blue-500/20 px-3 py-1 text-xs text-blue-200 ring-1 ring-blue-300/25">
+        <Info className="h-3.5 w-3.5" />
+        Pengajuan Banding
+      </div>
+      <div>
+  Pelanggar <strong>BERHAK</strong> untuk mengajukan banding kepada{' '}
+  <strong>ADMIN GRUP / OWNER GRUP / HEAD ADMIN</strong> jika ingin masuk ke dalam
+  grup kembali. Syarat yang harus dipenuhi adalah dua,
+  <ul className="list-decimal list-inside ml-4 mt-1 space-y-1 text-white/90">
+    <li>Pelanggar harus menjalani masa Hukuman terlebih dahulu yaitu Satu Bulan,</li>
+    <li>Pelanggar akan menjalani masa Probation selama Satu Bulan setelah diundang Kembali ke dalam grup.</li>
+  </ul>
+  Banding hanya berlaku sekali seumur hidup. Jika Pelanggar tertangkap melakukan
+  pelanggaran hingga terkena KICK kembali, maka pelanggar tidak memiliki hak untuk
+  Banding Kembali, alias dikeluarkan dari Komunitas Gachaverse.ID secara{' '}
+  <strong>PERMANEN</strong>
+</div>
     </div>
   </div>
 </Card>
@@ -265,10 +324,10 @@ export default function PeraturanPage() {
               <nav className="mt-2 grid gap-2 text-sm">
                 <a href="#etika" className="rounded-xl bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10">Etika & Kepatuhan</a>
                 <a href="#yura" className="rounded-xl bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10">Penggunaan Yura AI</a>
-                <a href="#konten" className="rounded-xl bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10">Konten Terlarang</a>
-                <a href="#tag" className="rounded-xl bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10">Tag Group</a>
+                <a href="#konten" className="rounded-xl bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10">Pelanggaran Kelas Berat</a>
+                <a href="#tag" className="rounded-xl bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10">Pelanggaran Super Berat</a>
                 <a href="#bantuan" className="rounded-xl bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10">Bantuan Cepat</a>
-                <a href="#warn" className="rounded-xl bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10">Tipe Warn</a>
+                <a href="#warn" className="rounded-xl bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10">Penjelasan Lebih Lanjut (Warn)</a>
               </nav>
             </Card>
 
@@ -279,9 +338,9 @@ export default function PeraturanPage() {
                 <span className="font-semibold">Ringkas</span>
               </div>
               <ul className="space-y-2 text-sm text-white/85">
-                <li>Isi intro = setuju aturan.</li>
-                <li>OOT berlebih, promosi luar, & spam Yura → Warn 1.</li>
-                <li>Rasis/18+/NSFW/Politik → Warn 2.</li>
+                <li>Mengisi Intro = Setuju dan Patuh Terhadap Aturan Umum.</li>
+                <li>Melawan Admin, Bohong, OOT Berlebih, Promosi Membuat Keributan, & Spam Yura → Warn 1.</li>
+                <li>Rasis/18+/NSFW/Politik/Topik Sensitif & Mengabaikan Aturan → Warn 2.</li>
                 <li>Tag Group sembarangan & LGBT → Kick tanpa warn.</li>
               </ul>
             </Card>
