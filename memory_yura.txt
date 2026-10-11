@@ -17,6 +17,7 @@ Informasi website:
   - Section #discord: server "Perguruan Tinggi Gachaverse.id" dengan link undangan Discord.
   - Section #creative: Pojok Kreasi (karya komunitas).
   - Section #media-partners, #sponsors, #gallery, #faq, dan #join.
+  - Section #peraturan: rekap peraturan, mana yang akan masuk ke warn atau kick permanen
 
 Aturan jawaban:
 - Kalau ditanya admin atau nama admin, jelaskan singkat peran admin itu dan sebutkan link profil /admins/[slug].

@@ -209,6 +209,13 @@ const GAME_ICON_MAP = {
   pubg: { base: "/icons/games/pubg", title: "PUBG" },
   guardiantales: { base: "/icons/games/guardiantales", title: "Guardian Tales" },
   limbus: { base: "/icons/games/limbus", title: "Limbus Company" },
+  nikke: { base: "/icons/games/nikke", title: "Goddess of Victory: Nikke" },
+  lobcorp: { base: "/icons/games/lobcorp", title: "Lobotomy Corporation" },
+  czn: { base: "/icons/games/czn", title: "Chaos Zero Nightmare" },
+  library: { base: "/icons/games/library", title: "Library of Ruina" },
+  nte: { base: "/icons/games/nte", title: "Neverness To Everness" },
+  holodori: { base: "/icons/games/holodori", title: "Hololive Dreams" },
+  spalace: { base: "/icons/games/spalace", title: "Silver Palace" },
 };
 
 // GAME matcher (untuk deteksi dari teks)
@@ -244,6 +251,13 @@ export const GAME_MATCHERS = [
   { key: "pubg", title: "PUBG", aliases: ["pubg","playerunknown battlegrounds","playerunknown’s battlegrounds"] },
   { key: "guardiantales", title: "Guardian Tales", aliases: ["guardian tales","guardiantales","guardian"] },
   { key: "limbus", title: "Limbus Company", aliases: ["limbus company","limbus","limbus: company"] },
+  { key: "nikke", title: "Goddess of Victory: Nikke", aliases: ["nikke","goddess of victory","goddess of victory nikke"] },
+  { key: "lobcorp", title: "Lobotomy Corporation", aliases: ["lobcorp","lobotomy corporation"] },
+  { key: "czn", title: "Chaos Zero Nightmare", aliases: ["czn","chaos zero nightmare"] },
+  { key: "library", title: "Library of Ruina", aliases: ["library","lor"] },
+  { key: "nte", title: "Neverness To Everness", aliases: ["nte","neverness to everness"] },
+  { key: "holodori", title: "Hololive Dreams", aliases: ["holodori","hololive dreams"] },
+  { key: "spalace", title: "Silver Palace", aliases: ["spalace","silver palace"] },
 ];
 
 const PLATFORM_ICONS = {
@@ -337,6 +351,15 @@ export function normalizeGames(list) {
     "wuthering waves": "wuwa",
     zzz: "zzz",
     "zenless zone zero": "zzz",
+    nikke: "nikke",
+    lobcorp: "lobcorp",
+    czn: "czn",
+    library: "library", "lor": "library",
+    nte: "nte",
+    nte: "neverness to everness",
+    holodori: "holodori",
+    spalace: "spalace",
+    silverpalace: "spalace",
   };
   const cleaned = (s) =>
     String(s).toLowerCase().trim().replace(/[_\-]+/g, " ").replace(/\s+/g, " ");

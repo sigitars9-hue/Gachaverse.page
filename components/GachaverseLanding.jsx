@@ -74,7 +74,7 @@ const MEDIA_PARTNERS = [
   { name: '@infoarknights.id', url: 'https://www.instagram.com/infoarknights.id', topic: 'Arknights', followers: '13,6 K', avatar: '/partners/infoarknights.jpg' },
   { name: '@fategrand_indonesia', url: 'https://www.instagram.com/fategrand_indonesia?igsh=ajB5b2lkdGR0NjY3', topic: 'Seputar info Fate Series', followers: '1.927', avatar: '/partners/fategrand-id.jpg' },
   { name: '@neo_fgo_world', url: 'https://www.instagram.com/neo_fgo_world?igsh=MXRzNHNva29uZmM4Yw==', topic: 'All content Type-Moon', followers: '2.851', avatar: '/partners/neo-fgo-world.jpg' },
-  { name: '@limbus_id', url: 'https://www.instagram.com/limbus_id?stkn=aGI5eXdoZzI5M3dm', topic: 'All Project Moon', followers: '983', avatar: '/partners/limbus-id.jpg' }
+  { name: '@limbus_id', url: 'https://www.instagram.com/limbus_id?stkn=aGI5eXdoZzI5M3dm', topic: 'All Project Moon', followers: '983', avatar: '/partners/limbusid.webp' }
 ];
 
 const SPONSORS = [

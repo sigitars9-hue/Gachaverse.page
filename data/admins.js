@@ -239,7 +239,11 @@ export const admins = [
       "hi",
       "zzz",
       "al",
-      "gfl"
+      "gfl",
+      "gbf",
+      "limbus",
+      "lobcorp",
+      "library",
     ],
     whatsapp: "6281259160766",
     channels: [
@@ -587,14 +591,14 @@ export const admins = [
       "instagram"
     ],
     games: [
-      "wuwa",
       "ak",
-      "ba",
-      "pgr",
-      "nikke"
+      "limbus",
+      "gi",
+      "reverse",
+      "holodori"
     ],
     whatsapp: "6285710161768",
-    discord: "https://discord.gg/rizzmustdie_",
+    discord: "https://discord.gg/773343740147793951",
     channels: [
       {
         platform: "whatsapp",
@@ -605,14 +609,14 @@ export const admins = [
       },
       {
         platform: "discord",
-        url: "https://discord.gg/rizzmustdie_",
+        url: "https://discord.gg/773343740147793951",
         role: "moderator",
         responsibility: "Satpam",
         isPrimary: false
       },
       {
         platform: "instagram",
-        url: "https://www.instagram.com/egg_are",
+        url: "https://www.instagram.com/rizzmustdie",
         role: "Owner Akun",
         responsibility: "Sebagai Cosplayer",
         isPrimary: true
@@ -1004,9 +1008,9 @@ export const admins = [
     skills: [
       "Gameplay",
       "Guide",
-      "Server Moderator (Discord)"
+      "Owner (Discord)"
     ],
-    responsibility: "Mengawasi grup Eridu, bertaggung jawab atas Grup Minecraft dan Shooter, dan Mengawasi traffic Discord",
+    responsibility: "Mengawasi grup Eridu, bertanggung jawab atas Grup Shooter, dan Mengawasi traffic Discord",
     joined: 2023,
     divisions: [
       "Leaks",
@@ -1120,7 +1124,7 @@ export const admins = [
       "EN"
     ],
     timezone: "WIB",
-    status: "active",
+    status: "inactive",
     lastUpdated: "2025-10-06T13:17:12.000Z",
     platforms: [
       "discord"
@@ -1466,7 +1470,7 @@ export const admins = [
       "Typesetter",
       "Manga",
       "Game Information",
-      "Server Moderator (Discord)"
+      "Co Owner (Discord)"
     ],
     responsibility: "mengawasi traffic discord",
     joined: 2023,
@@ -1646,7 +1650,7 @@ export const admins = [
 
   {
     slug: "kurokaizaru",
-    name: "Kurokaizaru",
+    name: "Kurokaizaru - Out",
     img: "/admins/kurokaizaru.jpg",
     role: "Admin",
     gender: "laki laki",
@@ -1665,7 +1669,7 @@ export const admins = [
       "EN"
     ],
     timezone: "WIB",
-    status: "active",
+    status: "inactive",
     lastUpdated: "2025-10-06T13:34:57.000Z",
     platforms: [
       "discord"
@@ -2403,7 +2407,7 @@ export const admins = [
 
   {
     slug: "rovalian",
-    name: "Rovalian",
+    name: "Rovalian - Out",
     img: "/admins/rovalian.jpg",
     role: "Owner Group",
     gender: "laki laki",
@@ -2422,7 +2426,7 @@ export const admins = [
       "JP"
     ],
     timezone: "UTC+7 (Jakarta)",
-    status: "active",
+    status: "inactive",
     lastUpdated: "2025-10-06T14:38:17.000Z",
     platforms: [
       "whatsapp"
@@ -2755,7 +2759,7 @@ export const admins = [
 
   {
     slug: "zuee",
-    name: "Chizue",
+    name: "Chizue - Out",
     img: "/admins/zuee.jpg",
     role: "Admin",
     gender: "laki laki",
@@ -3194,20 +3198,20 @@ export const admins = [
   slug: "mitsune2eima",
   name: "Mitsune2eima",
   img: "/admins/mitsune2eima.jpg",
-  role: "Admin",
+  role: "Owner Group",
   gender: "laki laki",
   skills: ["Guide", "Editing", "Lore Telling"],
   responsibility: "Mengawasi alur percakapan di grup WhatsApp, menjawab pertanyaan, dan mengeksekusi pelanggaran.",
   joined: 2024,
 
-  divisions: ["Admin Grup"],
+  divisions: ["Admin"],
   languages: ["ID", "EN", "Belanda", "Swedia", "Italia"],
   timezone: "WITA",
   status: "active",
   lastUpdated: "2025-10-07T12:00:10.000Z",
 
   platforms: ["whatsapp"],
-  games: ["pgr", "hok", "fgo"],
+  games: ["ak", "reverse", "fgo", "ba"],
 
   whatsapp: "6281210127259",
 
@@ -3217,7 +3221,7 @@ export const admins = [
 },
 {
   slug: "hitori",
-  name: "Hitori",
+  name: "Hitori - Out",
   img: "/admins/hitori.jpg",
   role: "Admin",
   gender: "laki laki",
@@ -3228,7 +3232,7 @@ export const admins = [
   divisions: ["Admin Grup", "Translator"],
   languages: ["ID", "JP"],
   timezone: "UTC+9",
-  status: "active",
+  status: "inactive",
   lastUpdated: "2025-10-07T12:00:15.000Z",
 
   platforms: ["whatsapp"],
@@ -3682,46 +3686,7 @@ export const admins = [
     }
   ]
 },
-{
-  slug: "runa",
-  name: "Runa",
-  img: "/admins/runa.jpg",
-  role: "Mascot",
-  gender: "perempuan",
-  skills: [
-    "Kecerdasan Buatan",
-    "Asisten Cerdas Komunitas",
-    "Konsultasi Kesehatan Mental",
-    "Pemegang Database Komunitas Gachaverse"
-  ],
-  responsibility: "AI Asisten Komunitas Gachaverse.",
-  joined: 2025,
 
-  divisions: [
-    "Babel",
-    "Posting",
-    "Translator",
-    "AI",
-    "Semua Divisi",
-  ],
-  languages: ["Semua Bahasa"],
-  timezone: "tidak realtime",
-  status: "active",
-  lastUpdated: "2025-10-10T12:00:00.000Z",
-
-  platforms: ["discord", "ai"],
-  games: [],
-
-  channels: [
-    {
-      platform: "whatsapp",
-      contact: "6285179546561",
-      role: "Mascot",
-      responsibility: "Persona of AI Gachaverse.",
-      isPrimary: true
-    }
-  ]
-},
 {
   slug: "loaw",
   name: "Lowaa",
@@ -3804,8 +3769,372 @@ export const admins = [
       isPrimary: true
     }
   ]
-}
+},
 
+{
+    slug: "Rid-cant-read",
+    name: "Farid III",
+    img: "/admins/farid.jpg",
+    role: "Admin Grup",
+    gender: "laki laki",
+    skills: [
+      "Guide",
+      "Strategy",
+      
+    ],
+    responsibility: "Bertanggung jawab untuk membimbing para player baru reverse, memberikan jawaban atas pertanyaan seputar reverse, membuat grup menjadi aman dan nyaman untuk semua member saat berkomunikasi dan mengutarakan pendapat.",
+    joined: 2026,
+    divisions: [
+      "Reverse1999"
+    ],
+    languages: [
+      "ID",
+      
+    ],
+    timezone: "UTC+8 ()",
+    status: "active",
+    lastUpdated: "2025-10-06T13:01:55.000Z",
+    platforms: [
+      "whatsapp",
+      "discord",
+      "instagram"
+    ],
+    games: [
+      "reverse",
+      "mlbb",
+      "limbus",
+      "roblox",
+      "ak",
+      "gbf"
+    ],
+    whatsapp: "6283841945520",
+    discord: "https://discord.com/users/722994442390470746",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6283841945520",
+        role: "admin",
+        responsibility: "Bertanggung jawab untuk membimbing para player baru reverse, memberikan jawaban atas pertanyaan seputar reverse, membuat grup menjadi aman dan nyaman untuk semua member saat berkomunikasi dan mengutarakan pendapat.",
+        isPrimary: true
+      },
+      {
+        platform: "discord",
+        url: "https://discord.com/users/722994442390470746",
+        role: "moderator",
+        responsibility: "Satpam",
+        isPrimary: false
+      }
+    ]
+  },
+
+  {
+    slug: "4951",
+    name: "Grace",
+    img: "/admins/grace.jpg",
+    role: "Admin Grup",
+    gender: "laki laki",
+    skills: [
+      "Guide",
+      "Fast-Response",
+      
+    ],
+    responsibility: "Menjaga kedamaian grup",
+    joined: 2023,
+    divisions: [
+      "Neverness To Everness"
+    ],
+    languages: [
+      "ID",
+      
+    ],
+    timezone: "UTC+7 (Lamongan)",
+    status: "active",
+    lastUpdated: "2025-10-06T13:01:55.000Z",
+    platforms: [
+      "whatsapp",
+      "discord",
+      
+    ],
+    games: [
+      "nte",
+      "minecraft",
+      "mlbb",
+      "roblox",
+    ],
+    whatsapp: "6281393943113",
+    discord: "https://discord.com/users/1110815332765012009",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6281393943113",
+        role: "admin",
+        responsibility: "Menjaga kedamaian grup",
+        isPrimary: true
+      },
+      {
+        platform: "discord",
+        url: "https://discord.com/users/1110815332765012009",
+        role: "moderator",
+        responsibility: "member",
+        isPrimary: false
+      }
+    ]
+  },
+
+  {
+    slug: "WikiPadia",
+    name: "Padia / Lia",
+    img: "/admins/padia.webp",
+    role: "Owner Grup",  
+    gender: "Perempuan",
+    skills: [
+      "Guide",
+      "Game Related Information",
+      "Story Related",
+      "Literature"
+      
+    ],
+    responsibility: "Bertugas sebagai Owner Grup, memberikan Guide Game dan Lore semua Game Project Moon sekaligus Admin Postingan divisi Project Moon & PJSK",
+    joined: 2025,
+    divisions: [
+      "Limbus Company", "Library of Ruina", "Lobotomy Corporation"
+    ],
+    languages: [
+      "ID",
+      "EN",
+      
+    ],
+    timezone: "UTC+8",
+    status: "active",
+    lastUpdated: "2025-10-06T13:01:55.000Z",
+    platforms: [
+      "whatsapp",
+      "discord",
+      
+    ],
+    games: [
+      "limbus",
+      "lobcorp",
+      "library",
+      "reverse",
+      "ak",
+      "hi",
+      "zzz",
+      "pjsk",
+      "mlbb",
+    ],
+    whatsapp: "6285176994775",
+    discord: "https://discord.com/users/756862726516506705",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6285176994775",
+        role: "admin",
+        responsibility: "bertugas sebagai Owner Grup, memberikan Guide Game dan Lore semua Game Project Moon sekaligus Admin Postingan divisi Project Moon & PJSK",
+        isPrimary: true
+      },
+      {
+        platform: "discord",
+        url: "https://discord.com/users/756862726516506705",
+        role: "moderator",
+        responsibility: "member",
+        isPrimary: false
+      }
+    ]
+  },
+
+  {
+    slug: "JustMex",
+    name: "Jay",
+    img: "/admins/jay.jpg",
+    role: "Owner Grup",  
+    gender: "Laki-Laki",
+    skills: [
+      "Guide",
+      "Gameplay Related",
+      
+    ],
+    responsibility: "",
+    joined: 2026,
+    divisions: [
+      "Genshin Impact"
+    ],
+    languages: [
+      "ID",
+      "EN",
+      "CN"
+      
+    ],
+    timezone: "UTC+7",
+    status: "active",
+    lastUpdated: "2025-10-06T13:01:55.000Z",
+    platforms: [
+      "whatsapp",
+      "discord",
+      "instagram"
+      
+    ],
+    games: [
+      "gi", "hsr", "zzz", "strinova", "ak", "endfield",
+      
+    ],
+    whatsapp: "6281281062360",
+    discord: "https://discord.com/users/882432645760450582",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6281281062360",
+        role: "admin",
+        responsibility: "Mengawasi dan Bertanggung jawab atas Grup Genshin",
+        isPrimary: true
+      },
+      {
+        platform: "discord",
+        url: "https://discord.com/users/882432645760450582",
+        role: "moderator",
+        responsibility: "member",
+        isPrimary: false
+      },
+      {
+        platform: "instagram",
+        url: "https://www.instagram.com/jayson.mex",
+        role: "Owner Akun",
+        responsibility: "Akun Pribadi",
+        isPrimary: true
+      }
+    ]
+  },
+
+  {
+    slug: "KikyoTheFather",
+    name: "Kikyo",
+    img: "/admins/kikyo.jpg",
+    role: "Admin Grup",  
+    gender: "Laki-Laki",
+    skills: [
+      "Guide",
+      "Story",
+      "Lore"
+      
+    ],
+    responsibility: "Mengemban Tugas sebagai admin di grup whatsapp nikke",
+    joined: 2025,
+    divisions: [
+      "Goddess of Victory: NIKKE"
+    ],
+    languages: [
+      "ID",
+      "EN",
+      
+    ],
+    timezone: "UTC+7",
+    status: "active",
+    lastUpdated: "2025-10-06T13:01:55.000Z",
+    platforms: [
+      "whatsapp",
+      "discord",
+      "instagram"
+      
+    ],
+    games: [
+      "nikke", 
+      "hi", 
+      "hsr", 
+      "mlbb", 
+      "codm", 
+      
+    ],
+    whatsapp: "6281281062360",
+    discord: "https://discord.com/users/943150045908316170",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6281281062360",
+        role: "admin",
+        responsibility: "Mengemban Tugas sebagai admin di grup whatsapp nikke",
+        isPrimary: true
+      },
+      {
+        platform: "discord",
+        url: "https://discord.com/users/943150045908316170",
+        role: "moderator",
+        responsibility: "member",
+        isPrimary: false
+      },
+    ]  
+  },
+
+  {
+    slug: "MerelVanDerMeer",
+    name: "Merel",
+    img: "/admins/merel.jpg",
+    role: "Admin Grup",  
+    gender: "Laki-Laki",
+    skills: [
+      "Guide",
+      "Story Enthusiast",
+      "Lore Enthusiast"
+      
+    ],
+    responsibility: "Menjaga ketertiban grup whatsapp, serta membantu masalah tentang Reverse: 1999",
+    joined: 2025,
+    divisions: [
+      "Reverse: 1999"
+    ],
+    languages: [
+      "ID",
+      "EN",
+      
+    ],
+    timezone: "UTC+7",
+    status: "active",
+    lastUpdated: "2025-10-06T13:01:55.000Z",
+    platforms: [
+      "whatsapp",
+      "discord",
+      "instagram",
+      "facebook"
+      
+    ],
+    games: [
+      "reverse", 
+      "spalace", 
+      
+    ],
+    whatsapp: "6285694404830",
+    discord: "https://discord.gg/J2pH4vvH",
+    facebook: "https://www.facebook.com/share/1K47CHrhVQ/",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6285694404830",
+        role: "admin",
+        responsibility: "Menjaga ketertiban grup whatsapp, serta membantu masalah tentang Reverse: 1999",
+        isPrimary: true
+      },
+      {
+        platform: "discord",
+        url: "https://discord.gg/J2pH4vvH",
+        role: "moderator",
+        responsibility: "member",
+        isPrimary: false
+      },
+      {
+        platform: "instagram",
+        url: "https://www.instagram.com/zera215?obrf=aDNxcnM3ZWhxcXl6",
+        role: "Owner Akun",
+        responsibility: "Akun Pribadi",
+        isPrimary: false
+      },
+      {
+        platform: "facebook",
+        url: "https://www.facebook.com/share/1K47CHrhVQ/",
+        role: "Owner Akun",
+        responsibility: "Akun Pribadi",
+        isPrimary: false
+      }
+    ]  
+  },
 ];
 
 export function getAdminBySlug(slug) {
