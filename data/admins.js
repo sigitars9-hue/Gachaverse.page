@@ -337,7 +337,7 @@ export const admins = [
         role: "admin",
         responsibility: "Menjaga gachaverse menjadi tempat yang nyaman dan aman bagi setiap member nya untuk berinteraksi.",
         isPrimary: true
-      }
+      },
     ]
   },
 
@@ -1010,7 +1010,7 @@ export const admins = [
       "Guide",
       "Owner (Discord)"
     ],
-    responsibility: "Mengawasi grup Eridu, bertanggung jawab atas Grup Shooter, dan Mengawasi traffic Discord",
+    responsibility: "Mengawasi grup Eridu, bertanggung jawab atas Grup NTE, mengawasi grup Shooter, dan Mengawasi traffic Discord",
     joined: 2023,
     divisions: [
       "Leaks",
@@ -1030,7 +1030,7 @@ export const admins = [
       "discord"
     ],
     games: [
-      "hsr",
+      "nte",
       "zzz",
       "roblox",
       "duet-nigh-abyss",
@@ -1046,7 +1046,7 @@ export const admins = [
         platform: "whatsapp",
         contact: "6281383216705",
         role: "admin",
-        responsibility: "Mengawasi grup Eridu, bertaggung jawab atas Grup Minecraft dan Shooter, dan Mengawasi traffic Discord",
+        responsibility: "Mengawasi grup Eridu, bertanggung jawab atas Grup NTE, mengawasi grup Shooter, dan Mengawasi traffic Discord",
         isPrimary: false
       },
       {
@@ -1159,7 +1159,7 @@ export const admins = [
     slug: "kaito",
     name: "Kaito",
     img: "/admins/kaito.jpg",
-    role: "Owner Group",
+    role: "Admin",
     gender: "laki laki",
     skills: [
       "Guide",
@@ -1167,11 +1167,10 @@ export const admins = [
       "Strategy",
       "Artist"
     ],
-    responsibility: "Owner Dante",
+    responsibility: "Admin Grup Project Moon",
     joined: 2022,
     divisions: [
       "Leaks",
-      "Owner Grup",
       "Admin Grup",
       "Gvs"
     ],
@@ -1190,7 +1189,10 @@ export const admins = [
       "hi",
       "zzz",
       "al",
-      "gfl2"
+      "gfl2",
+      "limbus",
+      "library",
+      "lobcorp",
     ],
     whatsapp: "#",
     channels: [
@@ -1570,7 +1572,7 @@ export const admins = [
     slug: "rei",
     name: "Rei",
     img: "/admins/rei.jpg",
-    role: "Admin",
+    role: "Co-Owner Grup",
     gender: "laki laki",
     skills: [
       "Guide",
@@ -1593,7 +1595,8 @@ export const admins = [
     ],
     games: [
       "ak",
-      "ba"
+      "ba",
+      "endfield"
     ],
     whatsapp: "6282234123314",
     channels: [
@@ -1603,7 +1606,14 @@ export const admins = [
         role: "admin",
         responsibility: "Sharing info, guide & news",
         isPrimary: true
-      }
+      },
+      {
+        platform: "discord",
+        url: "https://discord.com/users/1149677678186737674",
+        role: "moderator",
+        responsibility: "Member",
+        isPrimary: false
+      },
     ]
   },
 
@@ -2301,7 +2311,7 @@ export const admins = [
     slug: "tia",
     name: "Tia",
     img: "/admins/tia.jpg",
-    role: "Co-owner Group",
+    role: "Owner Group",
     gender: "laki laki",
     skills: [
       "Guide Blue Archive dan Rhythm",
@@ -2329,7 +2339,8 @@ export const admins = [
       "pgr",
       "pjsk",
       "bandori",
-      "maimai"
+      "maimai",
+      "steso"
     ],
     whatsapp: "6289661457400",
     channels: [
@@ -2634,7 +2645,7 @@ export const admins = [
 
   {
     slug: "dhani-ali",
-    name: "Dhani Ali",
+    name: "Dhani Ali - Out",
     img: "/admins/dhani-ali.jpg",
     role: "Admin",
     gender: "laki laki",
@@ -3739,7 +3750,7 @@ export const admins = [
   responsibility: "Mengurus dan mengawasi grup.",
   joined: 2025,
   divisions: [
-    "Admin Grup Whatsapp"
+    "Admin Grup"
   ],
   languages: [
     "ID",
@@ -3755,8 +3766,8 @@ export const admins = [
     "wuwa",
     "ak",
     "ba",
-    "zzz",
-    "uma_musume"
+    "limbus",
+    "umamusume"
   ],
   whatsapp: "6282136505016",
   discord: "",
@@ -3861,12 +3872,12 @@ export const admins = [
       "mlbb",
       "roblox",
     ],
-    whatsapp: "6281393943113",
+    whatsapp: "6281393942113",
     discord: "https://discord.com/users/1110815332765012009",
     channels: [
       {
         platform: "whatsapp",
-        contact: "6281393943113",
+        contact: "6281393942113",
         role: "admin",
         responsibility: "Menjaga kedamaian grup",
         isPrimary: true
@@ -3965,7 +3976,7 @@ export const admins = [
       "CN"
       
     ],
-    timezone: "UTC+7",
+    timezone: "UTC+8 (Taipei)",
     status: "active",
     lastUpdated: "2025-10-06T13:01:55.000Z",
     platforms: [
@@ -4133,6 +4144,235 @@ export const admins = [
         responsibility: "Akun Pribadi",
         isPrimary: false
       }
+    ]  
+  },
+
+  {
+    slug: "merufii6720",
+    name: "merufiii",
+    img: "/admins/merufii.jpg",
+    role: "Co-Owner Grup",  
+    gender: "Laki-Laki",
+    skills: [
+      "Gameplay Guide",
+      "Teambuilding",
+      
+    ],
+    responsibility: "Membantu owner dalam menjalankan grup dan membantu member yang membutuhkan bantuan baik dalam menyelesaikan endgame, build agent, dan sebagainya",
+    joined: 2026,
+    divisions: [
+      "Zenless Zone Zero"
+    ],
+    languages: [
+      "ID",
+      "EN",
+      
+    ],
+    timezone: "UTC+7 (Bandung)",
+    status: "active",
+    lastUpdated: "2025-10-06T13:01:55.000Z",
+    platforms: [
+      "whatsapp",
+      "discord",
+      "instagram",
+      
+    ],
+    games: [
+      "zzz", 
+      "hsr",
+      "gbf",
+      "riskofrain" 
+      
+    ],
+    whatsapp: "6285179672042",
+    discord: "https://discord.gg/712198144125042740",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6285179672042",
+        role: "admin",
+        responsibility: "Membantu owner dalam menjalankan grup dan membantu member yang membutuhkan bantuan baik dalam menyelesaikan endgame, build agent, dan sebagainya",
+        isPrimary: true
+      },
+      {
+        platform: "discord",
+        url: "https://discord.gg/712198144125042740",
+        role: "moderator",
+        responsibility: "member",
+        isPrimary: false
+      },
+    ]  
+  },
+
+  {
+    slug: "imsunnyday",
+    name: "Pika",
+    img: "/admins/pika.jpg",
+    role: "Admin Posting",  
+    gender: "Perempuan",
+    skills: [
+      "Content Creating",
+      "Guide",
+      
+    ],
+    responsibility: "bertanggungjawab dalam membuat konten Instagram terkait dengan Game Limbus Company, Lobotomy Corporation, dan Library of Ruina, serta membuat Guide terkait Identity",
+    joined: 2026,
+    divisions: [
+      "Posting"
+    ],
+    languages: [
+      "ID",
+      
+    ],
+    timezone: "UTC+7",
+    status: "active",
+    lastUpdated: "2025-10-06T13:01:55.000Z",
+    platforms: [
+      "whatsapp",
+      "discord",
+      
+    ],
+    games: [
+      "limbus",
+      "czn"
+      
+    ],
+    whatsapp: "6281510215277",
+    discord: "https://discord.com/users/945984788349743196",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6281510215277",
+        role: "admin",
+        responsibility: "bertanggungjawab dalam membuat konten Instagram terkait dengan Game Limbus Company, Lobotomy Corporation, dan Library of Ruina, serta membuat Guide terkait Identity",
+        isPrimary: true
+      },
+      {
+        platform: "discord",
+        url: "https://discord.com/users/945984788349743196",
+        role: "moderator",
+        responsibility: "member",
+        isPrimary: false
+      },
+    ]  
+  },
+
+  {
+    slug: "derasya",
+    name: "Yasan",
+    img: "/admins/derasya.jpg",
+    role: "Admin",  
+    gender: "Laki-Laki",
+    skills: [
+      "Game Information",
+      "Guide",
+      "Strategy",
+      "Lore Related"
+      
+    ],
+    responsibility: "Menjaga gachaverse menjadi tempat yang nyaman dan aman bagi setiap member komunitas dalam berkomunikasi dan berinteraksi",
+    joined: 2024,
+    divisions: [
+      "Limbus Company"
+    ],
+    languages: [
+      "ID",
+      "EN",
+      "JP"
+      
+    ],
+    timezone: "UTC+7",
+    status: "active",
+    lastUpdated: "2025-10-06T13:01:55.000Z",
+    platforms: [
+      "whatsapp",
+      "discord",
+      "Instagram"
+      
+    ],
+    games: [
+      "limbus",
+      "hsr",
+      "mlbb"
+
+    ],
+    whatsapp: "6282246047833",
+    discord: "https://discord.com/users/1235385103039860817",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6282246047833",
+        role: "admin",
+        responsibility: " Menjaga gachaverse menjadi tempat yang nyaman dan aman bagi setiap member komunitas dalam berkomunikasi dan berinteraksi",
+        isPrimary: true
+      },
+      {
+        platform: "discord",
+        url: "https://discord.com/users/1235385103039860817",
+        role: "moderator",
+        responsibility: "member",
+        isPrimary: false
+      },
+    ]  
+  },
+
+  {
+    slug: "aseprahmat",
+    name: "Ahahaha!",
+    img: "/admins/ahahaha.jpg",
+    role: "Admin Post",  
+    gender: "Laki-Laki",
+    skills: [
+      "Graphic Design",
+      "Berdoa",
+      
+    ],
+    responsibility: "Admin Post spesialis Arknights server Global",
+    joined: 2026,
+    divisions: [
+      "Arknights"
+    ],
+    languages: [
+      "ID",
+      "EN",
+      "JP",
+      "JV"
+      
+    ],
+    timezone: "UTC+7",
+    status: "active",
+    lastUpdated: "2025-10-06T13:01:55.000Z",
+    platforms: [
+      "whatsapp",
+      "discord",
+      "Instagram",
+      "X",
+      "Facebook",
+      "Threads"
+      
+    ],
+    games: [
+      "ak",
+      "endfield",
+
+    ],
+    whatsapp: "62812-9516-8090",
+    discord: "https://discord.gg/UVYPftNx",
+    channels: [
+      {
+        platform: "whatsapp",
+        contact: "6281295168090",
+        role: "admin",
+        responsibility: "Admin Post spesialis Arknights OG server Global",
+        isPrimary: true
+      },
+      {
+        platform: "discord",
+        url: "https://discord.gg/UVYPftNx",
+        role: "moderator",
+        responsibility: "member",
+        isPrimary: false
+      },
     ]  
   },
 ];

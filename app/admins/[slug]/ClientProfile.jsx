@@ -216,6 +216,10 @@ const GAME_ICON_MAP = {
   nte: { base: "/icons/games/nte", title: "Neverness To Everness" },
   holodori: { base: "/icons/games/holodori", title: "Hololive Dreams" },
   spalace: { base: "/icons/games/spalace", title: "Silver Palace" },
+  codm: { base: "/icons/games/codm", title: "Call of Duty: Mobile" },
+  riskofrain: { base: "/icons/games/riskofrain", title: "Risk of Rain" },
+  endfield: { base: "/icons/games/endfield", title: "Arknights: Endfield" },
+  steso: { base: "/icons/games/steso", title: "Stella Sora" },
 };
 
 // GAME matcher (untuk deteksi dari teks)
@@ -258,6 +262,10 @@ export const GAME_MATCHERS = [
   { key: "nte", title: "Neverness To Everness", aliases: ["nte","neverness to everness"] },
   { key: "holodori", title: "Hololive Dreams", aliases: ["holodori","hololive dreams"] },
   { key: "spalace", title: "Silver Palace", aliases: ["spalace","silver palace"] },
+  { key: "codm", title: "Call of Duty: Mobile", aliases: ["codm","call of duty mobile"] },
+  { key: "riskofrain", title: "Risk of Rain", aliases: ["riskofrain","risk of rain"] },
+  { key: "endfield", title: "Arknights: Endfield", aliases: ["endfield","arknights endfield"] },
+  { key: "steso", title: "Stella Sora", aliases: ["steso","stella sora"] },
 ];
 
 const PLATFORM_ICONS = {
@@ -267,6 +275,7 @@ const PLATFORM_ICONS = {
   tiktok: { base: "/icons/platforms/tiktok", title: "TikTok" },
   youtube: { base: "/icons/platforms/youtube", title: "YouTube" },
   x: { base: "/icons/platforms/x", title: "X" },
+  facebook: { base: "/icons/platforms/facebook", title: "Facebook" },
 };
 const PLATFORM_LABEL = {
   whatsapp: "WhatsApp",
@@ -275,6 +284,7 @@ const PLATFORM_LABEL = {
   tiktok: "TikTok",
   youtube: "YouTube",
   x: "x",
+  facebook: "Facebook",
 };
 
 function hasTokenList(hay, list) {
@@ -356,10 +366,17 @@ export function normalizeGames(list) {
     czn: "czn",
     library: "library", "lor": "library",
     nte: "nte",
-    nte: "neverness to everness",
     holodori: "holodori",
     spalace: "spalace",
     silverpalace: "spalace",
+    riskofrain: "riskofrain",
+    codm: "codm",
+    "call of duty mobile": "codm",
+    endfield: "endfield",
+    "arknights endfield": "endfield",
+    steso: "steso",
+    "stella sora": "steso",
+
   };
   const cleaned = (s) =>
     String(s).toLowerCase().trim().replace(/[_\-]+/g, " ").replace(/\s+/g, " ");
@@ -506,6 +523,7 @@ function LogosRow({ admin }) {
       : p === "discord" ? discordUrl
       : p === "instagram" ? instaUrl
       : p === "tiktok" ? tiktokUrl
+      : p === "facebook" ? `https://facebook.com/${admin.facebook}`
       : null,
   }));
 
