@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { Lock, Shield, Layers, Users } from "lucide-react";
 import { DIVISION_ORDER, DIVISION_DESC } from "@/constants/division";
+import { getAllDivisions } from "@/utils/adminMeta";
 
 /* ------------------------------------------------------------------ */
 /* Role → warna gradasi (sinkron dg halaman profil admin)             */
@@ -35,7 +36,8 @@ const ROLE_GRADIENT = {
   "mascot": "from-pink-600/85 via-rose-500/70 to-fuchsia-500/60",
 
   // moderator (discord)
-  "moderator": "from-violet-700/85 via-purple-600/75 to-fuchsia-600/60",
+  "owner-discord": "from-violet-900/85 via-purple-700/75 to-fuchsia-700/60",
+  "moderator": "from-purple-700/85 via-fuchsia-600/75 to-pink-600/60",
 
   // role group
   "owner-group": "from-indigo-700/85 via-blue-600/70 to-sky-600/60",
@@ -53,7 +55,7 @@ const DIVISION_ROLES = {
   Leaks: ["Leaks"],
   "Owner Grup": ["Owner Group", "Co-owner group"],
   "Admin Grup": ["Admin"],                     // "Admin" di sini akan ditampilkan sebagai "Admin Grup"
-  Discord: ["Moderator"],
+  Discord: ["owner discord", "Moderator"],
   AI: ["Mascot"],
   Gvs: ["Owner Gvstore", "Sekretaris"],
   Partnership: ["Moderator"],
@@ -68,6 +70,7 @@ const SHIMMER_ROLES = new Set([
   "best-creator",
   "owner-group",
   "owner-gvstore",
+  "owner-discord",
   "sekretaris",
 ]);
 
@@ -107,6 +110,7 @@ function getRoleLabel(role, division) {
   if (key === "head-admin") return "Head Admin";
   if (key === "co-owner-group") return "Co-owner Group";
   if (key === "owner-group") return "Owner Group";
+  if (key === "owner-discord") return "Owner Discord";
   if (key === "best-creator") return "Best Creator";
 
   return role;
@@ -117,22 +121,26 @@ function RoleChip({ role, division }) {
   const key = roleKey(role);
   const grad = getRoleGrad(role, division);
   const label = getRoleLabel(role, division);
-  const shimmer =
-    SHIMMER_ROLES.has(key) ||
-    // kalau "Admin Posting", jangan shimmer
-    (division === "Posting" && roleKey(role) === "admin" ? false : false);
+  const shimmer = SHIMMER_ROLES.has(key);
+
+  // kirim role (sudah dinormalisasi), label tampilan, dan divisi (opsional)
+  const params = new URLSearchParams({ role: key, label });
+  if (division) params.set("division", division);
+  const href = `/admins/hierarki/listadmin?${params.toString()}`;
 
   return (
-    <span className="relative inline-flex items-center">
+    <Link
+  href={href}
+  title={`Lihat daftar ${label}`}
+  className="pointer-events-auto relative inline-flex items-center rounded-full transition duration-200 hover:scale-105 hover:brightness-110 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+>
       <span
         className={`relative rounded-full px-3 py-1 text-xs font-semibold text-white bg-gradient-to-r ${grad} ring-1 ring-white/10 shadow-[0_4px_16px_rgba(0,0,0,.25)]`}
       >
-        {/* glossy overlay tipis agar gradasi lebih hidup */}
         <span className="pointer-events-none absolute inset-0 rounded-full bg-white/10 mix-blend-overlay opacity-10" />
         {label}
       </span>
 
-      {/* shimmer highlight (kilau bergerak) */}
       {shimmer && (
         <span
           aria-hidden
@@ -141,7 +149,7 @@ function RoleChip({ role, division }) {
           <span className="absolute -inset-2 rounded-full shine" />
         </span>
       )}
-    </span>
+    </Link>
   );
 }
 
@@ -202,6 +210,7 @@ export default function HierarkiPage() {
               "Co-founder",
               "Head admin",
               "Owner Gvstore",
+              "Owner Discord",
               "Sekretaris",
               "Best Creator",
               "Moderator",
@@ -218,49 +227,66 @@ export default function HierarkiPage() {
         {/* grid divisi */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {ORDERED_DIVISION.map((div) => {
-            const desc = DIVISION_DESC?.[div] ?? "";
-            const roles = DIVISION_ROLES[div] ?? [];
-            const locked = div.toLowerCase() === "pentung";
+  const ORDERED_DIVISION = getAllDivisions();
+  const desc = DIVISION_DESC?.[div] ?? "";
+  const roles = DIVISION_ROLES[div] ?? [];
+  const locked = div.toLowerCase() === "pentung";
+  const divHref = `/admins/hierarki/listadmin?division=${encodeURIComponent(div)}`;
 
-            return (
-              <Card key={div} className="relative">
-                <div className="mb-3 flex items-center justify-between">
-                  <h3 className="text-xl font-semibold">{div}</h3>
-                  {locked ? (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-red-500/15 px-3 py-1 text-xs font-medium text-red-300 border border-red-300/30">
-                      <Lock className="h-3.5 w-3.5" />
-                      Terkunci
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-white/70 border border-white/10">
-                      <Users className="h-3.5 w-3.5" />
-                      Divisi aktif
-                    </span>
-                  )}
-                </div>
+  return (
+    <Card
+      key={div}
+      className={`relative transition duration-200 ${
+        locked ? "" : "hover:-translate-y-0.5 hover:bg-white/[0.08]"
+      }`}
+    >
+      {/* layer klik untuk seluruh kartu (stretched link) */}
+      {!locked && (
+        <Link
+          href={divHref}
+          aria-label={`Lihat semua admin divisi ${div}`}
+          className="absolute inset-0 z-0 rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        />
+      )}
 
-                {/* deskripsi */}
-                <p
-                  className={`text-sm ${
-                    locked ? "text-white/50 blur-[1px] select-none" : "text-white/80"
-                  }`}
-                >
-                  {locked ? "Informasi divisi ini bersifat rahasia." : desc}
-                </p>
+      {/* konten: tembus klik, kecuali chip (pointer-events-auto) */}
+      <div className="pointer-events-none relative z-10">
+        <div className="mb-3 flex items-center justify-between">
+          <h3 className="text-xl font-semibold">{div}</h3>
+          {locked ? (
+            <span className="inline-flex items-center gap-1 rounded-full bg-red-500/15 px-3 py-1 text-xs font-medium text-red-300 border border-red-300/30">
+              <Lock className="h-3.5 w-3.5" />
+              Terkunci
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1 rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-white/70 border border-white/10">
+              <Users className="h-3.5 w-3.5" />
+              Divisi aktif
+            </span>
+          )}
+        </div>
 
-                {/* roles */}
-                {locked ? (
-                  <div className="mt-4 h-10 rounded-xl bg-white/5 border border-white/10 blur-[1px]" />
-                ) : roles.length ? (
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {roles.map((r) => (
-                      <RoleChip key={r} role={r} division={div} />
-                    ))}
-                  </div>
-                ) : null}
-              </Card>
-            );
-          })}
+        <p
+          className={`text-sm ${
+            locked ? "text-white/50 blur-[1px] select-none" : "text-white/80"
+          }`}
+        >
+          {locked ? "Informasi divisi ini bersifat rahasia." : desc}
+        </p>
+
+        {locked ? (
+          <div className="mt-4 h-10 rounded-xl bg-white/5 border border-white/10 blur-[1px]" />
+        ) : roles.length ? (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {roles.map((r) => (
+              <RoleChip key={r} role={r} division={div} />
+            ))}
+          </div>
+        ) : null}
+      </div>
+    </Card>
+  );
+})}
         </div>
 
         {/* footer back */}

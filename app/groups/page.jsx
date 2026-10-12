@@ -104,7 +104,7 @@ const iconPath = (key) => {
 
 // mapping nama/kategori → daftar icon (harus cocok dg nama file di /public/icons/games/*.png)
 const ICON_MAP = [
-  { test: /\bdante\b/i, icons: ['limbus'] },
+  { test: /\bdante\b/i, icons: ['limbus', 'lobcorp', 'library'] },
   { test: /velvet\s*room/i, icons: ['persona'] },
   { test: /penembak\s*jitu|pubg/i, icons: ['valorant', 'pubg', 'df'] },
   { test: /paimon|genshin|gi\b/i, icons: ['gi'] }, // → genshin.png via alias
@@ -124,11 +124,11 @@ const ICON_MAP = [
   { test: /cygames/i, icons: ['gbf', 'umamusume'] },
   { test: /yostar/i, icons: ['ak', 'al', 'ba', 'ag', 'nc'] },
 
-  { test: /rhythm|full\s*combo|bandori|pjsk/i, icons: ['bandori', 'pjsk'] },
+  { test: /rhythm|full\s*combo|bandori|pjsk/i, icons: ['bandori', 'pjsk', 'holodori'] },
   { test: /valorant/i, icons: ['valorant'] },
   { test: /\broblox\b/i, icons: ['roblox'] },
   { test: /pgr|punishing\s*gray\s*rav(en)?/i, icons: ['pgr'] },
-  { test: /limbus/i, icons: ['limbus'] },
+  { test: /limbus/i, icons: ['limbus', 'lobcorp', 'library'] },
   { test: /mlbb|moonton/i, icons: ['mlbb'] },
 ];
 

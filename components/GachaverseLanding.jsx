@@ -56,25 +56,25 @@ const NAV = [
 ];
 
 const ADMIN_PREVIEW = [
-  { name: 'Ryuu',  slug: 'pacar-elysia',  role: 'Founder',        img: '/admins/ryuu.jpg' },
-  { name: 'Haru',  slug: 'haru',          role: 'Co-Founder',     img: '/admins/haru.jpg' },
-  { name: 'Rizz',  slug: 'rizzmustdie',  role: 'Head Admin',     img: '/admins/rizz.jpg' },
-  { name: 'Kall',  slug: 'kalandra',  role: 'Head Admin',     img: '/admins/kalandra.jpg' },
-  { name: 'Asuka', slug: 'asuka', role: 'Best Creator',   img: '/admins/asuka.jpg' },
-  { name: 'Imy',   slug: 'imy',   role: 'Sekretaris',     img: '/admins/imy.jpg' },
+  { name: 'Ryuu',     slug: 'pacar-elysia',  role: 'Founder',        img: '/admins/ryuu.jpg' },
+  { name: 'Ceezu',    slug: 'ceezu',         role: 'Co-Founder',     img: '/admins/ceezu.jpg' },
+  { name: 'Kall',     slug: 'kalandra',      role: 'Co-Founder',     img: '/admins/kalandra.jpg' },
+  { name: 'Rizz',     slug: 'rizzmustdie',   role: 'Head Admin',     img: '/admins/rizz.jpg' },
+  { name: 'Soraa',    slug: 'soraskuyy',     role: 'Head Admin',     img: '/admins/sora.jpg' },
+  { name: 'Shizuu',   slug: 'shizuu',        role: 'Head Admin',     img: '/admins/shizuu.jpg' },
 
 ];
 
 const MEDIA_PARTNERS = [
-  { name: '@alvethia.logic', url: 'https://www.instagram.com/alvethia.logic?igsh=aTloMzJ3cW41aTg5', topic: 'Epistemologi & interpretasi lore HI3', followers: '10,3 K', avatar: '/partners/alvethia.jpg' },
-  { name: '@reverse_1999_indonesia', url: 'https://www.instagram.com/reverse_1999_indonesia?igsh=MTZhbXc1c3N3ZXpsNA==', topic: 'Reverse 1999', followers: '2.539', avatar: '/partners/reverse1999indo.jpg' },
-  { name: '@kapten.semmelweiss', url: 'https://www.instagram.com/kapten.semmelweiss?igsh=ZzFiYnJ2MmxnYWlh', topic: 'Reverse: 1999, info seputar Arcanist, dll.', followers: '445', avatar: '/partners/kapten-semmelweiss.jpg' },
-  { name: '@kysekai.id', url: 'https://www.instagram.com/kysekai.id?igsh=MW5maTB0eWlnM3ZkeA==', topic: 'Project Sekai', followers: '15,9 K', avatar: '/partners/kysekai.jpg' },
-  { name: '@bigbob_arknights', url: 'https://www.instagram.com/bigbob_arknights?igsh=MXd6cGpwaWt4b3oxbw==', topic: 'Arknights', followers: '3.770', avatar: '/partners/bigbob.jpg' },
-  { name: '@infoarknights.id', url: 'https://www.instagram.com/infoarknights.id', topic: 'Arknights', followers: '13,6 K', avatar: '/partners/infoarknights.jpg' },
-  { name: '@fategrand_indonesia', url: 'https://www.instagram.com/fategrand_indonesia?igsh=ajB5b2lkdGR0NjY3', topic: 'Seputar info Fate Series', followers: '1.927', avatar: '/partners/fategrand-id.jpg' },
-  { name: '@neo_fgo_world', url: 'https://www.instagram.com/neo_fgo_world?igsh=MXRzNHNva29uZmM4Yw==', topic: 'All content Type-Moon', followers: '2.851', avatar: '/partners/neo-fgo-world.jpg' },
-  { name: '@limbus_id', url: 'https://www.instagram.com/limbus_id?stkn=aGI5eXdoZzI5M3dm', topic: 'All Project Moon', followers: '983', avatar: '/partners/limbusid.webp' }
+  { name: '@alvethia.logic',          url: 'https://www.instagram.com/alvethia.logic',          topic: 'Epistemologi & interpretasi lore HI3', followers: '10,3 K', avatar: '/partners/alvethia.jpg' },
+  { name: '@reverse_1999_indonesia',  url: 'https://www.instagram.com/reverse_1999_indonesia',  topic: 'Reverse 1999', followers: '2.539', avatar: '/partners/reverse1999indo.jpg' },
+  { name: '@kapten.semmelweiss',      url: 'https://www.instagram.com/kapten.semmelweiss',      topic: 'Reverse: 1999, info seputar Arcanist, dll.', followers: '445', avatar: '/partners/kapten-semmelweiss.jpg' },
+  { name: '@kysekai.id',              url: 'https://www.instagram.com/kysekai.id',              topic: 'Project Sekai', followers: '15,9 K', avatar: '/partners/kysekai.jpg' },
+  { name: '@bigbob_arknights',        url: 'https://www.instagram.com/bigbob_arknights',        topic: 'Arknights', followers: '3.770', avatar: '/partners/bigbob.jpg' },
+  { name: '@infoarknights.id',        url: 'https://www.instagram.com/infoarknights.id',        topic: 'Arknights', followers: '13,6 K', avatar: '/partners/infoarknights.jpg' },
+  { name: '@fategrand_indonesia',     url: 'https://www.instagram.com/fategrand_indonesia',     topic: 'Seputar info Fate Series', followers: '1.927', avatar: '/partners/fategrand-id.jpg' },
+  { name: '@neo_fgo_world',           url: 'https://www.instagram.com/neo_fgo_world',           topic: 'All content Type-Moon', followers: '2.851', avatar: '/partners/neo-fgo-world.jpg' },
+  { name: '@limbus_id',               url: 'https://www.instagram.com/limbus_id',               topic: 'All Project Moon', followers: '1022', avatar: '/partners/limbusid.webp' }
 ];
 
 const SPONSORS = [

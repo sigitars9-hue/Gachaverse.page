@@ -188,7 +188,6 @@ const GAME_ICON_MAP = {
   zzz: { base: "/icons/games/zzz", title: "Zenless Zone Zero" },
   al: { base: "/icons/games/al", title: "Azur Lane" },
   gfl: { base: "/icons/games/gfl", title: "Girls’ Frontline" },
-  persona: { base: "/icons/games/persona", title: "Persona" },
   roblox: { base: "/icons/games/roblox", title: "Roblox" },
   strinova: { base: "/icons/games/strinova", title: "Strinova" },
   tot: { base: "/icons/games/tot", title: "Tears of Themis" },
@@ -220,6 +219,14 @@ const GAME_ICON_MAP = {
   riskofrain: { base: "/icons/games/riskofrain", title: "Risk of Rain" },
   endfield: { base: "/icons/games/endfield", title: "Arknights: Endfield" },
   steso: { base: "/icons/games/steso", title: "Stella Sora" },
+  enstar: { base: "/icons/games/enstar", title: "Ensemble Stars!" },
+  twst: { base: "/icons/games/twst", title: "Twisted Wonderland" },
+  persona3: { base: "/icons/games/persona3", title: "Persona3" },
+  persona4: { base: "/icons/games/persona4", title: "Persona4" },
+  persona5: { base: "/icons/games/persona5", title: "Persona5" },
+  persona5r: { base: "/icons/games/persona5r", title: "Persona5r" },
+  ninenine: { base: "/icons/games/ninenine", title: "9-Nine"},
+  sevengc: { base: "/icons/games/7dsgrandcross", title: "sevengc"}
 };
 
 // GAME matcher (untuk deteksi dari teks)
@@ -234,7 +241,6 @@ export const GAME_MATCHERS = [
   { key: "zzz", title: "Zenless Zone Zero", aliases: ["zzz","zenless zone zero","zenless"] },
   { key: "al", title: "Azur Lane", aliases: ["al","azur lane"] },
   { key: "gfl", title: "Girls’ Frontline", aliases: ["gfl","girls frontline","girls' frontline"] },
-  { key: "persona", title: "Persona", aliases: ["persona","persona 5","p5","persona5","persona series"] },
   { key: "roblox", title: "Roblox", aliases: ["roblox"] },
   { key: "strinova", title: "Strinova", aliases: ["strinova","stri nova"] },
   { key: "tot", title: "Tears of Themis", aliases: ["tot","tear of themis"] },
@@ -266,6 +272,14 @@ export const GAME_MATCHERS = [
   { key: "riskofrain", title: "Risk of Rain", aliases: ["riskofrain","risk of rain"] },
   { key: "endfield", title: "Arknights: Endfield", aliases: ["endfield","arknights endfield"] },
   { key: "steso", title: "Stella Sora", aliases: ["steso","stella sora"] },
+  { key: "enstar", title: "Ensemble Stars!", aliases: ["enstar","ensemble stars"] },
+  { key: "twst", title: "Twisted Wonderland", aliases: ["twst","twisted wonderland"] },
+  { key: "persona3", title: "Persona3", aliases: ["persona 3","p3","persona3"] },
+  { key: "persona4", title: "Persona4", aliases: ["persona 4","p4","persona4"] },
+  { key: "persona5", title: "Persona5", aliases: ["persona 5","p5","persona5"] },
+  { key: "persona5r", title: "Persona5r", aliases: ["persona 5 r","p5r","persona5r"] },
+  { key: "ninenine", title: "9-Nine", aliases: ["9-Nine","ninenine","9-nine","Ninenine"]},
+  { key: "sevengc", title: "sevengc", aliases: ["sevengc","7dsgc","7dsgrandcross"]}
 ];
 
 const PLATFORM_ICONS = {
@@ -341,7 +355,6 @@ export function normalizeGames(list) {
     "girls frontline neural cloud": "nc",
     "gfl nc": "nc",
     gflnc: "nc",
-    persona: "persona",
     pgr: "pgr",
     "punishing gray raven": "pgr",
     "punishing: gray raven": "pgr",
@@ -376,7 +389,15 @@ export function normalizeGames(list) {
     "arknights endfield": "endfield",
     steso: "steso",
     "stella sora": "steso",
-
+    enstar: "enstar",
+    "ensemble stars": "enstar",
+    twst: "twst",
+    persona3: "persona3",
+    persona4: "persona4",
+    persona5: "persona5",
+    persona5r: "persona5r",
+    ninenine: "ninenine",
+    sevengc: "sevengc"
   };
   const cleaned = (s) =>
     String(s).toLowerCase().trim().replace(/[_\-]+/g, " ").replace(/\s+/g, " ");
