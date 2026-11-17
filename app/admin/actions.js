@@ -1,3 +1,14 @@
+"use server";
+
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
+import { requireAdmin, COOKIE } from "@/lib/auth";
+import { supabaseAdmin as db } from "@/lib/supabase/admin";
+
+const list = (v) => String(v || "").split(/[,\n]/).map((s) => s.trim()).filter(Boolean);
+const text = (v) => String(v || "").trim() || null;
+
 export async function saveAdmin(formData) {
   await requireAdmin();
 
