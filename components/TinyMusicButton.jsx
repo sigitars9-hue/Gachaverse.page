@@ -10,14 +10,12 @@ const CDN_BASES = [
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const fmt = (s) => `${Math.floor((s || 0) / 60)}:${String(Math.floor((s || 0) % 60)).padStart(2, "0")}`;
 
+const MIME = { webm: "audio/webm", m4a: "audio/mp4", mp4: "audio/mp4", mp3: "audio/mpeg", ogg: "audio/ogg", wav: "audio/wav" };
+
 function buildCandidates({ slug, src }) {
   if (src) {
-    const b = src.replace(/\.\w+$/, "");
-    return [
-      { url: b + ".webm", type: "audio/webm" },
-      { url: b + ".m4a",  type: "audio/mp4"  },
-      { url: b + ".mp3",  type: "audio/mpeg" }
-    ];
+    const ext = (src.split("?")[0].match(/\.(\w+)$/)?.[1] || "").toLowerCase();
+    return [{ url: src, type: MIME[ext] || "" }];
   }
   if (!slug) return [];
   const list = [];

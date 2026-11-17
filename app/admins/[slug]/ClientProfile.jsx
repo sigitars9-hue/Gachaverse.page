@@ -16,13 +16,9 @@ import {
   Lock,
   EyeOff,
 } from "lucide-react";
-import { Poppins } from "next/font/google";
+import { Geist } from "next/font/google";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
-});
-
+const poppins = Geist({ subsets: ["latin"] });
 /* ========================= Helpers kecil ========================= */
 function normalizeGender(g) {
   if (!g) return null;
@@ -708,7 +704,7 @@ export default function ClientProfile({ admin }) {
   const channels = buildChannelAssignments(admin);
 
   return (
-    <main className={`${poppins.className} min-h-screen bg-black text-white`}>
+    <main className="min-h-screen bg-black text-white">
       {/* HEADER */}
       <FloatingHeaderControls />
       <BackdropHeader src={photo} tintClass="bg-sky-400/10">
@@ -1048,8 +1044,7 @@ export default function ClientProfile({ admin }) {
       </div>
 
       {/* Tombol musik mini (opsional) */}
-      <TinyMusicButton slug={admin.slug} />
-
+      <TinyMusicButton slug={admin.slug} src={admin.themeSong} />
       {/* CSS shimmer global */}
       <style jsx global>{`
         @keyframes role-shimmer {
