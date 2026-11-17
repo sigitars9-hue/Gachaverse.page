@@ -40,6 +40,7 @@ export default function AdminForm({ a = {} }) {
 
   return (
     <form action={saveAdmin} className="space-y-5">
+      <input type="hidden" name="original_slug" value={a.slug ?? ""} />
       <Section i={0} title="Identitas">
         <Field label="Nama"><input name="name" defaultValue={a.name} required className={input} /></Field>
         <Field label={isEdit ? "Slug (tidak bisa diubah)" : "Slug (alamat URL, huruf kecil)"}>
